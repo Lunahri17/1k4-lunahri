@@ -1,0 +1,88 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+31
+'Ingrese la cantidad de puntos'
+5
+1
+1
+N
+6
+2
+2
+CD
+1
+0
+2
+CF
+1
+0
+8
+1
+1
+C
+1
+1
+1
+1
+3
+N-1
+1
+1
+1
+4
+1
+19
+'Ingresar el punto'
+5
+1
+3
+X,Y
+7
+0
+1
+33
+X>=-3 and X<=3 and Y>=-3 and Y<=3
+4
+1
+36
+'Su numero esta fuera del cuadrante'
+6
+1
+2
+CF
+4
+CF+1
+13
+4
+1
+37
+'Su numero esta dentro del cuadrante'
+6
+1
+2
+CD
+4
+CD+1
+13
+10
+4
+1
+35
+'Puntos dentros del cuadrante:', CD
+6
+1
+1
+P
+14
+CF*100/(CD+CF)
+4
+1
+32
+'Porcentaje de puntos fuera:', P
+1

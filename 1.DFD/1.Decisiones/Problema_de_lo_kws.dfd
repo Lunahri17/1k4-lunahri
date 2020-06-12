@@ -1,0 +1,61 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+22
+'Ingresar valor de Kw'
+5
+1
+2
+KW
+4
+1
+21
+'Ingresar el consumo'
+5
+1
+1
+C
+7
+0
+1
+3
+C=0
+6
+1
+1
+S
+4
+C*KW
+7
+0
+1
+5
+C<350
+4
+1
+19
+'Total a pagar:', s
+13
+6
+1
+2
+SD
+6
+S*0.95
+4
+1
+41
+'Total a pagar con descuento del 5%:', SD
+13
+13
+4
+1
+18
+'No tiene consumo'
+13
+1

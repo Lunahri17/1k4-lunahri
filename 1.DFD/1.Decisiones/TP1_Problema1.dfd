@@ -1,0 +1,73 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+6
+1
+4
+P_IB
+2
+25
+4
+1
+25
+'Ingrese Total de ventas'
+5
+1
+7
+Tot_Ven
+4
+1
+24
+'Ingrese Total de Gasto'
+5
+1
+7
+Tot_Gas
+6
+2
+8
+Imp_Prov
+16
+P_IB/100*Tot_Ven
+3
+SNM
+24
+Tot_Ven-Tot_Gas-Imp_Prov
+4
+1
+32
+'Impuesto Provincial:', Imp_Prov
+4
+1
+26
+'Saldo Neto Mensual:', SNM
+7
+0
+1
+5
+SNM>0
+7
+0
+1
+5
+SNM=0
+4
+1
+19
+'No hubo gananacia'
+13
+4
+1
+38
+'No hay perdidas ni tampoco ganancias'
+13
+13
+4
+1
+19
+'Si hubo ganancia.'
+13
+1

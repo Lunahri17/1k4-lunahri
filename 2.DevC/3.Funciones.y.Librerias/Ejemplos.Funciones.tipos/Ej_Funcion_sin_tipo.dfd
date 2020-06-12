@@ -1,0 +1,51 @@
+ Dfd (c)
+1
+1
+2
+0
+0
+4
+1
+24
+'Ingrese el valor de A.'
+5
+1
+1
+A
+4
+1
+24
+'Ingrese el valor de B.'
+5
+1
+1
+B
+12
+1
+4
+SUMA
+1
+5
+A,B,S
+4
+1
+10
+'Suma: ',S
+1
+2
+1
+4
+SUMA
+1
+8
+A1,B1,S1
+1
+16
+Suma dos valores
+6
+1
+2
+S1
+5
+A1+B1
+3

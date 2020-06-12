@@ -1,0 +1,52 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+25
+'Ingresar Sueldo Basico:'
+5
+1
+2
+SB
+4
+1
+70
+'Ingresar el porcentaje de Alta montaña (25) o de Resto de zonas (19)'
+5
+1
+1
+P
+7
+0
+1
+12
+P=25 or P=19
+4
+1
+27
+'Ingreso un Numero erroneo'
+13
+6
+2
+1
+A
+10
+(P/100)*SB
+2
+SF
+4
+SB+A
+4
+1
+13
+'Aumento:', A
+4
+1
+18
+'Saldo Final:', Sf
+13
+1

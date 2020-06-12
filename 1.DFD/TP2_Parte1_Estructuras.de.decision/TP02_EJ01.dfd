@@ -1,0 +1,63 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+25
+'Ingrese Total de ventas'
+5
+1
+2
+TV
+4
+1
+24
+'Ingrese Total de Gasto'
+5
+1
+2
+TG
+6
+2
+3
+IMP
+7
+0.75*TV
+3
+SNM
+9
+TV-TG-IMP
+4
+1
+26
+'Saldo Neto Mensual:', SNM
+7
+0
+1
+5
+SNM>0
+7
+0
+1
+5
+SNM=0
+4
+1
+19
+'No hubo gananacia'
+13
+4
+1
+38
+'No hay perdidas ni tampoco ganancias'
+13
+13
+4
+1
+19
+'Si hubo ganancia.'
+13
+1

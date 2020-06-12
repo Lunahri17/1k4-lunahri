@@ -1,0 +1,37 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+29
+'Igrese la produccion diaria'
+5
+1
+2
+PD
+4
+1
+39
+'Ingrese el numero de pañales por caja'
+5
+1
+3
+NPC
+6
+2
+3
+CND
+6
+PD/NPC
+2
+CS
+5
+CND*7
+4
+1
+38
+'Cajas necesarias para la semana:', CS
+1

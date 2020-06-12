@@ -1,0 +1,58 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+33
+'Ingrese la cantidad de números.'
+5
+1
+1
+X
+8
+1
+1
+C
+1
+1
+1
+1
+1
+X
+1
+1
+1
+4
+1
+32
+'Ingrese un numero de 3 cifras.'
+5
+1
+1
+N
+7
+0
+1
+17
+N>=100 and N<=999
+4
+1
+35
+'No ingresó un valor de 3 digitos.'
+13
+6
+1
+1
+A
+8
+N mod 10
+4
+1
+46
+'El último digito del número ',N,' es: ',A,'.'
+13
+10
+1

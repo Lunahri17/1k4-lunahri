@@ -1,0 +1,47 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+44
+'Ingrese la cantidad de números a ingresar.'
+5
+1
+1
+X
+8
+1
+1
+C
+1
+1
+1
+1
+1
+X
+1
+1
+1
+4
+1
+39
+'Ingrese un valor N entero y positivo.'
+5
+1
+1
+N
+6
+1
+1
+N
+7
+N*(N-1)
+4
+1
+21
+'Su factorial es: ',N
+10
+1

@@ -1,0 +1,30 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+25
+'Ingresar valor de X e Y'
+5
+1
+3
+X,Y
+7
+0
+1
+33
+X>=-3 and X<=3 and Y>=-3 and Y<=3
+4
+1
+37
+'No se encuentra dentro del cuadrado'
+13
+4
+1
+34
+'Se encuentra dentro del cuadrado'
+13
+1

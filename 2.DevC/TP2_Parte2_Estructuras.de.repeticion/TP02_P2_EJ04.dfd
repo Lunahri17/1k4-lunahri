@@ -1,0 +1,73 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+69
+'¿Quiere ingresar valores? 1=Para ingresar valores, 0=Para cancelar.'
+5
+1
+1
+X
+6
+2
+2
+VP
+1
+0
+2
+VI
+1
+0
+9
+1
+3
+X>0
+4
+1
+26
+'Ingrese valores enteros.'
+5
+1
+1
+V
+7
+0
+1
+11
+V mod 2 = 0
+6
+1
+2
+VI
+4
+VI+V
+13
+6
+1
+2
+VP
+4
+VP+V
+13
+4
+1
+41
+'¿Desea ingresar otro valor? 1=Si, 0=No.'
+5
+1
+1
+X
+11
+4
+1
+38
+'La suma de los numeros pares es: ',VP
+4
+1
+40
+'La suma de los numeros impares es: ',VI
+1
