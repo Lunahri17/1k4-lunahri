@@ -44,7 +44,6 @@ main()
                 {
                     printf("\nIngreso una cantidad no valida, volvera al menu.");
                 }
-                
                 break;
             
             case 3:
@@ -63,7 +62,6 @@ main()
                 {
                     printf("\nIngreso una cantidad no valida, volvera al menu.");
                 }
-
                 break;
             
             case 4:
