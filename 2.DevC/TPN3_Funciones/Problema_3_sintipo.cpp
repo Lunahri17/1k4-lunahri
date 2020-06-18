@@ -8,7 +8,7 @@ void CalMayMen(int &May, int &Men);
 
 main()
 {
-    int n1,n2;
+    int n1,n2,AreaCuadrado=0;
 
     do
     {
@@ -26,6 +26,9 @@ main()
     while(n1==n2);
 
     CalMayMen(n1,n2);
+    printf("\n\tNumero 1: %d",n1);
+    printf("\n\tNumero 2: %d",n2);
+
     
 
  	printf("\n\n");
@@ -39,7 +42,7 @@ void CalMayMen(int &May, int &Men)
 
     if(May<Men)
     {
-        May=var;
+        var=May;
         May=Men;
         Men=var;
     }
