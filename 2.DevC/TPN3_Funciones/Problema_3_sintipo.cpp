@@ -3,12 +3,12 @@
 #include<math.h>
 
 void CalMayMen(int &May, int &Men);
-
+void AreaCuad(int May, int &SupCua);
 
 
 main()
 {
-    int n1,n2,AreaCuadrado=0;
+    int n1,n2,AreaCuadrado=0,AreaCilindro=0;
 
     do
     {
@@ -26,10 +26,11 @@ main()
     while(n1==n2);
 
     CalMayMen(n1,n2);
-    printf("\n\tNumero 1: %d",n1);
-    printf("\n\tNumero 2: %d",n2);
-
+    AreaCuad(n1,AreaCuadrado);
     
+    printf("\n La superficie del Cuadrado es: %d",AreaCuadrado);
+
+    AreaCilin(n2,AreaCilindro);
 
  	printf("\n\n");
 	system("pause");
@@ -46,4 +47,14 @@ void CalMayMen(int &May, int &Men)
         May=Men;
         Men=var;
     }
+}
+
+void AreaCuad(int May, int &SupCua)
+{
+    SupCua=May*May;
+}
+
+void AreaCilin(int Men, int &SupCil)
+{
+    
 }
