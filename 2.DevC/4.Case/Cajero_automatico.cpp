@@ -1,3 +1,4 @@
+//Corregido, y aparentemente aprobado xd
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
