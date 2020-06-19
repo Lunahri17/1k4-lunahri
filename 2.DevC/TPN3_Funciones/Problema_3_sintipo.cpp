@@ -4,23 +4,25 @@
 
 void CalMayMen(int &May, int &Men);
 void AreaCuad(int May, int &SupCua);
-
+void AreaCilin(int Men, int &SupCil);
 
 main()
 {
-    int n1,n2,AreaCuadrado=0,AreaCilindro=0;
+    int n1,n2,AreaCuadrado=0,AreaCirculo=0;
 
     do
     {
-        printf("\nIngrese el primer numero: ");
+        system("cls");
+
+        printf("\n Ingrese el primer numero: ");
         scanf("%d",&n1);
 
-        printf("\nIngrese el segundo numero: ");
+        printf("\n Ingrese el segundo numero: ");
         scanf("%d",&n2);
 
         if (n1==n2)
         {
-            printf("Los numero son iguales, vuelva a ingresarlos.");
+            printf("\n Los numeros no pueden ser iguales, vuelva a ingresarlos.");
         }
     }
     while(n1==n2);
@@ -30,7 +32,9 @@ main()
     
     printf("\n La superficie del Cuadrado es: %d",AreaCuadrado);
 
-    AreaCilin(n2,AreaCilindro);
+    AreaCilin(n2,AreaCirculo);
+
+    printf("\n La superficie del Circulo es: %d",AreaCirculo);
 
  	printf("\n\n");
 	system("pause");
@@ -56,5 +60,5 @@ void AreaCuad(int May, int &SupCua)
 
 void AreaCilin(int Men, int &SupCil)
 {
-    
+    SupCil=3*Men*Men;
 }
