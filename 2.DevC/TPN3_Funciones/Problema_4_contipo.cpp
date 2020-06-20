@@ -30,7 +30,7 @@ main()
             scanf("%d",&n2);
             if (n2>n1)
             {
-                printf("\nLa cantidad de envases con fallas no puede ser mayor a las producidad");
+                printf("\nLa cantidad de envases con fallas no puede ser mayor a las producidas");
                 printf("\nVuelva a ingresar los datos de la semana %d.\n",c);
                 system("pause");
                 c--;
@@ -46,7 +46,7 @@ main()
 
         printf("\n\nCodigo de la maquina: %d",num_maq);
         printf("\nCantidad de envases producidos: %d",env_pro);
-        printf("\nPorcentaje de envases con fallos: %f",porcentaje(env_pro,env_falla));
+        printf("\nPorcentaje de envases con fallos: %.2f",porcentaje(env_pro,env_falla));
                
         printf("\n\nIngrese el codigo de la maquina (0 para terminar): ");
         scanf("%d",&num_maq);
