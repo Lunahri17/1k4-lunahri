@@ -50,6 +50,9 @@ main()
                
         printf("\n\nIngrese el codigo de la maquina (0 para terminar): ");
         scanf("%d",&num_maq);
+
+        env_pro=0;
+        env_falla=0;
     }
     
     printf("\nGracias por utilizar el programa.");
