@@ -32,6 +32,7 @@ main()
             {
                 printf("\nLa cantidad de envases con fallas no puede ser mayor a las producidad");
                 printf("Vuelva a ingresar los datos de la semana %d.",c);
+                system("pause");
                 c--;
             }
             else
