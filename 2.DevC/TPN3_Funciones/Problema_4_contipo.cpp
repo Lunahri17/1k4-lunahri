@@ -49,5 +49,5 @@ float porcentaje(int x1, int x2)
 {
     float por;
     por=(float)(x2*100)/x1;
-    return pro;
+    return por;
 }
