@@ -64,6 +64,13 @@ main()
 float porcentaje(int x1, int x2)
 {
     float por;
-    por=(float)(x2*100)/x1;
+    if (x1==0)
+    {
+        por=0;
+    }
+    else
+    {
+        por=(float)(x2*100)/x1;
+    }
     return por;
 }
