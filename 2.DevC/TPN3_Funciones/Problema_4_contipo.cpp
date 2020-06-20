@@ -26,7 +26,6 @@ main()
             printf("\n\nIngrese la cantidad de envases producidos: ");
             scanf("%d",&n1);
             
-            
             printf("\nIngrese la cantidad de envases con fallas: ");
             scanf("%d",&n2);
             if (n2>n1)
