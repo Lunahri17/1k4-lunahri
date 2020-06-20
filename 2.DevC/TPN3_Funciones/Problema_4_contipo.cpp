@@ -10,7 +10,7 @@ main()
 
     system("cls");
 
-    printf("\n\nIngrese el codigo de la maquina: ");
+    printf("\nIngrese el codigo de la maquina: ");
     scanf("%d",&num_maq);
 
     while (num_maq!=0)
@@ -31,7 +31,7 @@ main()
             if (n2>n1)
             {
                 printf("\nLa cantidad de envases con fallas no puede ser mayor a las producidad");
-                printf("Vuelva a ingresar los datos de la semana %d.",c);
+                printf("\nVuelva a ingresar los datos de la semana %d.\n",c);
                 system("pause");
                 c--;
             }
@@ -52,7 +52,7 @@ main()
         scanf("%d",&num_maq);
     }
     
-    printf("Gracias por utilizar el programa.");
+    printf("\nGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
