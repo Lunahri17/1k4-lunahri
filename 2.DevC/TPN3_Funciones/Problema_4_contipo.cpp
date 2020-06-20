@@ -23,13 +23,23 @@ main()
 
             printf("\n\tDatos semana %d:",c);
 
-            printf("\nIngrese la cantidad de envases producidas: ");
+            printf("\n\nIngrese la cantidad de envases producidos: ");
             scanf("%d",&n1);
-            env_pro=env_pro+n1;
+            
             
             printf("\nIngrese la cantidad de envases con fallas: ");
             scanf("%d",&n2);
-            env_falla=env_falla+n2;
+            if (n2>n1)
+            {
+                printf("\nLa cantidad de envases con fallas no puede ser mayor a las producidad");
+                printf("Vuelva a ingresar los datos de la semana %d.",c);
+                c--;
+            }
+            else
+            {
+                env_pro=env_pro+n1;
+                env_falla=env_falla+n2;   
+            }
         }
         
         system("cls");
@@ -42,6 +52,7 @@ main()
         scanf("%d",&num_maq);
     }
     
+    printf("Gracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
