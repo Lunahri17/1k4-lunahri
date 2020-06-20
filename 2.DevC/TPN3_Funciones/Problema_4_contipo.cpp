@@ -8,6 +8,8 @@ main()
 {
     int c,num_maq,env_pro=0,env_falla=0,n1,n2;
 
+    system("cls");
+
     printf("\n\nIngrese el codigo de la maquina: ");
     scanf("%d",&num_maq);
 
