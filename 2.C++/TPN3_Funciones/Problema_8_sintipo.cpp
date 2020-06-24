@@ -25,6 +25,7 @@ main()
 		printf("\nSu llamada costo: %.2f Pesos.",valor);
 	}
 	
+    printf("\n\n");
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
