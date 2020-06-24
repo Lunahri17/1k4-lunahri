@@ -36,9 +36,7 @@ main()
         printf("\nPorcentaje de numeros pares: %.2f",porcentaje(contpar,contimpar));
         printf("\nPromedio de numeros impares: %.2f",promedio(contimpar,sumaimp));
     }
-    printf("\n\n");
-    system("pause");
-    system("cls");
+   
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
