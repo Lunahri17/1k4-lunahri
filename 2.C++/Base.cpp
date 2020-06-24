@@ -7,7 +7,8 @@
 main()
 {
 
-
+	system("pause");
+    printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
