@@ -1,4 +1,4 @@
-//Función (1): Retorna el mayor de 3 numeros.
+//Función (1): Retorna el mayor de tres numeros.
 int mayor(int x1,int x2,int x3)
 {
     if (x1>x2 and x1>x3)
@@ -15,7 +15,7 @@ int mayor(int x1,int x2,int x3)
     } 
 }
 
-//Función (2): Retorna el menor de 3 numeros.
+//Función (2): Retorna el menor de tres numeros.
 int menor(int x1,int x2,int x3)
 {
     if (x1<x2 and x1<x3)
@@ -40,7 +40,7 @@ float promedio(int x1,int x2,int x3)
     return prom;
 }
 
-//Función (4): Retorna el resultado del producto de 2 numeros.
+//Función (4): Retorna el resultado del producto de dos numeros.
 int producto(int x1,int x2)
 {
     int prod;
@@ -54,5 +54,13 @@ float divicion(int x1,int x2)
     float div;
     div=(float)x1/x2;
     return div;
+}
+
+//Función (6): Retorna el resultado de sumar dos numeros.
+int suma(int x1,int x2)
+{
+    int sum;
+    sum=x1+x2;
+    return sum;
 }
 
