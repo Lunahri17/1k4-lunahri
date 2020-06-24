@@ -3,12 +3,13 @@
 #include<math.h>
 
 float porcentaje(int numpar,int numimp);
+float sumaimp(int numimp,int totalimp);
 
 main()
 {
     system("cls");
 
-    int x,contpar=0,contimpar=0;
+    int x,contpar=0,contimpar=0,sumaimp=0;
 
     printf("Ingrese un numero (0 para cancelar): ");
     scanf("%d",&x);
@@ -22,6 +23,7 @@ main()
         else
         {
             contimpar++;
+            sumaimp=sumaimp+x;
         }
         
         system("cls");
@@ -29,9 +31,14 @@ main()
         scanf("%d",&x);
     }
     
-    printf("\nPorcentaje de numeros pares: %.2f",porcentaje(contpar,contimpar));
-    printf("")
-
+    if (x!=0)
+    {
+        printf("\nPorcentaje de numeros pares: %.2f",porcentaje(contpar,contimpar));
+        printf("\nPromedio de numeros impares: %.2f",promedio(contimpar,sumaimp))
+    }
+    
+    system("pause");
+    printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
@@ -42,4 +49,12 @@ float porcentaje(int numpar,int numimp)
 
     por=(float)numpar*100/(numpar+numimp);
     return por;
+}
+
+float sumaimp(int numimp,int totalimp)
+{
+    float prom;
+
+    prom=(float)totalimp/numimp;
+    return prom;
 }
