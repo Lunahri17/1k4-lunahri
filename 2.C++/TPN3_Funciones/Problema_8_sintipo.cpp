@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-void valor(int x1,float &valor1);
+void costo(int x1,float &valor1);
 
 main()
 {
@@ -32,7 +32,7 @@ main()
 }
 
 
-void valor(int x1,float &valor1)
+void costo(int x1,float &valor1)
 {
 	int var1;
 	
