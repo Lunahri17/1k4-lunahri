@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<math.h>
 
-float horas(int x1);
-float mul60(float x1);
+int horas(int x1);
+int mul60(int x1);
 
 main()
 {
@@ -18,9 +18,9 @@ main()
 
         if (x>99)
         {
-            printf("Su equivalente en horas: %.2f",horas(x));
-            printf("Su equivalente en minutos: %.2f",mul60(horas(x)));
-            printf("Su equivalente en segundos: %.2f",mul60(mul60(horas(x))));
+            printf("\nSu equivalente en horas: %.2f",horas(x));
+            printf("\nSu equivalente en minutos: %.2f",mul60(horas(x)));
+            printf("\nSu equivalente en segundos: %.2f",mul60(mul60(horas(x))));
 
         }
         else
@@ -37,7 +37,7 @@ main()
 	system("pause");
 }
 
-float horas(int x1)
+int horas(int x1)
 {
     float h;
 
@@ -45,7 +45,7 @@ float horas(int x1)
     return h;
 }
 
-float mul60(float x1)
+int mul60(int x1)
 {
     float val;
 
