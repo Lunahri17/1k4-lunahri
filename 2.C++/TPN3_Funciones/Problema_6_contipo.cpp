@@ -18,9 +18,9 @@ main()
 
         if (x>99)
         {
-            printf("\nSu equivalente en horas: %d",horas(x));
-            printf("\nSu equivalente en minutos: %d",mul60(horas(x)));
-            printf("\nSu equivalente en segundos: %d",mul60(mul60(horas(x))));
+            printf("\nSu equivalente en horas: %d [h]",horas(x));
+            printf("\nSu equivalente en minutos: %d [min]",mul60(horas(x)));
+            printf("\nSu equivalente en segundos: %d [s]",mul60(mul60(horas(x))));
 
         }
         else
