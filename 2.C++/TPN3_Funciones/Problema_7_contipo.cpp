@@ -6,6 +6,8 @@ float porcentaje(int numpar,int numimp);
 
 main()
 {
+    system("cls");
+    
     int x,contpar=0,contimpar=0;
 
     printf("Ingrese un numero (0 para cancelar): ");
@@ -23,7 +25,7 @@ main()
         }
         
         system("cls");
-        printf("\nIngrese otro numero, o un 0 para cancelar: ");
+        printf("\nIngrese otro numero, o un 0 para terminar: ");
         scanf("%d",&x);
     }
     
