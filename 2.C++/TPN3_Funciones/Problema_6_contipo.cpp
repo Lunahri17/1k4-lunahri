@@ -21,6 +21,7 @@ main()
             printf("\nSu equivalente en horas: %d [h]",horas(x));
             printf("\nSu equivalente en minutos: %d [min]",mul60(horas(x)));
             printf("\nSu equivalente en segundos: %d [s]",mul60(mul60(horas(x))));
+            printf("\n\n");
             system("pause");
         }
         else
