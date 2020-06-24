@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-
+void valor(int x1,float &valor1);
 
 main()
 {
@@ -36,7 +36,7 @@ void valor(int x1,float &valor1)
 {
 	int var1;
 	
-	if(x<4)
+	if(x1<4)
 	{
 		valor1=0.70;
 	}
