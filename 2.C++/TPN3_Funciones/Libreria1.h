@@ -40,7 +40,7 @@ float promedio(int x1,int x2,int x3)
     return prom;
 }
 
-//Función (4): Retorna el resultado del producto de dos numeros.
+//Función (4): Retorna el producto de dos numeros.
 int producto(int x1,int x2)
 {
     int prod;
@@ -48,7 +48,7 @@ int producto(int x1,int x2)
     return prod;
 }
 
-//Función (5): Retorna el resultado de la divición de dos numeros.
+//Función (5): Retorna la divición de dos numeros.
 float divicion(int x1,int x2)
 {
     float div;
@@ -56,7 +56,7 @@ float divicion(int x1,int x2)
     return div;
 }
 
-//Función (6): Retorna el resultado de sumar dos numeros.
+//Función (6): Retorna la suma dos numeros.
 int suma(int x1,int x2)
 {
     int sum;
@@ -64,3 +64,8 @@ int suma(int x1,int x2)
     return sum;
 }
 
+//Función (7): Retorna la resta de dos numeros.
+int resta(int x1,int x2)
+{
+    return x1-x2;
+}
