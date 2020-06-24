@@ -36,7 +36,7 @@ int menor(int x1,int x2,int x3)
 float promedio(int x1,int x2,int x3)
 {
     float prom=0;
-    prom=(float)(x1+x2+x3)/3
+    prom=(float)(x1+x2+x3)/3;
     return prom;
 }
 
