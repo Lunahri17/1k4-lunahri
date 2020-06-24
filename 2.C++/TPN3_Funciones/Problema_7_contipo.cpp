@@ -3,7 +3,7 @@
 #include<math.h>
 
 float porcentaje(int numpar,int numimp);
-float sumaimp(int numimp,int totalimp);
+float promedio(int numimp,int totalimp);
 
 main()
 {
@@ -51,7 +51,7 @@ float porcentaje(int numpar,int numimp)
     return por;
 }
 
-float sumaimp(int numimp,int totalimp)
+float promedio(int numimp,int totalimp)
 {
     float prom;
 
