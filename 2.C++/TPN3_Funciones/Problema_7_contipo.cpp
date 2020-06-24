@@ -7,7 +7,7 @@ float porcentaje(int numpar,int numimp);
 main()
 {
     system("cls");
-    
+
     int x,contpar=0,contimpar=0;
 
     printf("Ingrese un numero (0 para cancelar): ");
@@ -29,7 +29,8 @@ main()
         scanf("%d",&x);
     }
     
-    printf("\nPorcentaje de numeros impares: %.2f",porcentaje(contpar,contimpar));
+    printf("\nPorcentaje de numeros pares: %.2f",porcentaje(contpar,contimpar));
+    printf("")
 
  	printf("\n\n");
 	system("pause");
@@ -39,6 +40,6 @@ float porcentaje(int numpar,int numimp)
 {
     float por;
 
-    por=(float)numimp*100/(numpar+numimp);
+    por=(float)numpar*100/(numpar+numimp);
     return por;
 }
