@@ -31,7 +31,7 @@ main()
         scanf("%d",&x);
     }
     
-    if (x!=0)
+    if (contimpar!=0 or contpar!=0)
     {
         printf("\nPorcentaje de numeros pares: %.2f",porcentaje(contpar,contimpar));
         printf("\nPromedio de numeros impares: %.2f",promedio(contimpar,sumaimp));
