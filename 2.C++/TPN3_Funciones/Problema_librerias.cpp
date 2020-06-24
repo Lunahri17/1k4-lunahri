@@ -24,7 +24,7 @@ main()
     printf("\nEl promedio de los valores es: %.2f",promedio(n1,n2,n3));
     printf("\nLa suma del primer valor ingresado con el ultimo es: %d",suma(n1,n3));
     printf("\nLa resta del mayor, con el menor valor es: %d",resta(mayor(n1,n2,n3),menor(n1,n2,n3)));
-    printf("\nLa divicion del mayot en el segundo valor ingresado es: %.2f",divicion(mayor(n1,n2,n3),n2));
+    printf("\nLa divicion del mayor en el segundo valor ingresado es: %.2f",divicion(mayor(n1,n2,n3),n2));
     printf("\nEl producto de los 3 valores ingresados es: %d\n\n",producto(producto(n1,n2),n3));
 
     
