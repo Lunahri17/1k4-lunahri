@@ -11,11 +11,11 @@ main()
     int n1,n2,n3;
 
     printf("\nIngrese el primer numero: ");
-    scanf("%d",n1);
+    scanf("%d",&n1);
     printf("Ingrese el segundo numero: ");
-    scanf("%d",n2);
+    scanf("%d",&n2);
     printf("Ingrese el tercer numero: ");
-    scanf("%d",n3);
+    scanf("%d",&n3);
 
     printf("\n\tResultados:");
 
