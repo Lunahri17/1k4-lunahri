@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-
+float porcentaje(int numpar,int numimp);
 
 main()
 {
