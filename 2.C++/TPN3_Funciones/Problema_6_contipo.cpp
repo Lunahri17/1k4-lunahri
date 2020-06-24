@@ -14,7 +14,7 @@ main()
         system("cls");
         
         printf("\nIngrese la cantidad de dias (debe ser superior a 100): ");
-        scanf("%d",x);
+        scanf("%d",&x);
 
         if (x>99)
         {
