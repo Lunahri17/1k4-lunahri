@@ -18,7 +18,7 @@ main()
     printf("\nIngrese el segundo numero: ");
 	scanf("%d",&n2);
 
-	printf("\nProducto: %d",producto(n1,n2));
+	printf("\nEl resultado del producto es: %d",producto(n1,n2));
 	
 	printf("\n\n");
 	system("pause");

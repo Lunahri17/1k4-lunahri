@@ -35,7 +35,7 @@ main()
     }while (n2>n1 or n2==0);
     
 
-	printf("\nResultado de la division: %d",division(n1,n2));
+	printf("\nResultado de la division es: %d",division(n1,n2));
 	
 	printf("\n\n");
 	system("pause");
