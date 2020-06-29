@@ -36,7 +36,26 @@ void leer(int n1,float pro1[50],int leg1[50])
 
 void ordenar (int n1,float pro1[50],int leg1[50])
 {
+	int i,aux;
 	
+	do
+	{
+		b=0;
+		//vector ordenado
+		for(i=0;i<n-1;i++)
+		{
+			if(pro1[i]>pro1[i])
+			{
+				aux=pro1[i];
+				pro1[i]=pro1[i+1];
+				pro1[i+1]=aux;
+				
+				aux=leg1[i];
+				leg1[i]=leg1[i+1];
+				leg1[i+1]=aux;
+			}
+		}
+	}
 }
 
 
