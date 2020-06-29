@@ -17,11 +17,11 @@ main(void)
     
     leer(n,pro,leg);
     ordenar(n,pro,leg);
-    
-    printf("\n\tVectores ordenados: \n");
     mostrar(n,pro,leg);
     
-    printf("\n\n\tLos 3 mejores promedios:\n");
+    printf("\n\tVectores ordenados: ");
+    mostrar(n,pro,leg);
+    
     printf("\n pro[0]= %.2f - leg[0]= %d",pro[0],leg[0]);
     printf("\n pro[1]= %.2f - leg[1]= %d",pro[1],leg[1]);
     printf("\n pro[2]= %.2f - leg[2]= %d",pro[2],leg[2]);
@@ -42,6 +42,12 @@ main(void)
  
 }
 
+ 
+
+ 
+
+ 
+
 void leer(int n1,float pro1[50],int leg1[50])
 {
     int i;
@@ -55,6 +61,12 @@ void leer(int n1,float pro1[50],int leg1[50])
         scanf("%d",&leg1[i]);
     }
 }
+
+ 
+
+ 
+
+ 
 
 void ordenar (int n1,float pro1[50],int leg1[50])
 {
@@ -84,6 +96,12 @@ void ordenar (int n1,float pro1[50],int leg1[50])
     while(b==1);
 }
 
+ 
+
+ 
+
+ 
+
 void mostrar(int n1,float pro1[50],int leg1[50])
 {
     int i;
@@ -94,6 +112,12 @@ void mostrar(int n1,float pro1[50],int leg1[50])
         printf("\n leg[%d]= %d",i,leg1[i]);
     }
 }
+
+ 
+
+ 
+
+ 
 
 int buscar(int n1,int leg1[50],int lega1)
 {
