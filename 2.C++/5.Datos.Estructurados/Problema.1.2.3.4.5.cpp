@@ -6,7 +6,7 @@
 
 void cargar(int orden,int vector[50]);
 void mostrar(int orden,int ector[50]);
-float promedio(int orden, int vector[50]);
+float promedio(int orden, int vector[50]); //nuevo xd
 void porcentaje(int orden,int vector[50],float &por);
 int mayormenor(int orden, int vector[50],int &posmen);
 void pausa();
