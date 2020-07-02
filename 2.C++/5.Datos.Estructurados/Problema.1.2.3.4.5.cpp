@@ -6,6 +6,7 @@
 
 void cargar(int orden,int vector[50]);
 void mostrar(int orden,int ector[50]);
+float promedio(int orden, int vector[50]);
 void porcentaje(int orden,int vector[50],float &por);
 int mayormenor(int orden, int vector[50],int &posmen);
 void pausa();
@@ -21,7 +22,7 @@ main()
 	cargar(N,edad);
 	mostrar(N,edad);
 	
-	printf("\n El promedio de las edades: ");
+	printf("\n El promedio de las edades: ",promedio(N,edad));
 	
 	porcentaje(N,edad,porce);
 	printf("\n El porcentaje de numeros pares es: %.2f",porce);
@@ -53,6 +54,19 @@ void mostrar(int orden, int vector[50])
 	{
 		printf("\t%d",vector[i]);
 	}
+}
+
+float promedio(int orden, int vector[50])
+{
+
+	int s=0,cp=0,acumulador=0;
+
+	for(int i=0;i<orden;i++)
+	{
+		acumulador=vector[i]+acumulador;
+	}
+
+	return (float)acumulador/orden;
 }
 
 void porcentaje(int orden,int vector[50],float &por)
