@@ -1,6 +1,8 @@
 ### Mis excepciones xd ###
 *.exe
 
+### Excepciones Ubuntu ###
+*.out
 
 ### VisualStudioCode ###
 .vscode/*
