@@ -13,7 +13,7 @@ main()
     scanf("%d",&n);
 
     CargarNumeros(n,vector);
-    printf("\nNumero mayor %d",vector[CalculoMenor(n,vector)]);
+    printf("\nEl menor numero ingresado es: %d",vector[CalculoMenor(n,vector)]);
     
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
