@@ -9,7 +9,7 @@ main()
     int n,vector[100];
 
     printf("Ingrese la cantidad numeros: ");
-    scanf("%d",%n);
+    scanf("%d",&n);
 
     CargarNumeros(n,vector);
     
@@ -25,7 +25,7 @@ void CargarNumeros(int n1,int vector1[100])
     for(int i=0;i<n1;i++)
     {
         printf("\nIngrese el valor %d: ",i+1);
-        scanf("%d",vector1[i]);
+        scanf("%d",&vector1[i]);
     }
     system("cls");
 }
