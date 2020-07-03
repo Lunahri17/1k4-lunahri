@@ -3,7 +3,6 @@
 #include<math.h>
 
 void CargarNumeros(int n1,int vector1[100]);
-void mostrar(int n1,int vector1[100]);
 
 main()
 {
@@ -13,7 +12,7 @@ main()
     scanf("%d",&n);
 
     CargarNumeros(n,vector);
-    mostrar(n,vector);
+    printf("\nNumero mayor %d",vecotr[CalculoMayor(n,vector)]);
     
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
@@ -32,11 +31,18 @@ void CargarNumeros(int n1,int vector1[100])
     system("cls");
 }
 
-void mostrar(int n1,int vector1[100])
+int CalculoMayor(int n1,int vector1[100])
 {
-	printf("\nLos elementos del vector son: ");
-	for(int i=0;i<n1;i++)
-	{
-		printf("\t%d",vector1[i]);					
-	}
+    int NumMay=vector1[0],PosMay=0;
+
+    for (int i=0;i<n1;i++)
+    {
+        if (vector1[i]>NumMay)
+        {
+            NumMay=vector1[i];
+            PosMay=i;
+        }
+        
+    }
+    return PosMay;
 }
