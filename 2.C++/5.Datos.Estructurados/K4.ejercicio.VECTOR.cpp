@@ -48,6 +48,7 @@ int cargainde(int vector[50])
 	}
 	return i;
 }
+
 int mayormenor(int orden,int vector[50],int &pmen)
 {
 	int may=vector[0],men=vector[0],pmay=0;
@@ -100,12 +101,12 @@ float promedio(int orden,int vector[50])
 
 void cargar(int orden,int vector[50])
 {
-for(int i=0;i<orden;i++)
-	{
-		vector[i]=1+rand()%100;
-		//printf("\nIngrese el valor: ");
-		//scanf("%d",&edad[i]);
-	}
+	for(int i=0;i<orden;i++)
+		{
+			vector[i]=1+rand()%100;
+			//printf("\nIngrese el valor: ");
+			//scanf("%d",&edad[i]);
+		}
 }
 
 void mostrar(int orden,int vector[50])
