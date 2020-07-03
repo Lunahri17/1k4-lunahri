@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+void pausa();
 
 
 
@@ -8,8 +9,15 @@ main()
 {
 
     
-	system("pause");
+	pausa();
     printf("\n\tGracias por utilizar el programa.");
- 	printf("\n\n");
+ 	pausa();
+}
+
+
+
+void pausa()
+{
+    printf("\n\n");
 	system("pause");
 }
