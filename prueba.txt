@@ -1,0 +1,45 @@
+Los directorios en mingw64 se escriben asi: /c/programacion_uwu/1.proyectos
+                                            /c/users/jerem
+                                            /c/games
+
+Comando: --version ->>
+
+Comando: git init -> Crea un repositorio git en la carpeta en la que se está.
+
+Comando: git clone -> clona un repositorio
+
+Comando: git add . -> Añadira al repositorio(local!) (aunque no es directamente al repositorio si no como a un lugar preenvio, se llama "Starting Area")
+todo el contendo de la carpeta en la que uno se encuentre. (Puede tardar si son muchos archivos xd).
+         git add nombre_del_archivo_.txt -> Solo se actualizara el archivo que se menciona. (poniendo unas cuantas letras del nombre del archivo y precionando TAB, se autocompletará)
+
+Comando: git commit -m 'Aqui va el comentario' -> Sirve para añadir un comentario a la subida, aqui se debe indicar que fue lo que cambiamos.
+El "-m" es como una opción pero ni idea de cual, ni de cuantas hay, y ni que es lo que hace xd.
+
+Comando: git log -> lista de commits.
+
+Comando: git remote add origin aqui_va_el_link -> Sincroniza nuestro respositorio en GitHub con nuestro repositorio local.
+(Nos pedira que iniciemos sesion)
+
+Comando: git push -u origin master -> Este comando enviara al respositoro todo nuestro git local al master! 
+(supongo que habra que cambiar el nombre "master" por la rama que necesitemos xd)
+
+Commando: git pull -> ?
+
+Commando: git revert -> crea un nuevo commit para los cambios anteriores
+
+Repetir estos tres comandos cada vez que se quiera actualizar el repositorio en GitHub:
+    git add .
+    git commit -m 'Aqui va el comentario'
+    git push -u origin master
+
+Otra forma de subirlo es por vscode:
+    1. Ir a la parte de git.
+    2. Escribir el mensaje en el recuadro de la derecha (este es el commit)
+    3. Precionar el Ctrl+Enter para actualizar el repositorio local del master (como se hace con otros? ni idea xd)
+    4. Para subirlos a GitHub, precionar los tres puntitos y luego "Push".
+    5. Fijarse si funcionó xd.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Comando: git satus -> Sirve para ver que archivos fueron modificados del repositorios.
+Cuando un archivo no es rastreado (o sea que es nuevo xd) aparecera en rojo. tambien salen los que no en rojo, asi que ni puta idea.
+En verde aparecen los archivos que estan listos para subirse.
