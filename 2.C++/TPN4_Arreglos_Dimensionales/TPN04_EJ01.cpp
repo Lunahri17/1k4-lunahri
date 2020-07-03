@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+void pausa();
 
 void CargarNumeros(int n1,int vector1[100]);
 int CalculoMenor(int n1,int vector1[100]);
+void MostrarNumeros(int n1,int vector1[100]);
 
 main()
 {
@@ -14,11 +16,11 @@ main()
 
     CargarNumeros(n,vector);
     printf("\nEl menor numero ingresado es: %d",vector[CalculoMenor(n,vector)]);
+    MostrarNumeros(n,vector);
     
-	system("pause");
+    pausa();
     printf("\n\tGracias por utilizar el programa.");
- 	printf("\n\n");
-	system("pause");
+ 	pausa();
 }
 
 
@@ -46,4 +48,19 @@ int CalculoMenor(int n1,int vector1[100])
         
     }
     return PosMen;
+}
+
+void MostrarNumeros(int n1,int vector1[100])
+{
+	printf("\nLos elementos del vector son: ");
+	for(int i=0;i<n1;i++)
+	{
+		printf("\t%d",vector1[i]);					
+	}
+}
+
+void pausa()
+{
+    printf("\n\n");
+	system("pause");
 }
