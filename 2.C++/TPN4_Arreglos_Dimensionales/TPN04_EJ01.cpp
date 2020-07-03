@@ -3,6 +3,7 @@
 #include<math.h>
 
 void CargarNumeros(int n1,int vector1[100]);
+int CalculoMayor(int n1,int vector1[100]);
 
 main()
 {
