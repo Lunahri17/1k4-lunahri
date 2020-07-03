@@ -13,7 +13,7 @@ main()
     scanf("%d",&n);
 
     CargarNumeros(n,vector);
-    printf("\nNumero mayor %d",vecotr[CalculoMayor(n,vector)]);
+    printf("\nNumero mayor %d",vector[CalculoMayor(n,vector)]);
     
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
