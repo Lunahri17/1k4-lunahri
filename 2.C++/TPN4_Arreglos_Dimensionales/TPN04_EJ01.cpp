@@ -3,6 +3,7 @@
 #include<math.h>
 
 void CargarNumeros(int n1,int vector1[100]);
+void mostrar(int n1,int vector1[100]);
 
 main()
 {
@@ -12,6 +13,7 @@ main()
     scanf("%d",&n);
 
     CargarNumeros(n,vector);
+    mostrar(n,vector);
     
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
@@ -28,4 +30,13 @@ void CargarNumeros(int n1,int vector1[100])
         scanf("%d",&vector1[i]);
     }
     system("cls");
+}
+
+void mostrar(int n1,int vector1[100])
+{
+	printf("\nLos elementos del vector son: ");
+	for(int i=0;i<n1;i++)
+	{
+		printf("\t%d",vector1[i]);					
+	}
 }
