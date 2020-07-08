@@ -5,11 +5,12 @@
 void CargarNotas(int n1, float notas1[100]);
 void MayorMenor(int n1,float notas1[100],int &PosMayor,int &PosMen);
 float CalculoPromedio(int n1, float notas1[100]);
+int NotasSuperioresPromedio(int n1,float notas1[100],float promedio);
 
 main()
 {
-	int n,PosMen=0,PosMay=0;
-	float notas[100];
+	int n,PosMen=0,PosMay=0,NSP;
+	float notas[100],promedio=0;
 
 	printf(" Ingrese la cantidad de notas: ");
 	scanf("%d",&n);
@@ -22,9 +23,11 @@ main()
 		printf("\n La nota mas alta es: %.2f",notas[PosMay]);
 		printf("\n La nota mas baja es: %.2f\n",notas[PosMen]);
 
-		printf("\n El promedio de todas las notas es: %.2f\n",CalculoPromedio(n,notas));
+		promedio=CalculoPromedio(n,notas)
+		printf("\n El promedio de todas las notas es: %.2f\n",promedio);
 
-		
+		NSP=NotasSuperioresPromedio(n,notas,promedio);
+		printf("\n Cantidad de notas que superaron el promedio: %d",NSP);
 	}
 	
 	system("pause");
@@ -80,6 +83,20 @@ float CalculoPromedio(int n1, float notas1[100])
 		acumulador=acumulador+notas1[i];
 	}
 	return (float)acumulador/n1;
+}
+
+int NotasSuperioresPromedio(int n1,float notas1[100],float promedio)
+{
+	int Contador=0;
+
+	for (int i = 0; i < n1; i++)
+	{
+		if (notas1[i]>promedio)
+		{
+			Contador++;
+		}
+	}
+	return Contador;
 }
 
 
