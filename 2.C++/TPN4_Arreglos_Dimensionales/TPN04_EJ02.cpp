@@ -23,11 +23,11 @@ main()
 		printf("\n La nota mas alta es: %.2f",notas[PosMay]);
 		printf("\n La nota mas baja es: %.2f\n",notas[PosMen]);
 
-		promedio=CalculoPromedio(n,notas)
+		promedio=CalculoPromedio(n,notas);
 		printf("\n El promedio de todas las notas es: %.2f\n",promedio);
 
 		NSP=NotasSuperioresPromedio(n,notas,promedio);
-		printf("\n Cantidad de notas que superaron el promedio: %d",NSP);
+		printf("\n Cantidad de notas que superaron el promedio: %d\n",NSP);
 	}
 	
 	system("pause");
