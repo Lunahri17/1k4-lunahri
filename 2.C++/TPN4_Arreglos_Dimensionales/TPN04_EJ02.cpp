@@ -2,12 +2,13 @@
 #include<stdlib.h>
 #include<math.h>
 
-void CargarNotas(int n1, float notas1[200]);
+void CargarNotas(int n1, float notas1[100]);
+void MayorMenor(int n1,float notas1[100],int &PosMayor,int &PosMen);
 
 main()
 {
-	int n,PosMen,PosMay;
-	float notas[200];
+	int n,PosMen=0,PosMay=0;
+	float notas[100];
 
 	printf(" Ingrese la cantidad de notas: ");
 	scanf("%d",&n);
@@ -25,11 +26,11 @@ main()
 	system("pause");
 }
 
-void CargarNotas(int n1, float notas1[200])
+void CargarNotas(int n1, float notas1[100])
 {
-	for (int i=1;i<=n1;i++)
+	for (int i=0;i<n1;i++)
 	{
-		printf("\n Ingrese la nota %d: ",i);
+		printf("\n Ingrese la nota %d: ",i+1);
 		scanf("%f",&notas1[i]);
 
 		if (notas1[i]<1 or notas1[i]>10)
@@ -40,21 +41,22 @@ void CargarNotas(int n1, float notas1[200])
 	}
 }
 
-void MayorMenor(int n1,float notas1[200],int &PosMayor,int &PosMen)
+void MayorMenor(int n1,float notas1[100],int &PosMay,int &PosMen)
 {
-	int NumMay=notas1[1],NumMen[1];
-	PosMayor=1;
-	PosMen=1;
+	float NumMay=notas1[0],NumMen=notas1[0];
+	
+	PosMay=0;
+	PosMen=0;
 
 	for (int i=1;i<n1;i++)
 	{
-		if (NumMay<notas1[i])
+		if (notas1[i]>NumMay)
 		{
 			NumMay=notas1[i];
 			PosMay=i;
 		}
 		
-		if (NumMen>notas1[i])
+		if (notas1[i]<NumMen)
 		{
 			NumMen=notas1[i];
 			PosMen=i;
