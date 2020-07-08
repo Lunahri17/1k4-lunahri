@@ -2,14 +2,14 @@
 #include<stdlib.h>
 #include<math.h>
 
-
+void CargarNotas(int n1, float notas1[200]);
 
 main()
 {
 	int n;
 	float notas[200];
 
-	printf(" Ingrese la cantidad de notas:");
+	printf(" Ingrese la cantidad de notas: ");
 	scanf("%d",&n);
 
 	CargarNotas(n,notas);
@@ -30,7 +30,7 @@ void CargarNotas(int n1, float notas1[200])
 
 		if (notas1[i]<1 or notas1[i]>10)
 		{
-			printf("\nIngreso una nota erronea. Vuelva a ingresarla.");
+			printf("\n Ingreso una nota erronea. Vuelva a ingresarla.\n");
 			i--;
 		}
 	}
