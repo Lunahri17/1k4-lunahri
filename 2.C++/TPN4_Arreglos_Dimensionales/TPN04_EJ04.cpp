@@ -57,9 +57,10 @@ int MultiplosVector(int vector1[100])
 
 void Mostrar(int vector1[100])
 {
+    printf("\n\nVector: ");
+    
     for (int i = 0; i < 100; i++)
     {
-        printf("\n\nVector: ");
         printf("\t%d",vector1[i]);
     }
 }
