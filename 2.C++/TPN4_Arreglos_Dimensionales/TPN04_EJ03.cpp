@@ -3,6 +3,7 @@
 #include<math.h>
 
 int CargarValores(int vector1[100]);
+bool Buscar(int n1,int vector1[100],int valor,int &cant);
 
 main()
 {
@@ -17,7 +18,7 @@ main()
 	Buscar(n,vector,ValorBuscar,Cantidad);
 
 	printf("\n El valor %d esta en el vector, y se repitio %d.",ValorBuscar,Cantidad);
-	
+
 
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
