@@ -4,6 +4,7 @@
 #include<ctime>
 
 void CargarDatosRand(int vector1[100]);
+int MultiplosVector(int vector1[100]);
 
 main()
 {
@@ -11,12 +12,9 @@ main()
 
     CargarDatosRand(vector);
     
+    printf("\nLa cantidad de multiplos encontrados es de: %d Multiplos",MultiplosVector(vector));
 
-    for (int i = 0; i < 100; i++)
-    {
-        printf("\n%d",vector[i]);
-    }
-    
+        
 	
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
@@ -33,3 +31,26 @@ void CargarDatosRand(int vector1[100])
         vector1[i]=1+rand()%432;
     }
 }
+
+int MultiplosVector(int vector1[100])
+{
+    int k,contador=0;
+    
+    printf("\n Ingrese un valor para determinar cuantos multiplos hay del mismo en el vector: ");
+    scanf("%d",&k);
+
+    for (int i = 0; i < 100; i++)
+    {
+        if (vector1[i]%k==0)
+        {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+
+/*for (int i = 0; i < 100; i++)
+    {
+        printf("\t%d",vector[i]);
+    }*/
