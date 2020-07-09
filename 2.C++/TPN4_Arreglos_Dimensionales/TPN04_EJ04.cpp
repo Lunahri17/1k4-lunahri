@@ -38,15 +38,22 @@ int MultiplosVector(int vector1[100])
     
     printf("\n Ingrese un valor para determinar cuantos multiplos hay del mismo en el vector: ");
     scanf("%d",&k);
-
-    for (int i = 0; i < 100; i++)
+    
+    if (k!=0)
     {
-        if (vector1[i]%k==0)
+        for (int i = 0; i < 100; i++)
         {
-            contador++;
+            if (vector1[i]%k==0)
+            {
+                contador++;
+            }
         }
+        return contador;
     }
-    return contador;
+    else
+    {
+        return 0;
+    }
 }
 
 
