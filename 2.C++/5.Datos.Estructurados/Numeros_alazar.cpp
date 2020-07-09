@@ -18,7 +18,7 @@ main()
 	
 	for(i=0;i<N;i++)
 	{
-		nro_azar=1+rand()%10;
+		nro_azar=1+rand()%10;   //muestra un numero de 1 hasta 10, siendo el 1, el numero minimo que puede tomar, y el 10 siendo el numeor maximo que puede tomar.
 		printf("\t %d",nro_azar);
 	}
 
