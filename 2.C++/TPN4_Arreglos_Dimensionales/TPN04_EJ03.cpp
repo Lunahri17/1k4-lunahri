@@ -23,7 +23,7 @@ int CargarValores(int vector1[100])
 
 	do
 	{
-		printf("\n Ingrese el valor, o ingrese 0 para terminar: ");
+		printf("\n Ingrese el valor %d, o ingrese 0 para terminar: ",i+1);
 		scanf("%d",&n);
 		
 		if (n!=0)
