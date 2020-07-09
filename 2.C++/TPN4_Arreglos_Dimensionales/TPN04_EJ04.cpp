@@ -3,8 +3,10 @@
 #include<math.h>
 #include<ctime>
 
+void end();
 void CargarDatosRand(int vector1[100]);
 int MultiplosVector(int vector1[100]);
+void Mostrar(int vector1[100]);
 
 main()
 {
@@ -14,10 +16,9 @@ main()
     
     printf("\nLa cantidad de multiplos encontrados es de: %d Multiplos.\n",MultiplosVector(vector));
 
-	system("pause");
-    printf("\n\tGracias por utilizar el programa.");
- 	printf("\n\n");
-	system("pause");
+    Mostrar(vector);
+
+    end();
 }
 
 void CargarDatosRand(int vector1[100])
@@ -54,8 +55,20 @@ int MultiplosVector(int vector1[100])
     }
 }
 
-
-/*for (int i = 0; i < 100; i++)
+void Mostrar(int vector1[100])
+{
+    for (int i = 0; i < 100; i++)
     {
+        printf("\n\nVector: ");
         printf("\t%d",vector[i]);
-    }*/
+    }
+}
+
+void end()
+{
+    printf("\n\n");
+	system("pause");
+    printf("\n\tGracias por utilizar el programa.");
+ 	printf("\n\n");
+	system("pause");
+}
