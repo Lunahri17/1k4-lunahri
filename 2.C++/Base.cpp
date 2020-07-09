@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
+void end();
 
 
 main()
@@ -9,6 +10,13 @@ main()
 
     
 	
+	end();
+}
+
+
+
+void end()
+{
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
