@@ -12,10 +12,8 @@ main()
 
     CargarDatosRand(vector);
     
-    printf("\nLa cantidad de multiplos encontrados es de: %d Multiplos",MultiplosVector(vector));
+    printf("\nLa cantidad de multiplos encontrados es de: %d Multiplos.\n",MultiplosVector(vector));
 
-        
-	
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
