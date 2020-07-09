@@ -15,10 +15,18 @@ main()
 	printf("\n Ingrese el valor a buscar: ");
 	scanf("%d",&ValorBuscar);
 	
-	Buscar(n,vector,ValorBuscar,Cantidad);
+	esta=Buscar(n,vector,ValorBuscar,Cantidad);
 
-	printf("\n El valor %d esta en el vector, y se repitio %d.",ValorBuscar,Cantidad);
-
+	if (esta==1)
+	{
+		printf("\n El valor %d esta en el vector, y se repitio %d.",ValorBuscar,Cantidad);
+	}
+	else
+	{
+		printf("\n El valor %d no esta en el vector.",ValorBuscar);
+	}
+	
+	
 
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
