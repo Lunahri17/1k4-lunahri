@@ -56,7 +56,7 @@ void leer(int n1,float pro1[50],int leg1[50])
     }
 }
 
-void ordenar (int n1,float pro1[50],int leg1[50])
+void ordenar(int n1,float pro1[50],int leg1[50])
 {
     int i,aux,aux1,b;
     
