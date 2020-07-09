@@ -48,7 +48,7 @@ int CargarValores(int vector1[100])
 
 bool Buscar(int n1,int vector1[100],int valor,int &cant)
 {
-	cant=0
+	cant=0;
 
 	for (int i=0;i<n1;i++)
 	{
