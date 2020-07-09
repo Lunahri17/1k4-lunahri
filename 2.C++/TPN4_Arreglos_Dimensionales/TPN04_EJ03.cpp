@@ -19,15 +19,13 @@ main()
 
 	if (esta==1)
 	{
-		printf("\n El valor %d esta en el vector, y se repitio %d.",ValorBuscar,Cantidad);
+		printf("\n El valor %d esta en el vector, y se repitio %d.\n",ValorBuscar,Cantidad);
 	}
 	else
 	{
-		printf("\n El valor %d no esta en el vector.",ValorBuscar);
+		printf("\n El valor %d no esta en el vector.\n",ValorBuscar);
 	}
 	
-	
-
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
@@ -37,6 +35,8 @@ main()
 int CargarValores(int vector1[100])
 {
 	int n,i=0;
+
+	printf("\t Ingrese acontinuacion los valores del vector.");
 
 	do
 	{
@@ -74,6 +74,4 @@ bool Buscar(int n1,int vector1[100],int valor,int &cant)
 	{
 		return 0;
 	}
-	
-	
 }
