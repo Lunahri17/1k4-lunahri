@@ -60,7 +60,7 @@ void Mostrar(int vector1[100])
     for (int i = 0; i < 100; i++)
     {
         printf("\n\nVector: ");
-        printf("\t%d",vector[i]);
+        printf("\t%d",vector1[i]);
     }
 }
 
