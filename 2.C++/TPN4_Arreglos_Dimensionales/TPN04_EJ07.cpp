@@ -6,6 +6,7 @@ void end();
 void CargarVector(int vector1[10]);
 void Mostrar(int vector1[10]);
 void Potencia(int vector1[10],int vector2[10]);
+void SumaDeVectores(int vector1[10],int vector2[10],int vector3[10]);
 
 
 main()
@@ -26,7 +27,7 @@ main()
     SumaDeVectores(vectorA,vectorB,vectorC);
 	printf("\n\n Vector C, que es la suma entre vector A y el vector B : ");
     Mostrar(vectorC);
-    
+
 	end();
 }
 
