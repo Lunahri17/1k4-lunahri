@@ -13,6 +13,8 @@ main()
 	int vector[100],SumaPar,SumaImpar;
 	float PromedioPar,PromedioImpar;
 
+	printf("\tVector aleatorio de 100 elementos.\n");
+
 	CargarDatosRand(vector);
     
 	Promedios(vector,PromedioPar,PromedioImpar);
@@ -21,7 +23,7 @@ main()
 	
 	SumaElementosParesImpares(vector,SumaPar,SumaImpar);
 	printf("\n Suma de los elementos en las posiciones pares del vector: %d",SumaPar);
-	printf("\n Suma de los elementos en las posiciones impares del vector: %d",SumaImpar);
+	printf("\n Suma de los elementos en las posiciones impares del vector: %d\n\n",SumaImpar);
 	
 	end();
 }
