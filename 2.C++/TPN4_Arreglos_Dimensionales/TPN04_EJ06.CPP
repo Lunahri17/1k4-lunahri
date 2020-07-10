@@ -26,7 +26,7 @@ void CargarVector(int vector1[200],int &n1)
 
     for (int i = 0; i < n1; i++)
     {
-        printf("\n Ingrese el valor %d del arrgeglo: ",n1+1);
+        printf("\n Ingrese el valor %d del arrgeglo: ",i+1);
         scanf("%d",&vector1[i]);
     }
     
