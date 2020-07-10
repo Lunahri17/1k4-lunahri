@@ -9,15 +9,16 @@ void Mostrar(int vector1[10]);
 
 main()
 {
-    int vector[10];
+    int vectorA[10],vectorB[10],vectorC[10];
 
-    CargarVector(vector);
+    CargarVector(vectorA);
 
     system("cls");
 
-    printf("\n Vector ingresado es: ");
-    Mostrar(vector);
+    printf("\n Vector A ingresado es: ");
+    Mostrar(vectorA);
     
+    //Potencia(vectorA,vectorB);
 	
 	end();
 }
@@ -41,6 +42,8 @@ void Mostrar(int vector1[10])
     }
     
 }
+
+
 
 
 void end()
