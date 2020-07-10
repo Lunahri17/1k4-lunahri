@@ -23,7 +23,7 @@ main()
 
 void Mostrar(int vector1[200],int n1)
 {
-    printf("\n Vector: ");
+    printf("\n\n Vector: ");
 
     for (int i = 0; i < n1; i++)
     {
@@ -44,7 +44,6 @@ void CargarVector(int vector1[200],int &n1)
         printf("\n Ingrese el valor %d del arreglo: ",i+1);
         scanf("%d",&vector1[i]);
     }
-    system("cls");
 }
 
 void OrdenarMenorMayor(int vector1[200],int n1)
