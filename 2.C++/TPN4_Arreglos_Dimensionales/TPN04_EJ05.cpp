@@ -13,7 +13,11 @@ main()
 	float PromedioPar,PromedioImpar;
 
 	CargarDatosRand(vector);
-    Promedios(vector,PromedioPar,PromedioImpar);
+    
+	Promedios(vector,PromedioPar,PromedioImpar);
+	printf("\n El promedio de numeros pares del vector es: %.2f",PromedioPar);
+	printf("\n El promedio de numeros impares del vector es: %.2f",PromedioImpar);
+	
 	
 	end();
 }
