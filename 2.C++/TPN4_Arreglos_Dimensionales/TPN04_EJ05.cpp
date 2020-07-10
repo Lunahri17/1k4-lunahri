@@ -4,6 +4,7 @@
 #include<ctime>
 
 void end();
+void CargarDatosRand(int vector1[100]);
 
 
 main()
