@@ -13,7 +13,9 @@ main()
 
     CargarVector(vector,n);
     Mostrar(vector,n);
-    
+
+    OrdenarMenorMayor(vector,n);
+    Mostrar(vector,n);
 	
 	end();
 }
@@ -42,6 +44,30 @@ void CargarVector(int vector1[200],int &n1)
         scanf("%d",&vector1[i]);
     }
     system("cls");
+}
+
+void OrdenarMenorMayor(int vector1[200],int n1)
+{
+    int aux,b;
+
+    do
+    {
+        b=0
+        for (int i = 0; i < n1-1; i++)
+        {
+            if (vector1[i]<vector1[i+1])
+            {
+                aux=vector1[i];
+                vector1[i]=vector1[i+1];
+                vector1[i+1]=aux;
+
+                b=1;
+            }
+            
+        }
+        
+    } while (b==1);
+        
 }
 
 
