@@ -14,7 +14,6 @@ main()
 	float PromedioPar,PromedioImpar;
 
 	printf("\tVector aleatorio de 100 elementos.\n");
-
 	CargarDatosRand(vector);
     
 	Promedios(vector,PromedioPar,PromedioImpar);
