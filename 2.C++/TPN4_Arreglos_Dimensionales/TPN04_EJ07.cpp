@@ -9,7 +9,7 @@ void Mostrar(int vector1[10]);
 
 main()
 {
-    int vector[10],;
+    int vector[10];
 
     CargarVector(vector);
 
@@ -25,7 +25,7 @@ main()
 void CargarVector(int vector1[10])
 {
     printf("\tCarga del arreglo:\n");
-    
+
     for (int i = 0; i < 10; i++)
     {
         printf("\n Ingrese el valor %d del arreglo: ",i+1);
