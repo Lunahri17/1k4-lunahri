@@ -20,9 +20,13 @@ main()
     Mostrar(vectorA);
     
     Potencia(vectorA,vectorB);
-    printf("\n\n Vector B, que la potencia del vector A elvedo a su indice : ");
+    printf("\n\n Vector B, que es la potencia del vector A elvedo a su indice : ");
     Mostrar(vectorB);
-	
+
+    SumaDeVectores(vectorA,vectorB,vectorC);
+	printf("\n\n Vector C, que es la suma entre vector A y el vector B : ");
+    Mostrar(vectorC);
+    
 	end();
 }
 
@@ -51,6 +55,14 @@ void Potencia(int vector1[10],int vector2[10])
     for (int i = 0; i < 10; i++)
     {
         vector2[i]=pow(vector1[i],i);
+    }
+}
+
+void SumaDeVectores(int vector1[10],int vector2[10],int vector3[10])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        vector3[i]=vector1[i]+vector2[i];
     }
 }
 
