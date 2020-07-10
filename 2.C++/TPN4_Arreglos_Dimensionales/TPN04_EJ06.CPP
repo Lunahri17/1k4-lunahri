@@ -6,6 +6,7 @@ void end();
 void Mostrar(int vector1[200],int n1);
 void CargarVector(int vector1[200],int &n1);
 void OrdenarMayorMenor(int vector1[200],int n1);
+void OrdenarMenorMayor(int vector1[200],int n1);
 
 
 main()
@@ -23,6 +24,10 @@ main()
     printf("\n\n Vector ordenado de Mayor a Menor: ");
     Mostrar(vector,n);
 	
+    OrdenarMenorMayor(vector,n);
+    printf("\n\n Vector ordenado de Menor a Mayor: ");
+    Mostrar(vector,n);
+
 	end();
 }
 
@@ -66,13 +71,30 @@ void OrdenarMayorMenor(int vector1[200],int n1)
 
                 b=1;
             }
-            
         }
-        
-    } while (b==1);
-        
+    } while (b==1);      
 }
 
+void OrdenarMenorMayor(int vector1[200],int n1)
+{
+    int aux,b;
+
+    do
+    {
+        b=0;
+        for (int i = 0; i < n1-1; i++)
+        {
+            if (vector1[i]>vector1[i+1])
+            {
+                aux=vector1[i];
+                vector1[i]=vector1[i+1];
+                vector1[i+1]=aux;
+
+                b=1;
+            }
+        }
+    } while (b==1);      
+}
 
 void end()
 {
