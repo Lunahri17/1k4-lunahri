@@ -20,7 +20,7 @@ main()
     Mostrar(vectorA);
     
     Potencia(vectorA,vectorB);
-    printf("\n Vector B, que la potencia del vector A elvedo a su indice : ");
+    printf("\n\n Vector B, que la potencia del vector A elvedo a su indice : ");
     Mostrar(vectorB);
 	
 	end();
