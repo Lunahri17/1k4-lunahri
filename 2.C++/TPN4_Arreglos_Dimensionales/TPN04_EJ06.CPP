@@ -41,7 +41,7 @@ void CargarVector(int vector1[200],int &n1)
         printf("\n Ingrese el valor %d del arreglo: ",i+1);
         scanf("%d",&vector1[i]);
     }
-    system("clear");
+    system("cls");
 }
 
 
