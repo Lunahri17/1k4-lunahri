@@ -17,15 +17,15 @@ main()
 
     system("cls");
 
-    printf("\n Vector A ingresado es: ");
+    printf("\n El Arreglo A ingresado es: ");
     Mostrar(vectorA);
     
     Potencia(vectorA,vectorB);
-    printf("\n\n Vector B, que es la potencia del vector A elvedo a su indice : ");
+    printf("\n\n Arreglo B, que es la potencia del vector A elvedo a su indice : ");
     Mostrar(vectorB);
 
     SumaDeVectores(vectorA,vectorB,vectorC);
-	printf("\n\n Vector C, que es la suma entre vector A y el vector B : ");
+	printf("\n\n Arreglo C, que es la suma entre vector A y el vector B : ");
     Mostrar(vectorC);
 
 	end();
