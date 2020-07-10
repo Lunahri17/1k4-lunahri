@@ -17,9 +17,11 @@ main()
     
 	Promedios(vector,PromedioPar,PromedioImpar);
 	printf("\n El promedio de numeros pares del vector es: %.2f",PromedioPar);
-	printf("\n El promedio de numeros impares del vector es: %.2f",PromedioImpar);
+	printf("\n El promedio de numeros impares del vector es: %.2f\n",PromedioImpar);
 	
 	SumaElementosParesImpares(vector,SumaPar,SumaImpar);
+	printf("\n Suma de los elementos en las posiciones pares del vector: %d",SumaPar);
+	printf("\n Suma de los elementos en las posiciones impares del vector: %d",SumaImpar);
 	
 	end();
 }
