@@ -24,6 +24,8 @@ main()
 
 void CargarVector(int vector1[10])
 {
+    printf("\tCarga del arreglo:\n");
+    
     for (int i = 0; i < 10; i++)
     {
         printf("\n Ingrese el valor %d del arreglo: ",i+1);
