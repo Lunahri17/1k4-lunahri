@@ -5,6 +5,7 @@
 void end();
 void CargarVector(int vector1[10]);
 void Mostrar(int vector1[10]);
+void Potencia(int vector1[10],int vector2[10]);
 
 
 main()
@@ -18,7 +19,9 @@ main()
     printf("\n Vector A ingresado es: ");
     Mostrar(vectorA);
     
-    //Potencia(vectorA,vectorB);
+    Potencia(vectorA,vectorB);
+    printf("\n Vector B, que la potencia del vector A elvedo a su indice : ");
+    Mostrar(vectorB);
 	
 	end();
 }
@@ -43,7 +46,13 @@ void Mostrar(int vector1[10])
     
 }
 
-
+void Potencia(int vector1[10],int vector2[10])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        vector2[i]=pow(vector1[i],i);
+    }
+}
 
 
 void end()
