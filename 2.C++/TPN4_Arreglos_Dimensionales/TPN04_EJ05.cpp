@@ -67,15 +67,14 @@ void SumaElementosParesImpares(int vector1[100],int SumaPar,int SumaImpar)
 	{
 		if ((i+1)%2==0)
 		{
-			SumaPar=SumaPar+vector[i];
+			SumaPar=SumaPar+vector1[i];
 		}
 		else
 		{
-			SumaImpar=SumaImpar+vector[i];
+			SumaImpar=SumaImpar+vector1[i];
 		}
 	}
 }
-
 
 void end()
 {
