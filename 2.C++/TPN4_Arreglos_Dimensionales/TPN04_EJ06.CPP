@@ -31,7 +31,7 @@ void Mostrar(int vector1[200],int n1)
 
 void CargarVector(int vector1[200],int &n1)
 {
-    printf("\tCarga del arreglo:");
+    printf("\tCarga del arreglo:\n");
 
     printf("\n Ingrese la dimencion del arreglo: ");
     scanf("%d",&n1);
