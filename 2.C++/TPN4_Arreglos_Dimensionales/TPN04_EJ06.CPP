@@ -13,9 +13,11 @@ main()
     int vector[200],n; // n = Es el numero de dimenciones del vector.
 
     CargarVector(vector,n);
+    printf("\n Vector ingresado: ");
     Mostrar(vector,n);
 
     OrdenarMenorMayor(vector,n);
+    printf("\n Vector ordenado de Mayor a Menor: ");
     Mostrar(vector,n);
 	
 	end();
@@ -23,8 +25,6 @@ main()
 
 void Mostrar(int vector1[200],int n1)
 {
-    printf("\n\n Vector: ");
-
     for (int i = 0; i < n1; i++)
     {
         printf("\t%d",vector1[i]);
