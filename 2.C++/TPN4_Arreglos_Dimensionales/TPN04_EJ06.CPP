@@ -21,6 +21,8 @@ main()
 
 void CargarVector(int vector1[200],int &n1)
 {
+    printf("\tCarga del arreglo:");
+
     printf("\n Ingrese la dimencion del arreglo: ");
     scanf("%d",&n1);
 
@@ -29,7 +31,7 @@ void CargarVector(int vector1[200],int &n1)
         printf("\n Ingrese el valor %d del arreglo: ",i+1);
         scanf("%d",&vector1[i]);
     }
-    
+    system("clear");
 }
 
 
