@@ -3,6 +3,7 @@
 #include<math.h>
 
 void end();
+void Mostrar(int vector1[200],int n1);
 void CargarVector(int vector1[200],int &n1);
 
 
@@ -11,13 +12,22 @@ main()
     int vector[200],n; // n = Es el numero de dimenciones del vector.
 
     CargarVector(vector,n);
-    //Mostrar(vector,n);
+    Mostrar(vector,n);
     
 	
 	end();
 }
 
-//void Mostrar()
+void Mostrar(int vector1[200],int n1)
+{
+    printf("\n Vector: ");
+
+    for (int i = 0; i < n1; i++)
+    {
+        printf("\t%d",vector1[i]);
+    }
+    
+}
 
 void CargarVector(int vector1[200],int &n1)
 {
