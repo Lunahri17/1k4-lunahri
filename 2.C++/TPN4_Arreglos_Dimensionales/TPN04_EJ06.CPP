@@ -3,16 +3,34 @@
 #include<math.h>
 
 void end();
+void CargarVector(int vector1[200],int &n1);
 
 
 main()
 {
+    int vector[200],n; // n = Es el numero de dimenciones del vector.
 
+    CargarVector(vector,&n);
+    //Mostrar(vector,n);
     
 	
 	end();
 }
 
+//void Mostrar()
+
+void CargarVector(int vector1[200],int &n1)
+{
+    printf("\n Ingrese la dimencion del arreglo: ");
+    scanf("%d",&n1);
+
+    for (int i = 0; i < n1; i++)
+    {
+        printf("\n Ingrese el valor %d del arrgeglo: ",n1+1);
+        scanf("%d",&vector1[i]);
+    }
+    
+}
 
 
 void end()
