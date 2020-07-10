@@ -10,7 +10,7 @@ main()
 {
     int vector[200],n; // n = Es el numero de dimenciones del vector.
 
-    CargarVector(vector,&n);
+    CargarVector(vector,n);
     //Mostrar(vector,n);
     
 	
