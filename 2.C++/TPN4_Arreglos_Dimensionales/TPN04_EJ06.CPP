@@ -5,6 +5,7 @@
 void end();
 void Mostrar(int vector1[200],int n1);
 void CargarVector(int vector1[200],int &n1);
+void OrdenarMenorMayor(int vector1[200],int n1);
 
 
 main()
@@ -52,7 +53,7 @@ void OrdenarMenorMayor(int vector1[200],int n1)
 
     do
     {
-        b=0
+        b=0;
         for (int i = 0; i < n1-1; i++)
         {
             if (vector1[i]<vector1[i+1])
