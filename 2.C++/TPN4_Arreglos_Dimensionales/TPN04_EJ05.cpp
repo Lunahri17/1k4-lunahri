@@ -6,6 +6,7 @@
 void end();
 void CargarDatosRand(int vector1[100]);
 void Promedios(int vector1[100],float &PromedioPar,float &PromedioImpar);
+void SumaElementosParesImpares(int vector1[100],int SumaPar,int SumaImpar);
 
 main()
 {
