@@ -13,11 +13,14 @@ main()
     int vector[200],n; // n = Es el numero de dimenciones del vector.
 
     CargarVector(vector,n);
+
+    system("cls");
+
     printf("\n Vector ingresado: ");
     Mostrar(vector,n);
 
     OrdenarMenorMayor(vector,n);
-    printf("\n Vector ordenado de Mayor a Menor: ");
+    printf("\n\n Vector ordenado de Mayor a Menor: ");
     Mostrar(vector,n);
 	
 	end();
