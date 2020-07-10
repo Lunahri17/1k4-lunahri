@@ -57,6 +57,7 @@ void Potencia(int vector1[10],int vector2[10])
 
 void end()
 {
+    printf("\n\n");
 	system("pause");
     printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
