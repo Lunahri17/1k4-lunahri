@@ -15,7 +15,10 @@ todo el contendo de la carpeta en la que uno se encuentre. (Puede tardar si son 
 Comando: git commit -m 'Aqui va el comentario' -> Sirve para añadir un comentario a la subida, aqui se debe indicar que fue lo que cambiamos.
 El "-m" es como una opción pero ni idea de cual, ni de cuantas hay, y ni que es lo que hace xd.
 
+Comando: git rm --cached NombreDelArchivo -> Hace que git deje de seguir el archivo que mandamos al "stagin area"
+
 Comando: git log -> lista de commits.
+	 git log > logs.txt -> Creara un archivo donde estaran todos los commits.
 
 Comando: git remote add origin aqui_va_el_link -> Sincroniza nuestro respositorio en GitHub con nuestro repositorio local.
 (Nos pedira que iniciemos sesion)
@@ -23,7 +26,7 @@ Comando: git remote add origin aqui_va_el_link -> Sincroniza nuestro respositori
 Comando: git push -u origin master -> Este comando enviara al respositoro todo nuestro git local al master! 
 (supongo que habra que cambiar el nombre "master" por la rama que necesitemos xd)
 
-Commando: git pull -> ?
+Commando: git pull -> Actuliaza nuestro repositorio local con los cambios del repositorio externo.
 
 Commando: git revert -> crea un nuevo commit para los cambios anteriores
 
@@ -43,3 +46,5 @@ Otra forma de subirlo es por vscode:
  Comando: git satus -> Sirve para ver que archivos fueron modificados del repositorios.
 Cuando un archivo no es rastreado (o sea que es nuevo xd) aparecera en rojo. tambien salen los que no en rojo, asi que ni puta idea.
 En verde aparecen los archivos que estan listos para subirse.
+
+ Comando: git diff -> Muestra las diferencias de todos los archivos entre los que estan en el repositorio y los que uno esta modificando.
