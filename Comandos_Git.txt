@@ -4,12 +4,14 @@ Los directorios en mingw64 se escriben asi: /c/programacion_uwu/1.proyectos
 
 Comando: --version ->>
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+
 Comando: git init -> Crea un repositorio git en la carpeta en la que se está.
 
 Comando: git clone -> clona un repositorio
 
-Comando: git add . -> Añadira al repositorio(local!) (aunque no es directamente al repositorio si no como a un lugar preenvio, se llama "Starting Area")
-todo el contendo de la carpeta en la que uno se encuentre. (Puede tardar si son muchos archivos xd).
+Comando: git add . -> Añadira al repositorio(local!) (aunque no es directamente al repositorio si no como a un lugar preenvio, se llama "Starting Area") todo el contendo de la carpeta en la que uno se encuentre. (Puede tardar si son muchos archivos xd).
+         
          git add nombre_del_archivo_.txt -> Solo se actualizara el archivo que se menciona. (poniendo unas cuantas letras del nombre del archivo y precionando TAB, se autocompletará)
 
 Comando: git commit -m 'Aqui va el comentario' -> Sirve para añadir un comentario a la subida, aqui se debe indicar que fue lo que cambiamos.
@@ -25,6 +27,8 @@ Comando: git remote add origin aqui_va_el_link -> Sincroniza nuestro respositori
 
 Comando: git push -u origin master -> Este comando enviara al respositoro todo nuestro git local al master! 
 (supongo que habra que cambiar el nombre "master" por la rama que necesitemos xd)
+
+	 git push origin master -> hace lo mismo que el anterior xd.
 
 Commando: git pull -> Actuliaza nuestro repositorio local con los cambios del repositorio externo.
 
@@ -42,9 +46,37 @@ Otra forma de subirlo es por vscode:
     4. Para subirlos a GitHub, precionar los tres puntitos y luego "Push".
     5. Fijarse si funcionó xd.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
  Comando: git satus -> Sirve para ver que archivos fueron modificados del repositorios.
 Cuando un archivo no es rastreado (o sea que es nuevo xd) aparecera en rojo. tambien salen los que no en rojo, asi que ni puta idea.
 En verde aparecen los archivos que estan listos para subirse.
 
  Comando: git diff -> Muestra las diferencias de todos los archivos entre los que estan en el repositorio y los que uno esta modificando.
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------
+ Comando: git branch -> Muestra todas las ramas de nuestro repositorio local.
+
+	  git branch -a -> Muestra todas las ramas del repositorio local y externo.
+ 
+ Comando: git branch NombreDeLaBranch -> Crea una nueva rama.
+ 
+ Comando: git checkout NombreDeLaBranch -> Cambia a la rama que nombramos.
+ 
+ 1)Para merged una rama, primero debemos estar en la rama a la que queremos hacer merged.
+ 2)Luego hacemos pull para tener el codigo (en este ejemplo master) actualizado.
+ 3)Podemos ver todas las ramas que merged.
+ Comando: git branch --merged
+ 
+ 4)mergeamos la rama que queremos.
+ Comando: git merge NombreDeLaBranch
+ 
+ Comando: git push origin --delete NombreDeLaBranch -> Elimina una rama del repositorio remoto.
+ 
+	  git branch -d NombreDeLaBranch -> Elimina la rama del repositorio local.
+ --------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
