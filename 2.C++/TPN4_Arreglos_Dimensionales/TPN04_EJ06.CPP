@@ -99,8 +99,8 @@ void OrdenarMenorMayor(int vector1[200],int n1)
 void end()
 {
 	printf("\n\n");
-    system("pause");
-    printf("\n\tGracias por utilizar el programa.");
+    	system("pause");
+   	printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
