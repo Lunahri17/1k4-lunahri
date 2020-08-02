@@ -10,27 +10,30 @@ main()
 
 	printf("\nIngrese la cantidad de elementos: ");
 	scanf("%d",&N);
+	
 	while(c<N)
 	{
 		printf("\nIngrese el numero: ");
 		scanf("%d",&X);
+		
 		if(X>9999 and X<100000)
 		{
-		resultado=palindromo(X);
-		if(resultado)
-		{
-			printf("\nEl nro es PALINDROMO");
-		}
-		else
-		{
-			printf("\nEl nro NO ES Palindromo");
-		}
-		c++;
+			resultado=palindromo(X);
+			
+			if(resultado)
+			{
+				printf("\nEl nro es PALINDROMO");
+			}
+			else
+			{
+				printf("\nEl nro NO ES Palindromo");
+			}
+		
+			c++;
 		}
 		else
 		{
 			printf("\nEl nro ingresado NO ES de 5 digitos, ingrese nuevamente");
-			
 		}
 	}
 
@@ -50,6 +53,7 @@ bool palindromo(int valor)
 		pe=pe/10;
 		ni=ni*10+r;
 	}
+	
 	if(ni==valor)
 	{
 		res=true;

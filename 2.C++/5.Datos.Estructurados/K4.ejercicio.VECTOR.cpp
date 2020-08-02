@@ -20,10 +20,13 @@ main()
 	//scanf("%d",&N);
 	//cargar(N,edad);
 	mostrar(N,edad);
+	
 	prom=promedio(N,edad);
 	printf("\nEl promedio de las edades es: %.2f",prom);
+	
 	porcentaje(N,edad,porce);
 	printf("\nEl porcentaje de nros pares es: %.2f",porce);
+	
 	posmay=mayormenor(N,edad,posmen);
 	printf("\nEl elemento mayor del vector es: %d",edad[posmay]);
 	printf("\nY se encuentra en la posicion: %d",posmay+1);
@@ -90,6 +93,7 @@ float promedio(int orden,int vector[50])
 {
 	int s=0;
 	float p;
+	
 	for(int i=0;i<orden;i++)
 	{
 		s=s+vector[i];					
@@ -112,6 +116,7 @@ void cargar(int orden,int vector[50])
 void mostrar(int orden,int vector[50])
 {
 	printf("\nLos elementos del vector son: ");
+	
 	for(int i=0;i<orden;i++)
 	{
 		printf("\t%d",vector[i]);					

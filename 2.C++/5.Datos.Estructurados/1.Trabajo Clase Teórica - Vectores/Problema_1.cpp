@@ -22,7 +22,6 @@ main()
 	system("pause");
 }
 
-
 //todos lo arreglos son por referencia, y no hace falta poner el "&".
 void leer(int n1,int v1[100]) //el 100 debe conicidir con el de la variable declarada en main.
 {
