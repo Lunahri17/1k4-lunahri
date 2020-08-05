@@ -2,13 +2,16 @@
 #include<stdlib.h>
 #include<math.h>
 
+//Protipos de funciones:
 void end();
+
+
+//Variables globales:
 
 
 main()
 {
-
-    
+	
 	
 	end();
 }
