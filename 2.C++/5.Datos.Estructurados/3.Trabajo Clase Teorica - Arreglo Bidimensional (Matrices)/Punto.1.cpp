@@ -27,7 +27,7 @@ main()
 	for (i = 0; i < m1; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
 	{
 		//inicializar por filas:
-		s=0
+		s=0;
 
 		for (j = 0; j < n1; i++)
 		{
@@ -73,7 +73,7 @@ float total(int m1,int n1, int a1[50][50])
 	float s;
 
 	//incializar - Todos los valores de la matriz
-	s=0
+	s=0;
 
 	for (i = 0; i < m1; i++)
 	{
