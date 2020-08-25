@@ -63,8 +63,7 @@ main()
 		}	
 	}
 
-	printf("\nLa sucursal con mayor valor de ventas fue la %d.",suc);
-
+	printf("\nEl deporte con mayor valor de ventas fue la %d.",dep);
 
 	//Cuarto Punto:
 	mt=total(m,n,a);
