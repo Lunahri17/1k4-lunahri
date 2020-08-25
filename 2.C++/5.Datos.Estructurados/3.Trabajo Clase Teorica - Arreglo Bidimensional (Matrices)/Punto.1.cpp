@@ -8,8 +8,8 @@ float total(int m1,int n1, int a1[50][50]);
 
 main()
 {
-	int n,m;
-	float a[50][50],mt;
+	int n,m,suc;
+	float a[50][50],mt,mayf;
 
 	printf("\nIngrese la cantidad de filas: ");
 	scanf("%d",&m);
@@ -19,8 +19,34 @@ main()
 	//Primer punto:
 	leer(m,n,a);
 
+	//Segundo punto:
+
+	mayf=0;
+	suc=0;
+	
+	for (i = 0; i < m1; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
+	{
+		//inicializar por filas:
+		s=0
+
+		for (j = 0; j < n1; i++)
+		{
+			printf("a[%d][%d]= ",i,j);
+			scanf("%f",&a1[i][j]);
+		}
+		
+		if (s>mayf)
+		{
+			mayf=s;
+			suc=i;
+		}	
+	}
+
+	printf("\nLa sucursal con mayor valor de ventas fue la %d.",suc);
+
 	//Cuarto Punto:
 	mt=total(m,n,a);
+	printf("\nMonto total de todas las sucursales: %.2f",mt);
 	
  	printf("\n\n");
 	system("pause");
