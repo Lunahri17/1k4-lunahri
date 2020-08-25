@@ -30,7 +30,7 @@ main()
 
 		for (int j = 0; j < n; i++)
 		{
-			s+=a1[i][j];
+			s+=a[i][j];
 		}
 		
 		if (s>mayf)
