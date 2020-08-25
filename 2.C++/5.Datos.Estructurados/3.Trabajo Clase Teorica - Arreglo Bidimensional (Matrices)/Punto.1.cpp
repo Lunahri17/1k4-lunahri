@@ -3,7 +3,7 @@
 #include<math.h>
 
 void leer(int m1,int n1,float a1[50][50]);
-float total(int m1,int n1,int a1[50][50]);
+float total(int m1,int n1,float a1[50][50]);
 
 
 main()
@@ -20,7 +20,6 @@ main()
 	leer(m,n,a);
 
 	//Segundo punto:
-
 	mayf=0;
 	suc=0;
 	
@@ -67,7 +66,7 @@ void leer(int m1,int n1,float a1[50][50])
 	}
 }
 
-float total(int m1,int n1,int a1[50][50])
+float total(int m1,int n1,float a1[50][50])
 {
 	int i,j;
 	float s;
