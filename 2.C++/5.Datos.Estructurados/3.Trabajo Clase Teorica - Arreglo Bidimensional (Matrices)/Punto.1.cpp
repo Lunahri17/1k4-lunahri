@@ -9,7 +9,7 @@ float total(int m1,int n1,float a1[50][50]);
 main()
 {
 	int n,m,suc;
-	float a[50][50],mt,mayf;
+	float a[50][50],mt,mayf,s;
 
 	printf("\nIngrese la cantidad de filas: ");
 	scanf("%d",&m);
@@ -30,8 +30,7 @@ main()
 
 		for (int j = 0; j < n; i++)
 		{
-			printf("a[%d][%d]= ",i,j);
-			scanf("%f",&a[i][j]);
+			s+=a1[i][j];
 		}
 		
 		if (s>mayf)
