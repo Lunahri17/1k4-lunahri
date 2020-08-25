@@ -8,8 +8,8 @@ float total(int m1,int n1,float a1[50][50]);
 
 main()
 {
-	int n,m,suc;
-	float a[50][50],mt,mayf,s;
+	int i,j,n,m,suc,dep;
+	float a[50][50],mt,mayf,mayc,s;
 
 	printf("\nIngrese la cantidad de filas: ");
 	scanf("%d",&m);
@@ -23,12 +23,12 @@ main()
 	mayf=0;
 	suc=0;
 	
-	for (int i = 0; i < m; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
+	for (i = 0; i < m; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
 	{
 		//inicializar por filas:
 		s=0;
 
-		for (int j = 0; j < n; j++)
+		for (j = 0; j < n; j++)
 		{
 			s+=a[i][j];
 		}
