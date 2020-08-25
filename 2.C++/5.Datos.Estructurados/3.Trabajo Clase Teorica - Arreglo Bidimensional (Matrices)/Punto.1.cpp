@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<math.h>
 
-void leer(int m1,int n1, floar a1[50][50]);
-float total(int m1,int n1, int a1[50][50]);
+void leer(int m1,int n1,float a1[50][50]);
+float total(int m1,int n1,int a1[50][50]);
 
 
 main()
@@ -52,7 +52,7 @@ main()
 	system("pause");
 }
 
-void leer(int m1,int n1, floar a1[50][50])
+void leer(int m1,int n1,float a1[50][50])
 {
 	int i,j;
 
@@ -67,7 +67,7 @@ void leer(int m1,int n1, floar a1[50][50])
 	}
 }
 
-float total(int m1,int n1, int a1[50][50])
+float total(int m1,int n1,int a1[50][50])
 {
 	int i,j;
 	float s;
