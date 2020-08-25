@@ -23,15 +23,15 @@ main()
 	mayf=0;
 	suc=0;
 	
-	for (i = 0; i < m1; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
+	for (int i = 0; i < m; i++) //aqui si importa que primero vaya el cilco de i, porque tenemos que saber por sucursal
 	{
 		//inicializar por filas:
 		s=0;
 
-		for (j = 0; j < n1; i++)
+		for (int j = 0; j < n; i++)
 		{
 			printf("a[%d][%d]= ",i,j);
-			scanf("%f",&a1[i][j]);
+			scanf("%f",&a[i][j]);
 		}
 		
 		if (s>mayf)
