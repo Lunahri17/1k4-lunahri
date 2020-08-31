@@ -32,7 +32,7 @@ void CargarMatriz(int m,int Matriz[100][100])
 			if (i<=j)
 			{
 				printf("Matriz[%d][%d]= ",i,j);
-				scanf("%d",&Matriz[100][100]);
+				scanf("%d",&Matriz[i][j]);
 			}
 			else
 			{
