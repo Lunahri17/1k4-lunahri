@@ -4,7 +4,7 @@
 
 //Protipos de funciones:
 void end();
-void CargarVector(int m,int Matriz[100][100]);
+void CargarMatriz(int m,int Matriz[100][100]);
 
 
 //Variables globales:
@@ -17,12 +17,12 @@ main()
     printf("\nIngrese la cantidad de filas de la matriz cuadrada: ");
 	scanf("%d",&m);
 
-	CargarVector(m,Matriz);
+	CargarMatriz(m,Matriz);
 	
 	end();
 }
 
-void CargarVector(int m,int Matriz[100][100])
+void CargarMatriz(int m,int Matriz[100][100])
 {
 	for (int i = 0; i < m; i++)
 	{
