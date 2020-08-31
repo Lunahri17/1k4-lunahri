@@ -6,6 +6,7 @@
 void end();
 void CargarMatriz(int m,int Matriz[100][100]);
 void MostrarMatriz(int m,int Matriz[100][100]);
+void Ordenar(int m,int Matriz[100][100]);
 
 //Variables globales:
 
@@ -18,8 +19,15 @@ main()
 	scanf("%d",&m);
 
 	CargarMatriz(m,Matriz);
+
+	printf("\nMatriz ingresada:");
 	MostrarMatriz(m,Matriz);
-	
+
+	printf("\n\nMatriz ordenada:");
+	Ordenar(m,Matriz);
+	MostrarMatriz(m,Matriz);
+
+
 	end();
 }
 
@@ -31,7 +39,7 @@ void CargarMatriz(int m,int Matriz[100][100])
 		{
 			if (i<=j)
 			{
-				printf("Matriz[%d][%d]= ",i,j);
+				printf("\nMatriz[%d][%d]= ",i,j);
 				scanf("%d",&Matriz[i][j]);
 			}
 			else
@@ -48,9 +56,47 @@ void MostrarMatriz(int m,int Matriz[100][100])
 	{
 		for (int j = 0; j < m; j++)
 		{
-			printf("Matriz[%d][%d]= %d",i,j,Matriz[i][j]);
+			printf("\nMatriz[%d][%d]= %d",i,j,Matriz[i][j]);
 		}
 	}
+}
+
+void Ordenar(int m,int Matriz[100][100])
+{
+	bool stop;
+	int aux;
+
+	do
+	{
+		stop=true;
+
+		for (int i = 0; i < m; i++)
+		{
+			for (int j = 0; j < m-1; j++)
+			{
+				if (Matriz[i][j]>Matriz[i][j+1])
+				{
+					aux=Matriz[i][j];
+					Matriz[i][j]=Matriz[i][j+1];
+					Matriz[i][j+1]=aux;
+					stop=false;
+				}
+				
+				if (i<m-1)
+				{
+					if (Matriz[i][m-1]>Matriz[i+1][0])
+					{
+						aux=Matriz[i][m-1];
+						Matriz[i][m-1]=Matriz[i+1][0];
+						Matriz[i+1][0]=aux;
+						stop=false;
+					}
+				}
+			}
+		}
+	} while (stop==false);
+
+		
 }
 
 void end()
