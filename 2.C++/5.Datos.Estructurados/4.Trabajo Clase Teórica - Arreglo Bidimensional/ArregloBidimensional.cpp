@@ -8,8 +8,6 @@ void CargarMatriz(int m,int Matriz[100][100]);
 void MostrarMatriz(int m,int Matriz[100][100]);
 void Ordenar(int m,int Matriz[100][100]);
 
-//Variables globales:
-
 
 main()
 {
@@ -27,6 +25,7 @@ main()
 	Ordenar(m,Matriz);
 	MostrarMatriz(m,Matriz);
 
+	printf("\nSuma del cuadrado de la matriz: %d",SumaCuadrado(m,Matriz));
 
 	end();
 }
@@ -97,6 +96,11 @@ void Ordenar(int m,int Matriz[100][100])
 	} while (stop==false);
 
 		
+}
+
+void SumaCuadrado(int m,int Matriz[100][100])
+{
+	
 }
 
 void end()
