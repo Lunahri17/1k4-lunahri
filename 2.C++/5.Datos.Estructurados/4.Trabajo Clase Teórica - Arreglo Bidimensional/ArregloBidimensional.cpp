@@ -4,6 +4,7 @@
 
 //Protipos de funciones:
 void end();
+void CargarVector(int m,int Matriz[100][100]);
 
 
 //Variables globales:
