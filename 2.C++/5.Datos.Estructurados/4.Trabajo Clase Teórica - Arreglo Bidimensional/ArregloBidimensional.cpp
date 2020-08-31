@@ -26,7 +26,7 @@ main()
 	Ordenar(m,Matriz);
 	MostrarMatriz(m,Matriz);
 
-	printf("\nSuma del cuadrado de la matriz: %d",SumaCuadrado(m,Matriz));
+	printf("\n\nSuma del cuadrado de la matriz: %d",SumaCuadrado(m,Matriz));
 
 	end();
 }
