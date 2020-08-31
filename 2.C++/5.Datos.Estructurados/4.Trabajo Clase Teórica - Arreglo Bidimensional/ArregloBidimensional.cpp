@@ -36,7 +36,7 @@ void CargarMatriz(int m,int Matriz[100][100])
 			}
 			else
 			{
-				a[i][j]=-a[j][i];
+				Matriz[i][j]=-Matriz[j][i];
 			}
 		}
 	}
