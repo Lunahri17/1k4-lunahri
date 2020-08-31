@@ -7,6 +7,7 @@ void end();
 void CargarMatriz(int m,int Matriz[100][100]);
 void MostrarMatriz(int m,int Matriz[100][100]);
 void Ordenar(int m,int Matriz[100][100]);
+int SumaCuadrado(int m,int Matriz[100][100]);
 
 
 main()
@@ -98,9 +99,31 @@ void Ordenar(int m,int Matriz[100][100])
 		
 }
 
-void SumaCuadrado(int m,int Matriz[100][100])
+int SumaCuadrado(int m,int Matriz[100][100])
 {
+	int Acumulador=0;
+
+	for (int j = 0; j < m; j++)
+	{
+		Acumulador+=Matriz[0][j];
+	}
+
+	for (int j = 0; j < m; j++)
+	{
+		Acumulador+=Matriz[m-1][j];
+	}
 	
+	for (int i = 1; i < m-1; i++)
+	{
+		Acumulador+=Matriz[i][0];
+	}
+	
+	for (int i = 1; i < m-1; i++)
+	{
+		Acumulador+=Matriz[i][m-1];
+	}
+
+	return Acumulador;
 }
 
 void end()
