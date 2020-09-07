@@ -26,6 +26,8 @@ main()
     cargar(m,n,p,a);
     
     printf("Cantidad total de personas alojadas: %d",total(m,n,p,a));
+
+    CalculoHotel(m,n,p,a);
 	
 	end();
 }
@@ -61,6 +63,32 @@ int total(int m1,int n1,int p1,int a[10][10][10])
     }
 
     return total;
+}
+
+void CalculoHotel(int m,int n,int p,int a[10][10][10])
+{
+    int Acumulador,MayH=0,NumHotel=0;
+
+    for (int k = 0; k < p; k++)
+    {
+        Acumulador=0;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Acumalor+=a[i][j][k];
+            }
+        }
+        
+        if (Acumulador>MayH)
+        {
+            MayH=Acumulador;
+            NumHotel=k;
+        }
+    }
+
+    printf("\n El hotel con mayor cantidad de personas alojadas es: %d",NumHotel);
 }
 
 void end()
