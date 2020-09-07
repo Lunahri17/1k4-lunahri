@@ -59,6 +59,8 @@ int total(int m1,int n1,int p1,int a[10][10][10])
             }   
         }   
     }
+
+    return total;
 }
 
 void end()
