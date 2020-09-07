@@ -11,7 +11,7 @@ void cargar(int m1,int n1,int p1,int a[10][10][10]);
 
 main()
 {
-	int n,m,p;
+	int n,m,p,a[10][10][10];
 
     printf("Ingrese la cantidad de Filas: ");
     scanf("%d",&m);
@@ -22,7 +22,7 @@ main()
     printf("Ingrese la cantidad de Planos: ");
     scanf("%d",&p);
 
-    cargar(m,n,p,a)
+    cargar(m,n,p,a);
 	
 	end();
 }
