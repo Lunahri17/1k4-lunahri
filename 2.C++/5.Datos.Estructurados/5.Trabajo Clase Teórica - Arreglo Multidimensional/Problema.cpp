@@ -8,7 +8,6 @@ void cargar(int m1,int n1,int p1,int a[10][10][10]);
 int total(int m1,int n1,int p1,int a[10][10][10]);
 void CalculoHotel(int m,int n,int p,int a[10][10][10]);
 
-
 main()
 {
 	int n,m,p,a[10][10][10];
