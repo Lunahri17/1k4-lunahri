@@ -78,7 +78,7 @@ void CalculoHotel(int m,int n,int p,int a[10][10][10])
         {
             for (int j = 0; j < n; j++)
             {
-                Acumalador+=a[i][j][k];
+                Acumulador+=a[i][j][k];
             }
         }
         
