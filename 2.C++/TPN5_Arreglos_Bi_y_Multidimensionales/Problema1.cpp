@@ -75,7 +75,7 @@ void MostrarMatriz(float Matriz[10][10])
 
         for (int j = 0; j < 3; j++)
         {
-            printf("\t %.2f",Matriz[i][j]);
+            printf(" %.2f",Matriz[i][j]);
 
             if (j<2)
             {
