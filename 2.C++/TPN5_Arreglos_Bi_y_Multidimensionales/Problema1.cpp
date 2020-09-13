@@ -16,8 +16,8 @@ main()
 
     Mayor=MayorMenor(Matriz,Menor);
 
-    printf("\nEl mayor elemeno de la matriz es: %.2f",Mayor);
-    printf("\nEl menor elemeno de la matriz es: %.2f",Menor);
+    printf("\nEl mayor elemento de la matriz es: %.2f",Mayor);
+    printf("\nEl menor elemento de la matriz es: %.2f",Menor);
 
     MostrarMatriz(Matriz);
 	
@@ -67,7 +67,7 @@ float MayorMenor(float Matriz[10][10],float &Menor)
 
 void MostrarMatriz(float Matriz[10][10])
 {
-    printf("\nLa matriz ingresada es: \n");
+    printf("\n\nLa matriz ingresada es: \n");
 
     for (int i = 0; i < 4; i++)
     {
