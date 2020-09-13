@@ -25,7 +25,7 @@ main()
 
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
 {
-    for (int j = 0; j < Columans; j++)
+    for (int j = 0; j < Columnas; j++)
     {
         for (int i = 0; i < Filas; i++)
         {
