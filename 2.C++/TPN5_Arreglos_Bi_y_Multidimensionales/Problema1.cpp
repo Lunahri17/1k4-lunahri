@@ -13,7 +13,7 @@ main()
 {
 	float Matriz[10][10];
 
-    IngresarElemnetos(Matriz);
+    IngresarElementos(Matriz);
 	
 	end();
 }
