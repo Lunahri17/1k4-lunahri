@@ -33,7 +33,7 @@ void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
             scanf("%d",&Matriz[i][j]);
             if (Matriz[i][j]<1)
             {
-                printf("\n\n\tERROR: Se ingreso un numeor que es meno, o igual, a 0. Porfavor vuelva a ingrsarlo\n");
+                printf("\n\n\tERROR: Se ingreso un numero menor, o igual, a 0. Porfavor vuelva a ingrsarlo\n");
                 i--;
             }          
         }        
