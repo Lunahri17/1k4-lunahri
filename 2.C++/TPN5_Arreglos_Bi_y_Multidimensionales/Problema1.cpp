@@ -6,9 +6,7 @@
 void end();
 void IngresarElementos(float Matriz[10][10]);
 float MayorMenor(float Matriz[10][10],float &Menor);
-
-//Variables globales:
-
+void MostrarMatriz(float Matriz[10][10]);
 
 main()
 {
@@ -17,6 +15,11 @@ main()
     IngresarElementos(Matriz);
 
     Mayor=MayorMenor(Matriz,Menor);
+
+    printf("\nEl mayor elemeno de la matriz es: %.2f",Mayor);
+    printf("\nEl menor elemeno de la matriz es: %.2f",Menor);
+
+    MostrarMatriz(Matriz);
 	
 	end();
 }
@@ -60,6 +63,22 @@ float MayorMenor(float Matriz[10][10],float &Menor)
     }
 
     return Mayor;
+}
+
+void MostrarMatriz(float Matriz[10][10])
+{
+    printf("\nLa matriz ingresada es: \n");
+
+    for (int i = 0; i < 4; i++)
+    {
+        printf("\n\n");
+
+        for (int j = 0; j < 3; j++)
+        {
+            printf("\t%.2f - ",Matriz[i][j]);
+        }
+    }
+    
 }
 
 void end()
