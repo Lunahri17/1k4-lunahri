@@ -4,13 +4,13 @@
 
 //Protipos de funciones:
 void end();
-void CargarMatriz(int Matriz,int Filas,int Columnas);
+void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
 
 main()
 {
 	int Matriz[100][100],Filas,Columnas;
     
-    printf("\nCargue la matriz: ")
+    printf("\nCargue la matriz: ");
 
     printf("\nIngrese la cantidad de filas: ");
     scanf("%d",&Filas);
@@ -23,7 +23,7 @@ main()
 	end();
 }
 
-void CargarMatriz(int Matriz,int Filas,int Columnas)
+void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
 {
     for (int j = 0; j < Columans; j++)
     {
