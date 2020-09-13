@@ -4,7 +4,7 @@
 
 //Protipos de funciones:
 void end();
-
+void CargarMatriz(int Matriz,int Filas,int Columnas);
 
 main()
 {
