@@ -5,10 +5,6 @@
 //Protipos de funciones:
 void end();
 
-
-//Variables globales:
-
-
 main()
 {
 	
