@@ -6,7 +6,7 @@
 void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
 void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
-void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar)
+void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar);
 
 main()
 {
