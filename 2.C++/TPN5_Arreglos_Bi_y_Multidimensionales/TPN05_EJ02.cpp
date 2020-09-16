@@ -5,6 +5,7 @@
 //Protipos de funciones:
 void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
+void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
 
 main()
 {
