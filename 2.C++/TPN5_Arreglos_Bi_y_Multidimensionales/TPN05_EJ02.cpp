@@ -9,7 +9,7 @@ void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
 
 main()
 {
-	int Matriz[100][100],Filas,Columnas;
+	int Matriz[100][100],Filas,Columnas,CambiarFila,CambiarColumna;
     
     printf("\nCargue la matriz: ");
 
@@ -23,6 +23,18 @@ main()
 
     MostrarMatriz(Matriz,Filas,Columnas);
 	
+    printf("\nIngrese la posicion en la que desea cambiar el numero por cero:");
+    
+    printf("\nFila: ");
+    scanf("%d",&CambiarFila);
+
+    printf("\nColumna: ");
+    scanf("%d",&CambiarColumna);
+
+    Matriz[CambiarFila-1][CambiarColumna-1]=0;
+
+    MostrarMatriz(Matriz,Filas,Columnas);
+
 	end();
 }
 
@@ -62,6 +74,8 @@ void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
         }
     }
 }
+
+
 
 void end()
 {
