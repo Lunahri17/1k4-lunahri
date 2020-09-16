@@ -49,7 +49,7 @@ void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
 
     for (int i = 0; i < Filas; i++)
     {
-        printf("\n\n");
+        printf("\n\n\t");
 
         for (int j = 0; j < Columnas; j++)
         {
