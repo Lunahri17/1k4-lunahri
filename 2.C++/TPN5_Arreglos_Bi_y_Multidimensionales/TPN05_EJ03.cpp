@@ -7,6 +7,7 @@
 void end();
 void CargarMatriz(int Matriz[100][3],int NroTalleres);
 void MostrarMatriz(int Matriz[100][3],int NroTalleres);
+int Calcular(int Matriz[100][3],int NroTalleres);
 
 main()
 {
@@ -21,7 +22,7 @@ main()
 
     MostrarMatriz(Matriz,NroTalleres);
 	
-    printf("\nEl taller con la mayor produccion es: %d",Calcualr(Matriz,NroTalleres));
+    printf("\nEl taller con la mayor produccion es: %d",Calcular(Matriz,NroTalleres));
 
 	end();
 }
@@ -59,7 +60,7 @@ int Calcular(int Matriz[100][3],int NroTalleres)
 {
     int Aux,Produccion=0,Acumulador=0;
 
-    for (in j = 0; j < NroTalleres; j++)
+    for (int j = 0; j < NroTalleres; j++)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -72,7 +73,7 @@ int Calcular(int Matriz[100][3],int NroTalleres)
            Aux=j;
        }
     }
-    return aux;
+    return Aux;
 }
 
 void end()
