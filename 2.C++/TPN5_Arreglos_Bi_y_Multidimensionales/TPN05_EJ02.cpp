@@ -39,7 +39,7 @@ main()
     MostrarMatriz(Matriz,Filas,Columnas);
 
 
-    printf("\nIngrese la fila que desea mostrar: ");
+    printf("\n\nIngrese la fila que desea mostrar: ");
     scanf("%d",&FilaMostrar);
     system("cls");
 
@@ -89,13 +89,15 @@ void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
 
 void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar)
 {
-
-
     for (int i = 0; i < Columnas; i++)
     {
         printf(" %d",Matriz[FilaMostrar-1][i]);
+        
+        if (i<Columnas-1)
+        {
+            printf(" - ");
+        }
     }
-    
 }
 
 
