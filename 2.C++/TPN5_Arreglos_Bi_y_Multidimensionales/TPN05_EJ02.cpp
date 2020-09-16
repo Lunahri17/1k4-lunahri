@@ -7,10 +7,11 @@ void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
 void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
 void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar);
+void MostrarColumna(int Matriz[100][100],int Filas,int ColumnaMostrar);
 
 main()
 {
-	int Matriz[100][100],Filas,Columnas,CambiarFila,CambiarColumna,FilaMostrar;
+	int Matriz[100][100],Filas,Columnas,CambiarFila,CambiarColumna,FilaMostrar,ColumnaMostrar;
     
     printf("\nCargue la matriz: ");
 
@@ -46,6 +47,13 @@ main()
     printf("\nLa fila %d es: ",FilaMostrar);
     MostrarFila(Matriz,Columnas,FilaMostrar);
 
+
+    printf("\nIngrese la columna que desea mostrar: ");
+    scanf("%d",&ColumnaMostrar);
+    system("cls");
+
+    printf("\nLa Columna %d es: \n",ColumnaMostrar);
+    MostrarColumna(Matriz,Filas,ColumnaMostrar);
 
     
 	end();
@@ -100,6 +108,13 @@ void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar)
     }
 }
 
+void MostrarColumna(int Matriz[100][100],int Filas,int ColumnaMostrar)
+{
+    for (int i = 0; i < Filas; i++)
+    {
+        printf(" %d",Matriz[i][ColumnaMostrar-1]);
+    }
+}
 
 void end()
 {
