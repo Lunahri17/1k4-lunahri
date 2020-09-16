@@ -30,7 +30,7 @@ void CargarMatriz(int Matriz[100][3],int NroTalleres)
     {
         for (int i = 0; i < 3; i++)
         {
-            Matriz[i][j]=1+rand%1000; //Decidí poner como tope 1000, así lo numero no se hagan muy grandes a la hora de probar el programa.
+            Matriz[i][j]=1+rand()%1000; //Decidí poner como tope 1000, así lo numero no se hagan muy grandes a la hora de probar el programa.
         }
     }
 }
