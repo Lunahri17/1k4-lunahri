@@ -48,7 +48,7 @@ main()
     MostrarFila(Matriz,Columnas,FilaMostrar);
 
 
-    printf("\nIngrese la columna que desea mostrar: ");
+    printf("\n\nIngrese la columna que desea mostrar: ");
     scanf("%d",&ColumnaMostrar);
     system("cls");
 
@@ -112,7 +112,7 @@ void MostrarColumna(int Matriz[100][100],int Filas,int ColumnaMostrar)
 {
     for (int i = 0; i < Filas; i++)
     {
-        printf(" %d",Matriz[i][ColumnaMostrar-1]);
+        printf(" %d\n",Matriz[i][ColumnaMostrar-1]);
     }
 }
 
