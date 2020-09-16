@@ -27,10 +27,10 @@ main()
     
     printf("\n\nIngrese la posicion en la que desea cambiar el numero por cero:");
     
-    printf("\nFila: ");
+    printf("\n\nFila: ");
     scanf("%d",&CambiarFila);
 
-    printf("\nColumna: ");
+    printf("Columna: ");
     scanf("%d",&CambiarColumna);
 
     Matriz[CambiarFila-1][CambiarColumna-1]=0;
