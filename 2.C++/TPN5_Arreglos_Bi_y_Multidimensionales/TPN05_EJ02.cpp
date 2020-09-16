@@ -20,6 +20,8 @@ main()
     scanf("%d",&Columnas);
 
     CargarMatriz(Matriz,Filas,Columnas);
+
+    MostrarMatriz(Matriz,Filas,Columnas);
 	
 	end();
 }
