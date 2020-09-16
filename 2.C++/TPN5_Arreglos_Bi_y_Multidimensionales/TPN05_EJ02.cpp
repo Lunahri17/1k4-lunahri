@@ -40,6 +40,25 @@ void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
     }    
 }
 
+void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
+{
+    printf("\n\nLa matriz ingresada es: \n");
+
+    for (int i = 0; i < Filas; i++)
+    {
+        printf("\n\n");
+
+        for (int j = 0; j < Columnas; j++)
+        {
+            printf("%d",Matriz[i][j]);
+
+            if (j<Columnas-1)
+            {
+                printf(" - ");
+            }
+        }
+    }
+}
 
 void end()
 {
