@@ -6,16 +6,16 @@
 void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
 void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
+void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar)
 
 main()
 {
-	int Matriz[100][100],Filas,Columnas,CambiarFila,CambiarColumna;
+	int Matriz[100][100],Filas,Columnas,CambiarFila,CambiarColumna,FilaMostrar;
     
     printf("\nCargue la matriz: ");
 
     printf("\nIngrese la cantidad de filas: ");
     scanf("%d",&Filas);
-
     printf("\nIngrese la cantidad de Columnas: ");
     scanf("%d",&Columnas);
 
@@ -29,15 +29,25 @@ main()
     
     printf("\n\nFila: ");
     scanf("%d",&CambiarFila);
-
     printf("Columna: ");
     scanf("%d",&CambiarColumna);
 
     Matriz[CambiarFila-1][CambiarColumna-1]=0;
+    system("cls");
 
     printf("\n\nLa nueva matriz es: \n");
     MostrarMatriz(Matriz,Filas,Columnas);
 
+
+    printf("\nIngrese la fila que desea mostrar: ");
+    scanf("%d",&FilaMostrar);
+    system("cls");
+
+    printf("\nLa fila %d es: ",FilaMostrar);
+    MostrarFila(Matriz,Columnas,FilaMostrar);
+
+
+    
 	end();
 }
 
@@ -55,7 +65,8 @@ void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
                 i--;
             }          
         }        
-    }    
+    } 
+    system("cls");
 }
 
 void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
@@ -76,6 +87,16 @@ void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
     }
 }
 
+void MostrarFila(int Matriz[100][100],int Columnas,int FilaMostrar)
+{
+
+
+    for (int i = 0; i < Columnas; i++)
+    {
+        printf(" %d",Matriz[FilaMostrar-1][i]);
+    }
+    
+}
 
 
 void end()
