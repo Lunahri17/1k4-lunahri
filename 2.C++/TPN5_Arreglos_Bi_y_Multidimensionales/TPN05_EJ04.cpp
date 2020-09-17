@@ -7,6 +7,7 @@
 void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
 void Transpuesta(int Matriz[100][100],int MatrizTranspuesta[100][100],int Filas,int Columnas);
+void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas);
 
 main()
 {
@@ -22,7 +23,13 @@ main()
 	CargarMatriz(Matriz,Filas,Columnas);
 
 	Transpuesta(Matriz,MatrizTranspuesta,Filas,Columnas);
+
+	printf("\n La matriz A es: \n");
+	MostrarMatriz(Matriz,Filas,Columnas);
 	
+	printf("\n La matriz B es: \n");
+	MostrarMatriz(MatrizTranspuesta,Filas,Columnas);
+
 	end();
 }
 
@@ -46,6 +53,24 @@ void Transpuesta(int Matriz[100][100],int MatrizTranspuesta[100][100],int Filas,
 			MatrizTranspuesta[i][j]=Matriz[j][i];
 		}
 	}
+}
+
+void MostrarMatriz(int Matriz[100][100],int Filas,int Columnas)
+{
+    for (int i = 0; i < Filas; i++)
+    {
+        printf("\n\n");
+
+        for (int j = 0; j < Columnas; j++)
+        {
+            printf(" %d",Matriz[i][j]);
+
+            if (j<Columnas-1)
+            {
+                printf(" - ");
+            }
+        }
+    }
 }
 
 void end()
