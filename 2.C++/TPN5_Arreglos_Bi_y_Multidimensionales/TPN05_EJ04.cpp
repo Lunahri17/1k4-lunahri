@@ -24,10 +24,10 @@ main()
 
 	Transpuesta(Matriz,MatrizTranspuesta,Filas,Columnas);
 
-	printf("\n La matriz A es: \n");
+	printf("\n La matriz A es:");
 	MostrarMatriz(Matriz,Filas,Columnas);
 	
-	printf("\n La matriz B es: \n");
+	printf("\n\n La matriz B es:");
 	MostrarMatriz(MatrizTranspuesta,Filas,Columnas);
 
 	end();
