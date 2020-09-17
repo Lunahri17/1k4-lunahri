@@ -6,12 +6,13 @@
 //Protipos de funciones:
 void end();
 void CargarMatriz(int Matriz[100][100],int Filas,int Columnas);
+void Transpuesta(int Matriz[100][100],int MatrizTranspuesta[100][100],int Filas,int Columnas);
 
 main()
 {
 	srand(time(0));
 
-	int Matriz[100][100],Filas,Columnas;
+	int Matriz[100][100],Filas,Columnas,MatrizTranspuesta[100][100];
 
 	printf("\nIngrese la cantidad de filas de la matriz: ");
 	scanf("%d",&Filas);
@@ -19,6 +20,8 @@ main()
 	scanf("%d",&Columnas);
 
 	CargarMatriz(Matriz,Filas,Columnas);
+
+	Transpuesta(Matriz,MatrizTranspuesta,Filas,Columnas);
 	
 	end();
 }
@@ -34,7 +37,16 @@ void CargarMatriz(int Matriz[100][100],int Filas,int Columnas)
     }
 }
 
-
+void Transpuesta(int Matriz[100][100],int MatrizTranspuesta[100][100],int Filas,int Columnas)
+{
+	for (int j = 0; j < Columnas; j++)
+	{
+		for (int i = 0; i < Filas; i++)
+		{
+			MatrizTranspuesta[i][j]=Matriz[j][i];
+		}
+	}
+}
 
 void end()
 {
