@@ -5,6 +5,7 @@
 //Protipos de funciones:
 void end();
 void CargarArreglo(int Arreglo[2][4][3]);
+int PaisMasVendio(int Arreglo[2][4][3]);
 
 main()
 {
@@ -12,6 +13,8 @@ main()
 
     CargarArreglo(Arreglo);
 	
+    printf("\nEl pais que mas vendio fue: %d",PaisMasVendio(Arreglo));
+
 	end();
 }
 
@@ -28,6 +31,30 @@ void CargarArreglo(int Arreglo[2][4][3])
             }
         }
     }
+}
+
+int PaisMasVendio(int Arreglo[2][4][3])
+{
+    int Acumulador=0,Mayor=0,Pais=0;
+    
+    for (int k = 0; k < 3; k++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                Acumulador+=Arreglo[i][j][k];
+            }
+        }
+
+        if (Acumulador>Mayor)
+        {
+            Mayor=Acumulador;
+            Pais=k;
+        }
+    }
+
+    return Pais;
 }
 
 void end()
