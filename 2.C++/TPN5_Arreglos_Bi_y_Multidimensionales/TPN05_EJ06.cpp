@@ -5,6 +5,7 @@
 //Protipos de funciones:
 void end();
 void CargarArreglo(float Arreglo[50][50][50],int Filas,int Columnas,int Planos);
+float MenorValor(float Arreglo[50][50][50],int Filas,int Columnas,int Planos);
 
 main()
 {
@@ -24,7 +25,7 @@ main()
     Menor=MenorValor(Arreglo,Filas,Columnas,Planos);
     printf("\nEl menor valor encontrado es: %.2f",Menor);
 
-    
+
 	
 	end();
 }
