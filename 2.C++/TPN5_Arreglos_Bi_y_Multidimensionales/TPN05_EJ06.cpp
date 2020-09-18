@@ -6,6 +6,8 @@
 void end();
 void CargarArreglo(float Arreglo[50][50][50],int Filas,int Columnas,int Planos);
 float MenorValor(float Arreglo[50][50][50],int Filas,int Columnas,int Planos);
+bool esDecimal(float num);
+bool esPar(float Menor);
 
 main()
 {
@@ -25,8 +27,22 @@ main()
     Menor=MenorValor(Arreglo,Filas,Columnas,Planos);
     printf("\nEl menor valor encontrado es: %.2f",Menor);
 
-
-	
+    if (esDecimal(Menor))
+    {
+        printf("\nEl numero menor es decimal, por lo que el programa no puede determinar si es par o no.");
+    }
+    else
+    {
+        if (esPar(Menor);)
+        {
+            printf("\nEl numero menor es Par.");
+        }
+        else
+        {
+            printf("\nEl numero menor es Impar.");
+        }
+    }
+    
 	end();
 }
 
@@ -64,6 +80,26 @@ float MenorValor(float Arreglo[50][50][50],int Filas,int Columnas,int Planos)
     }
 
     return Menor;
+}
+
+bool esDecimal(float num)
+{
+    int ent=num;
+    return num-ent;
+}
+
+bool esPar(float Menor)
+{
+    int num=Menor;
+    
+    if (num%2==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void end()
