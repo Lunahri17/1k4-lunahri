@@ -62,6 +62,8 @@ float MenorValor(float Arreglo[50][50][50],int Filas,int Columnas,int Planos)
             }
         }
     }
+
+    return Menor;
 }
 
 void end()
