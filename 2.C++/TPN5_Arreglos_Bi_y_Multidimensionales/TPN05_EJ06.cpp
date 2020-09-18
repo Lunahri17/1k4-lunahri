@@ -39,7 +39,7 @@ void CargarArreglo(float Arreglo[50][50][50],int Filas,int Columnas,int Planos)
             for (int i = 0; i < Filas; i++)
             {
                 printf("\nArreglo[%d][%d][%d]= ",i,j,k);
-                scanf("%d",&Arreglo[i][j][k]);
+                scanf("%f",&Arreglo[i][j][k]);
             }
         }
     }
