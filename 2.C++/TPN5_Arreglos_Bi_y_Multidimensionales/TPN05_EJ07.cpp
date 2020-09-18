@@ -17,14 +17,14 @@ main()
 
 void CargarArreglo(int Arreglo[2][4][3])
 {
-    for (int k = 0; k < 4; k++)
+    for (int k = 0; k < 3; k++)
     {
         for (int j = 0; j < 4; j++)
         {
             for (int i = 0; i < 2; i++)
             {
                 printf("\nArreglo[%d][%d][%d]= ",i,j,k);
-                scanf("%f",&Arreglo[i][j][k]);
+                scanf("%d",&Arreglo[i][j][k]);
             }
         }
     }
