@@ -6,6 +6,7 @@
 void end();
 void CargarArreglo(int Arreglo[2][4][3]);
 int PaisMasVendio(int Arreglo[2][4][3]);
+void VentaSucursales(int Arreglo[2][4][3]);
 
 main()
 {
@@ -15,6 +16,8 @@ main()
     CargarArreglo(Arreglo);
 	
     printf("\nEl pais que mas vendio fue el %d",PaisMasVendio(Arreglo)+1);
+
+    VentaSucursales(Arreglo);
 
 	end();
 }
@@ -40,6 +43,8 @@ int PaisMasVendio(int Arreglo[2][4][3])
     
     for (int k = 0; k < 3; k++)
     {
+        Acumulador=0;
+
         for (int j = 0; j < 4; j++)
         {
             for (int i = 0; i < 2; i++)
@@ -56,6 +61,26 @@ int PaisMasVendio(int Arreglo[2][4][3])
     }
 
     return Pais;
+}
+
+void VentaSucursales(int Arreglo[2][4][3])
+{
+    int Acumulador=0;
+    
+    for (int i = 0; i < 2; i++)
+    {
+        Acumulador=0;
+
+        for (int k = 0; k < 3; k++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                Acumulador+=Arreglo[i][j][k];
+            }
+        }
+
+        printf("\nTotal de venta de sucursal %d: %d",i+1,Acumulador);
+    }
 }
 
 void end()
