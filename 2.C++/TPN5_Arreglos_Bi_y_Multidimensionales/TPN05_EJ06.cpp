@@ -29,11 +29,11 @@ main()
 
     if (esDecimal(Menor))
     {
-        printf("\nEl numero menor es decimal, por lo que el programa no puede determinar si es par o no.");
+        printf("\nEl numero menor es decimal, por lo que el programa no puede determinar si es par o impar.");
     }
     else
     {
-        if (esPar(Menor);)
+        if (esPar(Menor))
         {
             printf("\nEl numero menor es Par.");
         }
