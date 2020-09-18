@@ -26,7 +26,9 @@ main()
 
     printf("\nVector con la suma de los planos: ");
     MostrarVector(Suma,Planos);
-
+    
+    printf("\nEl promedio del Vector de la suma de los planos es: %.2f",Promedio(Suma,Planos));
+    
 	end();
 }
 
@@ -71,6 +73,18 @@ void MostrarVector(int Vector[50],int Indice)
     {
         printf("%d ",Vector[i]);
     }
+}
+
+float Promedio(int Vector[50],int Indice);
+{
+    int Acumulador=0;
+
+    for (int i = 0; i < Indice; i++)
+    {
+        Acumulador+=Vector[i];
+    }
+    
+    return Acumulador/Indice;
 }
 
 void end()
