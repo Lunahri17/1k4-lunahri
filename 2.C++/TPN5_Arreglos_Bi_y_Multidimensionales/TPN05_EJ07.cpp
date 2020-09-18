@@ -11,9 +11,10 @@ main()
 {
 	int Arreglo[2][4][3];
 
+    printf("\nIngrese los datos: ");
     CargarArreglo(Arreglo);
 	
-    printf("\nEl pais que mas vendio fue: %d",PaisMasVendio(Arreglo));
+    printf("\nEl pais que mas vendio fue el %d",PaisMasVendio(Arreglo)+1);
 
 	end();
 }
