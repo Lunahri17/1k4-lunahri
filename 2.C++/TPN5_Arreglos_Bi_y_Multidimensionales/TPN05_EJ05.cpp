@@ -7,7 +7,7 @@ void end();
 void CargarArreglo(int Arreglo[50][50][50],int Filas,int Columnas,int Planos);
 void SumaPlanos(int Arreglo[50][50][50],int Filas,int Columnas,int Planos,int Suma[50]);
 void MostrarVector(int Vector[50],int Indice);
-float Promedio(int Vector[50],int Indice)
+float Promedio(int Vector[50],int Indice);
 
 main()
 {
