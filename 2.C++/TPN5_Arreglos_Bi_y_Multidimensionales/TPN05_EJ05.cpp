@@ -18,10 +18,13 @@ main()
     printf("\nIngrese la cantidad de planos: ");
     scanf("%d",&Planos);
 
-    printf("\nCargue el arreglo: ");   
+    printf("\nCargue el arreglo: ");
     CargarArreglo(Arreglo,Filas,Columnas,Planos);
 
     SumaPlanos(Arreglo,Filas,Columnas,Planos,Suma);
+
+    printf("\nVector con la suma de los planos: ");
+    MostrarVector(Suma,Planos);
 
 	end();
 }
@@ -58,6 +61,14 @@ void SumaPlanos(int Arreglo[50][50][50],int Filas,int Columnas,int Planos,int Su
         }
 
         Suma[k]=Acumulador;
+    }
+}
+
+void MostrarVector(int Vector[50],int Indice)
+{
+    for (int i = 0; i < Indice; i++)
+    {
+        printf("%d ",Vector[i]);
     }
 }
 
