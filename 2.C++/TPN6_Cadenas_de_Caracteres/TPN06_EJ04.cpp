@@ -12,8 +12,9 @@ main()
     int i=0,Consonantes=0;
 
     printf("\nIngrese el poema: ");
-    puts(poema);
-
+    _flushall();
+    gets(poema);
+    _flushall();
 
     do
     {
@@ -32,10 +33,10 @@ main()
         i++;
     } while (poema[i]!=NULL);
     
-	printf("\n\n\tDATOS DEL POEMA:");
+	printf("\n\n\tDATOS DEL POEMA");
 
     printf("\n Cantidad de consonantes: %d",Consonantes);
-    
+
 	end();
 }
 
