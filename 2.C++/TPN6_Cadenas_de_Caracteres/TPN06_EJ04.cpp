@@ -9,7 +9,7 @@ void end();
 main()
 {
 	char poema[200];
-    int i=0,Consonantes=0;
+    int i=0,Mayusculas=0,Minusculas=0,Consonantes=0,Vocales=0,Digitos=0,Signos=0,Espacios=0;
 
     printf("\nIngrese el poema: ");
     _flushall();
@@ -18,17 +18,53 @@ main()
 
     do
     {
-        //Busqueda de consonantes Mayusculas
+        //Busqueda de consonantes Mayusculas y letras maysuculas.
         if ((poema[i]>65 and poema[i]<69) or (poema[i]>69 and poema[i]<73) or (poema[i]>73 and poema[i]<79) or (poema[i]>79 and poema[i]<85) or (poema[i]>85 and poema[i]<91))
         {
             Consonantes++;
+            Mayusculas++;
         }
         
-        //Busqueda de consonantes Minusculas
+        //Busqueda de consonantes Minusculas y letras minusculas.
         if ((poema[i]>97 and poema[i]<101) or (poema[i]>101 and poema[i]<105) or (poema[i]>105 and poema[i]<111) or (poema[i]>111 and poema[i]<117) or (poema[i]>117 and poema[i]<123))
         {
             Consonantes++;
+            Minusculas++;
         }
+
+        //Busqueda de vocales Mayusculas y letras mayusculas.
+        if (poema[i]==65 or poema[i]==69 or poema[i]==73 or poema[i]==65 or poema[i]==65)
+        {
+            Vocales++;
+            Mayusculas++;
+        }
+        
+        //Busqueda de vocales minusculas y letras minusculas.
+        if (poema[i]==97 or poema[i]==101 or poema[i]==105 or poema[i]==111 or poema[i]==117)
+        {
+            Vocales++;
+            Mayusculas++;
+        }
+        
+        //Busqueda de digitos.
+        if (poema[i]>47 and poema[i]<58)
+        {
+            Digitos++;
+        }
+        
+
+        //Singos de puntuación.
+        if ((poema[i]>57 and poema[i]<64) or (poema[i]>93 and poema[i]<97) or (poema[i]>122 and poema[i]<127) or poema[i]==168 or poema[i]==173 or poema[i]==33 or (poema[i]>38 and poema[i]<47) (poema[i]>237 and poema[i]<241))
+        {
+            Signos++;
+        }
+        
+        //Espacios.
+        if (poema[i]==32)
+        {
+            Espacios++;
+        }
+        
 
         i++;
     } while (poema[i]!=NULL);
@@ -39,8 +75,6 @@ main()
 
 	end();
 }
-
-
 
 void end()
 {
