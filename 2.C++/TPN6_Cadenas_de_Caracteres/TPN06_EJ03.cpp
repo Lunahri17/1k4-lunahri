@@ -6,6 +6,7 @@
 //Protipos de funciones:
 void end();
 void CargarVectores(int Inscriptos[100],int NroDeAsignaturas);
+int MayorInscriptos(int Inscriptos[100],int NroDeAsignaturas);
 
 //Variables Globales
 typedef char cadena[30];
@@ -19,24 +20,43 @@ main()
     scanf("%d",&NroDeAsignaturas);
 
     CargarVectores(Inscriptos,NroDeAsignaturas);
+
+    printf("\nLa asignatura con mayor cantidad de inscriptos es: %s ",Asignaturas[MayorInscriptos(Inscriptos,NroDeAsignaturas)]);
 	
-	end();
+    end();
 }
 
 void CargarVectores(int Inscriptos[100],int NroDeAsignaturas)
 {
     for (int i = 0; i < NroDeAsignaturas; i++)
     {
-        printf("\nIngerese el nombre se la asgnatura %d",i+1);
+        printf("\nIngerese el nombre se la asgnatura %d: ",i+1);
         _flushall();
         gets(Asignaturas[i]);
         _flushall();
 
-        printf("\nIngrese la cantidad de alumanos inscriptos de la asignatura %s",Asignaturas[i]);
+        printf("\nIngrese la cantidad de alumanos inscriptos de la asignatura %s: ",Asignaturas[i]);
         scanf("%d",&Inscriptos[i]);
+
+        printf("\n-------------------------------------------------------------\n");
     }
 }
 
+int MayorInscriptos(int Inscriptos[100],int NroDeAsignaturas)
+{
+    int aux=Inscriptos[0],aux2=0;
+
+    for (int i = 0; i < NroDeAsignaturas; i++)
+    {
+        if (Inscriptos[i]>aux)
+        {
+            aux=Inscriptos[i];
+            aux2=i;
+        }
+    }
+    
+    return aux2;
+}
 
 void end()
 {
