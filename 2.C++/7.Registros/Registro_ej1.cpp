@@ -19,36 +19,43 @@ main()
 {
     int N;
 
-    producto prod;
+    producto prod[50];
 
-    //printf("\nIngrese la cantidad de elementos: ");
-    //scanf("%d",&N);
+    printf("\nIngrese la cantidad de elementos: ");
+    scanf("%d",&N);
 	
-    printf("\nCODIGO: ");
-    scanf("%d",&prod.codigo);
+    for (int i = 0; i < N; i++)
+    {
+        printf("\nCODIGO: ");
+        scanf("%d",&prod[i].codigo);
 
-    _flushall();
+        _flushall();
 
-    printf("\nDESCRIPCION: ");
-    gets(prod.descripcion);
+        printf("\nDESCRIPCION: ");
+        gets(prod[i].descripcion);
 
-    printf("\nPRECIO: ");
-    scanf("%f",&prod.precio);
-	
-    printf("\nFECHA DE VENCIMIENTO: ");
-    scanf("%d",&prod.fecha_vencimiento);
-
+        printf("\nPRECIO: ");
+        scanf("%f",&prod[i].precio);
+        
+        printf("\nFECHA DE VENCIMIENTO: ");
+        scanf("%d",&prod[i].fecha_vencimiento);
     
-    printf("\n LISTADO DE PRODUCTOS\n");
-
-    printf("\nCODIGO: %d",prod.codigo);
+    }
     
-    printf("\nDESCRIPCION: ");
-    puts(prod.descripcion);
+    printf("\n LISTADO DE PRODUCTOS");
 
-    printf("\nPRECIO: %.2f",prod.precio);
+    for (int i = 0; i < N; i++)
+    {
+        printf("\n\nCODIGO: %d",prod[i].codigo);
     
-	printf("\nFECHA DE VENCIMIENTO: %d",prod.fecha_vencimiento);
+        printf("\nDESCRIPCION: ");
+        puts(prod[i].descripcion);
+
+        printf("PRECIO: %.2f",prod[i].precio);
+        
+        printf("\nFECHA DE VENCIMIENTO: %d",prod[i].fecha_vencimiento);
+        
+    }
     
 	end();
 }
