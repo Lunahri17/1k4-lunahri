@@ -6,6 +6,7 @@
 //Protipos de funciones:
 void end();
 void Mostrar(char Nombres[100]);
+int CantidadDeCaracteres(char Nombres[100]);
 
 main()
 {
@@ -42,9 +43,9 @@ void Mostrar(char Nombres[100])
     } while (Nombres[i]!=NULL);
 }
 
-void CantidadDeCaracteres(char Nombres[100])
+int CantidadDeCaracteres(char Nombres[100])
 {
-    i=0;
+    int i=0;
     
     do
     {
