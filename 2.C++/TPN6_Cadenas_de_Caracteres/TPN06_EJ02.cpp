@@ -17,9 +17,10 @@ main()
     gets(Nombres);
 	_flushall();
 
+    printf("\nNombres: \n");
     Mostrar(Nombres);
 
-    printf("\nLa longitud de la cadena es: %d.",CantidadDeCaracteres(Nombres));
+    printf("\n\nLa longitud de la cadena es: %d.",CantidadDeCaracteres(Nombres));
     
 	end();
 }
