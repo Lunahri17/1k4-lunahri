@@ -27,14 +27,14 @@ main()
 	
     do
     {
-        printf("\nIngrese el nombre de la asignatura que desea buscar:");
+        printf("\nIngrese el nombre de la asignatura que desea buscar: ");
         _flushall();
         gets(PalabraBuscar);
         _flushall();
         
         aux=Buscar(PalabraBuscar,NroDeAsignaturas);
 
-        if(aux!=0)
+        if(aux<0)
         {
             printf("La Asgnatura no se encuentra, o la escribio de la forma incorrecta.");
         }
