@@ -15,7 +15,7 @@ cadena Asignaturas[30];
 
 main()
 {
-	int NroDeAsignaturas,Inscriptos[100],Stop=1;
+	int NroDeAsignaturas,Inscriptos[100],Stop=1,aux;
     char PalabraBuscar[30];
 
     printf("\nIngrese la cantidad de asignaturas: ");
@@ -28,20 +28,25 @@ main()
     do
     {
         printf("\nIngrese el nombre de la asignatura que desea buscar:");
+        _flushall();
         gets(PalabraBuscar);
+        _flushall();
         
-        if(Buscar(PalabraBuscar,NroDeAsignaturas)<0)
+        aux=Buscar(PalabraBuscar,NroDeAsignaturas);
+
+        if(aux!=0)
         {
             printf("La Asgnatura no se encuentra, o la escribio de la forma incorrecta.");
         }
         else
         {
-            printf("\nLa cantidad de incriptos de la asignatura %s es: %d",Asignaturas[Buscar(PalabraBuscar,NroDeAsignaturas)],Inscriptos[Buscar(PalabraBuscar,NroDeAsignaturas)]);
+            printf("\nLa cantidad de incriptos de la asignatura %s es: %d",Asignaturas[aux],Inscriptos[aux]);
         }
 
         printf("\n¿Desea buscar otra asignatura? 1=Si, 0=No: ");
         scanf("%d",&Stop);
-    } while (Stop==1);
+    
+    } while (Stop!=0);
 
     end();
 }
@@ -84,7 +89,7 @@ int Buscar(char PalabraBuscar[30],int NroDeAsignaturas)
 
     for (int i = 0; i < NroDeAsignaturas; i++)
     {
-        if (strcmp(Asignaturas[i],PalabraBuscar)>0)
+        if (strcmp(Asignaturas[i],PalabraBuscar)==0)
         {
             Aux=i;
         }
