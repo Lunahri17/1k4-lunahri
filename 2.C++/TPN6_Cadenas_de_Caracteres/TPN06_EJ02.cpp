@@ -17,6 +17,8 @@ main()
 	_flushall();
 
     Mostrar(Nombres);
+
+    printf("\nLa longitud de la cadena es: %d.",CantidadDeCaracteres(Nombres));
     
 	end();
 }
@@ -27,10 +29,29 @@ void Mostrar(char Nombres[100])
 
     do
     {
-        printf("%c",Nombres[i]);
+        if (Nombres[i]==44)
+        {
+            printf("\n");
+        }
+        else
+        {
+            printf("%c",Nombres[i]);    
+        }
+        
+        i++;
+    } while (Nombres[i]!=NULL);
+}
+
+void CantidadDeCaracteres(char Nombres[100])
+{
+    i=0;
+    
+    do
+    {
         i++;
     } while (Nombres[i]!=NULL);
     
+    return i;
 }
 
 void end()
