@@ -7,6 +7,7 @@
 void end();
 void CargarVectores(int Inscriptos[100],int NroDeAsignaturas);
 int MayorInscriptos(int Inscriptos[100],int NroDeAsignaturas);
+int Buscar(char PalabraBuscar[30],int NroDeAsignaturas);
 
 //Variables Globales
 typedef char cadena[30];
@@ -14,7 +15,8 @@ cadena Asignaturas[30];
 
 main()
 {
-	int NroDeAsignaturas,Inscriptos[100];
+	int NroDeAsignaturas,Inscriptos[100],Stop=1;
+    char PalabraBuscar[30];
 
     printf("\nIngrese la cantidad de asignaturas: ");
     scanf("%d",&NroDeAsignaturas);
@@ -23,6 +25,24 @@ main()
 
     printf("\nLa asignatura con mayor cantidad de inscriptos es: %s ",Asignaturas[MayorInscriptos(Inscriptos,NroDeAsignaturas)]);
 	
+    do
+    {
+        printf("\nIngrese el nombre de la asignatura que desea buscar:");
+        gets(PalabraBuscar);
+        
+        if(Buscar(PalabraBuscar,NroDeAsignaturas)<0)
+        {
+            printf("La Asgnatura no se encuentra, o la escribio de la forma incorrecta.");
+        }
+        else
+        {
+            printf("\nLa cantidad de incriptos de la asignatura %s es: %d",Asignaturas[Buscar(PalabraBuscar,NroDeAsignaturas)],Inscriptos[Buscar(PalabraBuscar,NroDeAsignaturas)]);
+        }
+
+        printf("\n¿Desea buscar otra asignatura? 1=Si, 0=No: ");
+        scanf("%d",&Stop);
+    } while (Stop==1);
+
     end();
 }
 
@@ -56,6 +76,22 @@ int MayorInscriptos(int Inscriptos[100],int NroDeAsignaturas)
     }
     
     return aux2;
+}
+
+int Buscar(char PalabraBuscar[30],int NroDeAsignaturas)
+{
+    int Aux=-1;
+
+    for (int i = 0; i < NroDeAsignaturas; i++)
+    {
+        if (strcmp(Asignaturas[i],PalabraBuscar)>0)
+        {
+            Aux=i;
+        }
+        
+    }
+
+    return Aux;       
 }
 
 void end()
