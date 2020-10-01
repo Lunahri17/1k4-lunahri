@@ -27,6 +27,8 @@ main()
     printf("\nCODIGO: ");
     scanf("%d",&prod.codigo);
 
+    _flushall();
+
     printf("\nDESCRIPCION: ");
     gets(prod.descripcion);
 
@@ -39,7 +41,7 @@ main()
     
     printf("\n LISTADO DE PRODUCTOS\n");
 
-    printf("\nCODIGO: &d",prod.codigo);
+    printf("\nCODIGO: %d",prod.codigo);
     
     printf("\nDESCRIPCION: ");
     puts(prod.descripcion);
