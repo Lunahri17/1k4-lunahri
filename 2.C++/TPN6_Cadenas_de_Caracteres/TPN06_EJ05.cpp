@@ -71,7 +71,7 @@ void IngresarDatos(int &CantNombres)
 
     do
     {
-        printf("Ingrese el Apellido y Nombre del socio (Ingrese final para terminar): ",i);
+        printf("Ingrese el Apellido y Nombre del socio (Ingrese final para terminar): ");
         _flushall();
         gets(Personas[CantNombres]);
         strupr(Personas[CantNombres]);
