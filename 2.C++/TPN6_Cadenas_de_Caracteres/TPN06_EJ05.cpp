@@ -8,6 +8,7 @@ void end();
 void IngresarDatos(int &CantNombres);
 void Decreciente(int CantNombres);
 void Mostrar(int CantNombres);
+void Creciente(int CantNombres);
 
 //Variables Globales:
 typedef char cadena[50];
@@ -53,7 +54,9 @@ main()
 
             case 4:
                 system("cls");
-
+                Creciente(CantNombres);
+                printf("\nEl ordenamiento se realizo con exito.");
+                system("pause");
                 break;
 
             case 5:
@@ -118,7 +121,7 @@ void Decreciente(int CantNombres)
         
         for (int i=0 ; i < CantNombres-1 ; i++)
         {
-            if(strcmp(Personas[i],Personas[i+1])<0) // > "A" a "Z" / < "Z" a "A".
+            if(strcmp(Personas[i],Personas[i+1])<0)
             {
                 strcpy(aux,Personas[i]);
                 strcpy(Personas[i],Personas[i+1]);
@@ -130,7 +133,28 @@ void Decreciente(int CantNombres)
     while (stop);
 }
 
+void Creciente(int CantNombres)
+{
+    bool stop;
+    char aux[100];
 
+    do
+    {
+        stop=false;
+        
+        for (int i=0 ; i < CantNombres-1 ; i++)
+        {
+            if(strcmp(Personas[i],Personas[i+1])>0)
+            {
+                strcpy(aux,Personas[i]);
+                strcpy(Personas[i],Personas[i+1]);
+                strcpy(Personas[i+1],aux);
+                stop=true;
+            }
+        }         
+    }
+    while (stop);
+}
 
 void end()
 {
