@@ -64,9 +64,12 @@ main()
             case 5:
                 system("cls");
                 printf("\nIngrese el apellido del socio que desea buscar: ");
+                _flushall();
                 gets(SocioBuscar);
+                _flushall();
                 strupr(SocioBuscar);
                 Buscar(CantNombres,SocioBuscar);
+                system("pause");
                 break;
 
             case 6:
