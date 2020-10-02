@@ -66,17 +66,17 @@ main()
 
 void IngresarDatos(int &CantNombres)
 {
-    char Final[] = "final";
+    char Final[] = "FINAL";
     bool stop=false;
 
     do
     {
-        printf("Ingrese el Apellido y Nombre del socio: ",i);
+        printf("Ingrese el Apellido y Nombre del socio (Ingrese final para terminar): ",i);
         _flushall();
-        gets(Personas[i]);
-        strupr(Personas[i]);
+        gets(Personas[CantNombres]);
+        strupr(Personas[CantNombres]);
 
-        if (strcmp(Personas[i],Final)!=0)
+        if (strcmp(Personas[CantNombres],Final)!=0)
         {
             CantNombres++;
         }
