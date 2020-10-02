@@ -1,4 +1,4 @@
-include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
 #include<string.h>
@@ -8,18 +8,65 @@ void end();
 
 main()
 {
-	
-	
-	end();
+	typedef char cadena[50];
+    cadena Personas[50];
+
+    int opcion;
+
+    do
+    {
+        system("cls");
+        printf("\n\tBienvenido a tu negocio.");
+        printf("\n\n1. Ingresar datos de socios.");
+        printf("\n\n2. Ordenar los nombres de manera decreciente.");
+        printf("\n\n3. Mostrar el listado de personas.");
+        printf("\n\n4. Ordenar los nombres de manera creciente.");
+        printf("\n\n5. Buscar un apellido en la lista.");
+        printf("\n\n6. Salir.");
+        printf("\n\nIngrese la opcion: ");
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+            case 1:
+
+                break;
+            
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+
+                break;
+
+            case 5:
+
+                break;
+
+            case 6:
+                end();
+                break;
+
+            default:
+                printf("\nIngreso una opcion incorrecta, volvera al menu.\n");
+                system("pause");
+                break;
+        }
+
+
+    } while (opcion!=6);
 }
 
 
 
 void end()
 {
-	printf("\n\n");
-	system("pause");
-    printf("\n\tGracias por utilizar el programa.");
+	printf("\n\tGracias por utilizar el programa.");
  	printf("\n\n");
 	system("pause");
 }
