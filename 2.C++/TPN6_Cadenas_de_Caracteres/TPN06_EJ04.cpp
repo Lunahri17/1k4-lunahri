@@ -54,7 +54,7 @@ main()
         
 
         //Singos de puntuación.
-        if ((poema[i]>57 and poema[i]<64) or (poema[i]>93 and poema[i]<97) or (poema[i]>122 and poema[i]<127) or poema[i]==168 or poema[i]==173 or poema[i]==33 or (poema[i]>38 and poema[i]<47) (poema[i]>237 and poema[i]<241))
+        if ((poema[i]>57 and poema[i]<64) or (poema[i]>93 and poema[i]<97) or (poema[i]>122 and poema[i]<127) or poema[i]==168 or poema[i]==173 or poema[i]==33 or (poema[i]>38 and poema[i]<47) or (poema[i]>237 and poema[i]<241))
         {
             Signos++;
         }
@@ -64,7 +64,6 @@ main()
         {
             Espacios++;
         }
-        
 
         i++;
     } while (poema[i]!=NULL);
