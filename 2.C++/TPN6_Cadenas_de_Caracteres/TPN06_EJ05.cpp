@@ -5,13 +5,15 @@
 
 //Protipos de funciones:
 void end();
+void IngresarDatos(int &CantNombres);
+
+//Variables Globales:
+typedef char cadena[50];
+cadena Personas[50];
 
 main()
 {
-	typedef char cadena[50];
-    cadena Personas[50];
-
-    int opcion;
+	int opcion,CantNombres=0;
 
     do
     {
@@ -29,7 +31,8 @@ main()
         switch(opcion)
         {
             case 1:
-
+                system("cls");
+                IngresarDatos(CantNombres);
                 break;
             
             case 2:
@@ -58,10 +61,33 @@ main()
                 break;
         }
 
-
     } while (opcion!=6);
 }
 
+void IngresarDatos(int &CantNombres)
+{
+    char Final[] = "final";
+    bool stop=false;
+
+    do
+    {
+        printf("Ingrese el Apellido y Nombre del socio: ",i);
+        _flushall();
+        gets(Personas[i]);
+        strupr(Personas[i]);
+
+        if (strcmp(Personas[i],Final)!=0)
+        {
+            CantNombres++;
+        }
+        else
+        {
+            stop=true;
+        }
+
+    } while (stop==false);
+
+}
 
 
 void end()
