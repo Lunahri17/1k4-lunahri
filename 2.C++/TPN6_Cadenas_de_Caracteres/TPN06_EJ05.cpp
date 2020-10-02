@@ -6,7 +6,7 @@
 //Protipos de funciones:
 void end();
 void IngresarDatos(int &CantNombres);
-void Decreciente();
+void Decreciente(int CantNombres);
 
 //Variables Globales:
 typedef char cadena[50];
@@ -37,7 +37,7 @@ main()
                 break;
             
             case 2:
-                Decreciente();
+                Decreciente(CantNombres);
                 break;
 
             case 3:
@@ -90,15 +90,16 @@ void IngresarDatos(int &CantNombres)
 
 }
 
-void Decreciente()
+void Decreciente(int CantNombres)
 {
     bool stop;
+    char aux[100];
 
     do
     {
         stop=false;
         
-        for (i=0;i<n-1;i++)
+        for (int i=0 ; i < CantNombres-1 ; i++)
         {
             if(strcmp(Personas[i],Personas[i+1])<0) // > "A" a "Z" / < "Z" a "A".
             {
