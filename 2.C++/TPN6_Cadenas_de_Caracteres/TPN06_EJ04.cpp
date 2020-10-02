@@ -72,6 +72,12 @@ main()
 	printf("\n\n\tDATOS DEL POEMA");
 
     printf("\n Cantidad de consonantes: %d",Consonantes);
+    printf("\n Cantidad de vocales: %d",Vocales);
+    printf("\n Cantidad de digitos: %d",Digitos);
+    printf("\n Cantidad de signos de puntuacion: %d",Signos);
+    printf("\n Cantidad de mayusculas: %d",Mayusculas);
+    printf("\n Cantidad de minusculas: %d",Minusculas);
+    printf("\n Cantidad de espacios: %d",Espacios);
 
 	end();
 }
