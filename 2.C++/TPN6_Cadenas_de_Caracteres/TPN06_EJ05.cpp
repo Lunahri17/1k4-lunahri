@@ -9,6 +9,7 @@ void IngresarDatos(int &CantNombres);
 void Decreciente(int CantNombres);
 void Mostrar(int CantNombres);
 void Creciente(int CantNombres);
+void Buscar(int CantNombres,char SocioBuscar[50]);
 
 //Variables Globales:
 typedef char cadena[50];
@@ -17,6 +18,7 @@ cadena Personas[50];
 main()
 {
 	int opcion,CantNombres=0;
+    char SocioBuscar[50];
 
     do
     {
@@ -61,7 +63,10 @@ main()
 
             case 5:
                 system("cls");
-
+                printf("\nIngrese el apellido del socio que desea buscar: ");
+                gets(SocioBuscar);
+                strupr(SocioBuscar);
+                Buscar(CantNombres,SocioBuscar);
                 break;
 
             case 6:
@@ -153,6 +158,37 @@ void Creciente(int CantNombres)
         }         
     }
     while (stop);
+}
+
+void Buscar(int CantNombres,char SocioBuscar[50])
+{
+    bool Esta=false;
+    int Contador=0;
+
+    for (int i = 0; i < CantNombres; i++)
+    {
+        if (strcmp(Personas[i],SocioBuscar)==0)
+        {
+            Esta=true;
+            Contador++;
+        }
+    }
+
+    if (Esta)
+    {
+        if (Contador==1)
+        {
+            printf("\nEl socio buscado si se encuentra en la lista.");
+        }
+        else
+        {
+            printf("\nEl socio buscado aparece en la lista %d veces.",Contador);
+        }
+    }
+    else
+    {
+        printf("\nEl socio buscado no aparece en la lista.");
+    }    
 }
 
 void end()
