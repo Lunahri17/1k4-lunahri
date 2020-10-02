@@ -37,18 +37,22 @@ main()
                 break;
             
             case 2:
+                system("cls");
                 Decreciente(CantNombres);
                 break;
 
             case 3:
+                system("cls");
 
                 break;
 
             case 4:
+                system("cls");
 
                 break;
 
             case 5:
+                system("cls");
 
                 break;
 
