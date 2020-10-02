@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include<stdlib.h>
 
 main()
 {
@@ -23,7 +24,7 @@ main()
          b=0;
          for (i=0;i<n-1;i++)
          {
-             if(strcmp(nombre[i],nombre[i+1])>0)
+             if(strcmp(nombre[i],nombre[i+1])<0) // > "A" a "Z" / < "Z" a "A".
              {
                   strcpy(aux,nombre[i]);
                   strcpy(nombre[i],nombre[i+1]);
@@ -39,4 +40,5 @@ main()
          printf("Nombre %d: %s\n",i,nombre[i]);
      }
 
+    system("pause");
 }
