@@ -13,7 +13,7 @@ void Buscar(int CantNombres,char SocioBuscar[50]);
 
 //Variables Globales:
 typedef char cadena[50];
-cadena Personas[50];
+cadena Personas[50],ListaCreciente[50];
 
 main()
 {
@@ -27,7 +27,7 @@ main()
         printf("\n\n1. Ingresar datos de socios.");
         printf("\n\n2. Ordenar los nombres de manera decreciente.");
         printf("\n\n3. Mostrar el listado de personas.");
-        printf("\n\n4. Ordenar los nombres de manera creciente.");
+        printf("\n\n4. Lista de nombres creciente.");
         printf("\n\n5. Buscar un apellido en la lista.");
         printf("\n\n6. Salir.");
         printf("\n\nIngrese la opcion: ");
@@ -57,7 +57,7 @@ main()
             case 4:
                 system("cls");
                 Creciente(CantNombres);
-                printf("\nEl ordenamiento se realizo con exito.");
+                
                 system("pause");
                 break;
 
@@ -96,6 +96,8 @@ void IngresarDatos(int &CantNombres)
         _flushall();
         gets(Personas[CantNombres]);
         strupr(Personas[CantNombres]);
+        
+        strcpy(ListaCreciente[CantNombres],Personas[CantNombres]);
 
         if (strcmp(Personas[CantNombres],Final)!=0)
         {
@@ -151,11 +153,11 @@ void Creciente(int CantNombres)
         
         for (int i=0 ; i < CantNombres-1 ; i++)
         {
-            if(strcmp(Personas[i],Personas[i+1])>0)
+            if(strcmp(ListaCreciente[i],ListaCreciente[i+1])>0)
             {
-                strcpy(aux,Personas[i]);
-                strcpy(Personas[i],Personas[i+1]);
-                strcpy(Personas[i+1],aux);
+                strcpy(aux,ListaCreciente[i]);
+                strcpy(ListaCreciente[i],ListaCreciente[i+1]);
+                strcpy(ListaCreciente[i+1],aux);
                 stop=true;
             }
         }         
