@@ -39,11 +39,15 @@ main()
             case 2:
                 system("cls");
                 Decreciente(CantNombres);
+                printf("\nEl ordenamiento se realizo con exito.");
+                system("pause");
                 break;
 
             case 3:
                 system("cls");
-
+                Mostrar(CantNombres);
+                printf("\n\n");
+	            system("pause");
                 break;
 
             case 4:
@@ -115,6 +119,14 @@ void Decreciente(int CantNombres)
         }         
     }
     while (stop);
+}
+
+void Mostrar(int CantNombres)
+{
+    for (int i=0 ; i < CantNombres ; i++)
+     {
+         printf("Socio %d: %s\n",i+1,Personas[i]);
+     }    
 }
 
 void end()
