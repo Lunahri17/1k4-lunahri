@@ -7,6 +7,7 @@
 void end();
 void IngresarDatos(int &CantNombres);
 void Decreciente(int CantNombres);
+void Mostrar(int CantNombres);
 
 //Variables Globales:
 typedef char cadena[50];
