@@ -176,7 +176,7 @@ void Buscar(int CantNombres,char SocioBuscar[50])
 
     for (int i = 0; i < CantNombres; i++)
     {
-        if (strcmp(Personas[i],SocioBuscar)==0)
+        if (strstr(Personas[i],SocioBuscar)>0)
         {
             Esta=true;
             Contador++;
