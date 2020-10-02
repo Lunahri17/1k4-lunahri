@@ -99,7 +99,6 @@ void IngresarDatos(int &CantNombres)
         }
 
     } while (stop==false);
-
 }
 
 void Mostrar(int CantNombres)
