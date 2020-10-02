@@ -57,7 +57,6 @@ main()
             case 4:
                 system("cls");
                 Creciente(CantNombres);
-                
                 system("pause");
                 break;
 
@@ -163,6 +162,11 @@ void Creciente(int CantNombres)
         }         
     }
     while (stop);
+
+    for (int i=0 ; i < CantNombres ; i++)
+    {
+        printf("Socio %d: %s\n",i+1,ListaCreciente[i]);
+    } 
 }
 
 void Buscar(int CantNombres,char SocioBuscar[50])
