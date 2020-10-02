@@ -99,6 +99,14 @@ void IngresarDatos(int &CantNombres)
 
 }
 
+void Mostrar(int CantNombres)
+{
+    for (int i=0 ; i < CantNombres ; i++)
+     {
+         printf("Socio %d: %s\n",i+1,Personas[i]);
+     }    
+}
+
 void Decreciente(int CantNombres)
 {
     bool stop;
@@ -122,13 +130,7 @@ void Decreciente(int CantNombres)
     while (stop);
 }
 
-void Mostrar(int CantNombres)
-{
-    for (int i=0 ; i < CantNombres ; i++)
-     {
-         printf("Socio %d: %s\n",i+1,Personas[i]);
-     }    
-}
+
 
 void end()
 {
