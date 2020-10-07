@@ -2,6 +2,9 @@
 #include<stdlib.h>
 #include<math.h>
 
+//Estructuras:
+
+
 //Protipos de funciones:
 void end();
 
