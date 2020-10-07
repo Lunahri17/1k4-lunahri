@@ -20,6 +20,7 @@ struct registro
 void end();
 void IngresarDatos(registro reg,int n,int &cp60,int &PasientePositivo);
 int calculo(fecha fec);
+float Porcentaje(int n,int PasientePositivo);
 
 main ()
 {
@@ -29,12 +30,15 @@ main ()
     printf("Ingrese cantidad de pacientes: ");
     scanf("%d",&n);
     
-    IngresarDatos(reg,n,cp60,PasientePositivo);
+    if (n>0)
+    {
+        IngresarDatos(reg,n,cp60,PasientePositivo);
+    
+        printf("\n\nCANTIDAD MAYORES DE 60: %d",cp60);
 
-    printf("\n\nCANTIDAD MAYORES DE 60: %d",cp60);
-
-    printf("\nEl porcentaje de pasientes positivos es: %.2f % ",Porcentaje(n,PasientePositivo));
-
+        printf("\nEl porcentaje de pasientes positivos es: %.2f",Porcentaje(n,PasientePositivo));
+    }
+    
     end();
 }
 
@@ -65,14 +69,13 @@ void IngresarDatos(registro reg,int n,int &cp60,int &PasientePositivo)
         printf("Resultado test (P: positivo / N: Negativo): ");
         _flushall();
         scanf("%c",&reg.resultado);
-        strupr(reg.resultado);
-	      
+
 	    if (calculo(reg.fec_nac)>60)
 	        {
               cp60++;
             }
         
-        if (reg.resultado=="P")
+        if (reg.resultado=='P' or reg.resultado=='p')
         {
             PasientePositivo++;
         }
@@ -83,6 +86,11 @@ void IngresarDatos(registro reg,int n,int &cp60,int &PasientePositivo)
 int calculo(fecha fec)
 {
 	return 2020-fec.year;
+}
+
+float Porcentaje(int n,int PasientePositivo)
+{
+    return (PasientePositivo*100)/n;
 }
 
 void end()
