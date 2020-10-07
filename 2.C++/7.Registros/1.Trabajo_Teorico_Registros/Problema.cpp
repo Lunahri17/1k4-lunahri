@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 //Estructuras:
 struct fecha
@@ -17,16 +18,28 @@ struct registro
 
 //Protipos de funciones:
 void end();
+void IngresarDatos(registro reg,int n,int &cp60,int &PasientePositivo);
 int calculo(fecha fec);
 
 main ()
 {
     registro reg;
-    int n,cp60=0;
+    int n,cp60=0,PasientePositivo=0;
      
     printf("Ingrese cantidad de pacientes: ");
     scanf("%d",&n);
     
+    IngresarDatos(reg,n,cp60,PasientePositivo);
+
+    printf("\n\nCANTIDAD MAYORES DE 60: %d",cp60);
+
+    printf("\nEl porcentaje de pasientes positivos es: %.2f % ",Porcentaje(n,PasientePositivo));
+
+    end();
+}
+
+void IngresarDatos(registro reg,int n,int &cp60,int &PasientePositivo)
+{
     printf("\nIngrese los datos del registro\n\n");
     for (int i=0 ; i < n ; i++)
 	{	     
@@ -52,14 +65,19 @@ main ()
         printf("Resultado test (P: positivo / N: Negativo): ");
         _flushall();
         scanf("%c",&reg.resultado);
+        strupr(reg.resultado);
 	      
 	    if (calculo(reg.fec_nac)>60)
-	        cp60++;
+	        {
+              cp60++;
+            }
+        
+        if (reg.resultado=="P")
+        {
+            PasientePositivo++;
+        }
+        
 	}
-     
-    printf("\n\nCANTIDAD MAYORES DE 60: %d",cp60);
-
-
 }
 
 int calculo(fecha fec)
