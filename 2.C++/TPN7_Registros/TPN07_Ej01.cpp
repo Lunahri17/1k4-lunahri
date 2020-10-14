@@ -45,7 +45,7 @@ main()
 
         system("cls");
 
-        if (Clientes.monCred>30000)
+        if (Clientes.monCred>=30000)
         {
             Contador++;
         }
