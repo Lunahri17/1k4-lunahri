@@ -31,7 +31,7 @@ main()
     float aux1;
     datosCliente Clientes;
 
-    printf("\nIngrese la cantidad de cliente a ingresar: ");
+    printf("\nIngrese la cantidad de clientes a ingresar: ");
     scanf("%d",&CantidadClientes);
 
     for (int i = 0; i < CantidadClientes; i++)
@@ -49,11 +49,11 @@ main()
         
         printf("\nIngrese la fecha: ");
         printf("\nDia: ");
-        scanf("%d",&Clientes.fecha.dia);
+        scanf("%d",&Clientes.fecVenta.dia);
         printf("\nMes: ");
-        scanf("%d",&Clientes.fecha.mes);
+        scanf("%d",&Clientes.fecVenta.mes);
         printf("\nAnio: ");
-        scanf("%d",&Clientes.fecha.year);
+        scanf("%d",&Clientes.fecVenta.year);
 
         system("cls");
 
@@ -69,9 +69,9 @@ main()
         if (aux1>=Clientes.monVehi)
         {
             aux1=Clientes.monVehi;
-            aux2=Clientes.fecha.dia;
-            aux3=Clientes.fecha.mes;
-            aux4=Clientes.fecha.year;
+            aux2=Clientes.fecVenta.dia;
+            aux3=Clientes.fecVenta.mes;
+            aux4=Clientes.fecVenta.year;
         } 
     }
         
@@ -82,20 +82,18 @@ main()
 
 void Mostrar(int i,datosCliente Clientes)
 {
-    printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
-
     printf("\n\nIngrese el apellido y nombre del cliente %d: ",i+1);
     puts(Clientes.ApeNom);
 
     printf("\nIngrese la direccion del cliente %d: ",i+1);
     puts(Clientes.dire);
 
-    printf("\nIngrese el monto maximo de credito %d: %.2f\n\n",i+1,Clientes.monCred);
+    printf("\nIngrese el monto del vehiculo %d: %.2f",i+1,Clientes.monVehi);
 
     printf("\nIngrese la fecha: ");
-    printf("\nDia: %d",&Clientes.fecha.dia);
-    printf("\nMes: %d",&Clientes.fecha.mes);
-    printf("\nAnio: %d",&Clientes.fecha.year);
+    printf("\nDia: %d",&Clientes.fecVenta.dia);
+    printf("\nMes: %d",&Clientes.fecVenta.mes);
+    printf("\nAnio: %d\n\n",&Clientes.fecVenta.year);
 
     system("pause");
 }
