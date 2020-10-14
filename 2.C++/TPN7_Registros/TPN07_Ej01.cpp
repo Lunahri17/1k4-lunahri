@@ -26,7 +26,7 @@ main()
     printf("\nIngrese la cantidad de cliente a ingresar: ");
     scanf("&d",&CantidadClientes);
 
-    for (int i = 0; i < CantiadClientes; i++)
+    for (int i = 0; i < CantidadClientes; i++)
     {
         printf("\nIngrese el codigo del cliente %d",CantidadClientes+1);
         scanf("%d",&Clientes.codCli);
