@@ -28,7 +28,7 @@ main()
 
     for (int i = 0; i < CantidadClientes; i++)
     {
-        printf("\nIngrese el codigo del cliente %d",CantidadClientes+1);
+        printf("\nIngrese el codigo del cliente %d: ",CantidadClientes+1);
         scanf("%d",&Clientes.codCli);
 
         printf("\nIngrese el apellido y nombre del cliente %d: ",CantidadClientes+1);
@@ -41,12 +41,29 @@ main()
 
         printf("\nIngrese el monto maximo de credito %d: ",CantidadClientes+1);
         scanf("%d",&Clientes.monCred);
+        
+        system("cls");
+
+        Mostrar(i,Clientes);
+
+        system("cls");
     }
-    
 	
 	end();
 }
 
+void Mostrar(int i,datosCliente Clientes);
+{
+    printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
+
+    printf("\nIngrese el apellido y nombre del cliente %d: ",i+1);
+    puts(Clientes.ApeNom);
+
+    printf("\nIngrese la direccion del cliente %d: ",i+1);
+    puts(Clientes.dire);
+
+    printf("\nIngrese el monto maximo de credito %d: %.2f",i+1,Clientes.monCred);
+}
 
 
 void end()
