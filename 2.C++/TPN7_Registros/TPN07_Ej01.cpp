@@ -3,6 +3,13 @@
 #include<math.h>
 
 //Estructuras:
+struct datosCliente
+{
+    int codCli;         //Codigo del cliente.
+    char ApeNom[40];    //Apellido y nombre.
+    char dire[60];      //Dimicilio.
+    float monCred       //Monto máximo del crédito que puede realizar en cada compra.
+};
 
 
 //Protipos de funciones:
