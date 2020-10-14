@@ -20,7 +20,7 @@ main()
 	int CantidadClientes=0,Contador=0;
     datosCliente Clientes;
 
-    printf("\nIngrese la cantidad de cliente a ingresar: ");
+    printf("\nIngrese la cantidad de clientes a ingresar: ");
     scanf("%d",&CantidadClientes);
 
     for (int i = 0; i < CantidadClientes; i++)
