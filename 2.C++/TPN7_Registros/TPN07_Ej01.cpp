@@ -58,15 +58,15 @@ main()
 
 void Mostrar(int i,datosCliente Clientes)
 {
-    printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
+    printf("\nCodigo del cliente %d: %d",i+1,Clientes.codCli);
 
-    printf("\n\nIngrese el apellido y nombre del cliente %d: ",i+1);
+    printf("\n\nApellido y nombre del cliente %d: ",i+1);
     puts(Clientes.ApeNom);
 
-    printf("\nIngrese la direccion del cliente %d: ",i+1);
+    printf("\nDireccion del cliente %d: ",i+1);
     puts(Clientes.dire);
 
-    printf("\nIngrese el monto maximo de credito %d: %.2f\n\n",i+1,Clientes.monCred);
+    printf("\nMonto maximo de credito %d: %.2f\n\n",i+1,Clientes.monCred);
 
     system("pause");
 }
