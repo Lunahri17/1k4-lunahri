@@ -17,7 +17,7 @@ void Mostrar(int i,datosCliente Clientes);
 
 main()
 {
-	int CantidadClientes=0;
+	int CantidadClientes=0,Contador=0;
     datosCliente Clientes;
 
     printf("\nIngrese la cantidad de cliente a ingresar: ");
@@ -44,7 +44,15 @@ main()
         Mostrar(i,Clientes);
 
         system("cls");
+
+        if (Clientes.monCred>30000)
+        {
+            Contador++;
+        }
     }
+
+    printf("\nHay %d clientes con un monto de credito superior a $30000",Contador);
+
 	end();
 }
 
