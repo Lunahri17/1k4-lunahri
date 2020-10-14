@@ -15,9 +15,6 @@ struct datosCliente
 void end();
 void Mostrar(int i,datosCliente Clientes);
 
-//Variables globales:
-
-
 main()
 {
 	int CantidadClientes=0;
@@ -40,7 +37,7 @@ main()
         gets(Clientes.dire);
 
         printf("\nIngrese el monto maximo de credito %d: ",i+1);
-        scanf("%d",&Clientes.monCred);
+        scanf("%f",&Clientes.monCred);
         
         system("cls");
 
@@ -48,7 +45,6 @@ main()
 
         system("cls");
     }
-	
 	end();
 }
 
@@ -56,13 +52,13 @@ void Mostrar(int i,datosCliente Clientes)
 {
     printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
 
-    printf("\nIngrese el apellido y nombre del cliente %d: ",i+1);
+    printf("\n\nIngrese el apellido y nombre del cliente %d: ",i+1);
     puts(Clientes.ApeNom);
 
     printf("\nIngrese la direccion del cliente %d: ",i+1);
     puts(Clientes.dire);
 
-    printf("\nIngrese el monto maximo de credito %d: %.2f",i+1,Clientes.monCred);
+    printf("\nIngrese el monto maximo de credito %d: %.2f\n\n",i+1,Clientes.monCred);
 
     system("pause");
 }
