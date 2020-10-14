@@ -27,13 +27,57 @@ void end();
 
 main()
 {
-	int CantidadClientes=0;
+	int CantidadClientes=0,aux2,aux3,aux4;
+    float aux1;
     datosCliente Clientes;
 
     printf("\nIngrese la cantidad de cliente a ingresar: ");
     scanf("%d",&CantidadClientes);
 
-    
+    for (int i = 0; i < CantidadClientes; i++)
+    {
+        printf("\nIngrese el apellido y nombre del cliente %d: ",i+1);
+        _flushall();
+        gets(Clientes.ApeNom);
+
+        printf("\nIngrese la direccion del cliente %d: ",i+1);
+        _flushall();
+        gets(Clientes.dire);
+
+        printf("\nIngrese el monto del vehiculo %d: ",i+1);
+        scanf("%f",&Clientes.monVehi);
+        
+        printf("\nIngrese la fecha: ");
+        printf("Dia: ");
+        scanf("%d",&Clientes.fecha.dia);
+        printf("\nMes: ");
+        scanf("%d",&Clientes.fecha.mes);
+        printf("\nAnio: ");
+        scanf("%d",&Clientes.fecha.year);
+
+        system("cls");
+
+        Mostrar(i,Clientes);
+
+        system("cls");
+
+        if (i==0)
+        {
+            aux1=Clientes.monVehi;
+        }
+
+        if (aux1>=Clientes.monVehi)
+        {
+            aux1=Clientes.monVehi;
+            aux2=Clientes.fecha.dia;
+            aux3=Clientes.fecha.mes;
+            aux4=Clientes.fecha.year;
+        }
+        
+    }
+        
+        printf("\nLa fecha con la menor venta fue: %d/%d/%d",aux2,aux3,aux4);
+        
 	
 	end();
 }
