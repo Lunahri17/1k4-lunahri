@@ -20,7 +20,7 @@ struct datosCliente
 
 //Protipos de funciones:
 void end();
-void Mostrar(int i,datosCliente Clientes);
+void Mostrar(int i,datosCliente &Clientes);
 
 //Variables globales:
 
@@ -80,15 +80,15 @@ main()
 	end();
 }
 
-void Mostrar(int i,datosCliente Clientes)
+void Mostrar(int i,datosCliente &Clientes)
 {
-    printf("\n\nIngrese el apellido y nombre del cliente %d: ",i+1);
+    printf("\n\nApellido y nombre del cliente %d: ",i+1);
     puts(Clientes.ApeNom);
 
-    printf("\nIngrese la direccion del cliente %d: ",i+1);
+    printf("\nDireccion del cliente %d: ",i+1);
     puts(Clientes.dire);
 
-    printf("\nIngrese el monto del vehiculo %d: %.2f",i+1,Clientes.monVehi);
+    printf("\nMonto del vehiculo %d: %.2f",i+1,Clientes.monVehi);
 
     printf("\nIngrese la fecha: ");
     printf("\nDia: %d",&Clientes.fecVenta.dia);
