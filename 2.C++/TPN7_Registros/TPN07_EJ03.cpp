@@ -20,7 +20,7 @@ struct datosCliente
 
 //Protipos de funciones:
 void end();
-
+void Mostrar(int i,datosCliente Clientes);
 
 //Variables globales:
 
@@ -48,7 +48,7 @@ main()
         scanf("%f",&Clientes.monVehi);
         
         printf("\nIngrese la fecha: ");
-        printf("Dia: ");
+        printf("\nDia: ");
         scanf("%d",&Clientes.fecha.dia);
         printf("\nMes: ");
         scanf("%d",&Clientes.fecha.mes);
@@ -72,17 +72,33 @@ main()
             aux2=Clientes.fecha.dia;
             aux3=Clientes.fecha.mes;
             aux4=Clientes.fecha.year;
-        }
-        
+        } 
     }
         
-        printf("\nLa fecha con la menor venta fue: %d/%d/%d",aux2,aux3,aux4);
-        
-	
+    printf("\nLa fecha con la menor venta fue: %d/%d/%d",aux2,aux3,aux4);
+
 	end();
 }
 
+void Mostrar(int i,datosCliente Clientes)
+{
+    printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
 
+    printf("\n\nIngrese el apellido y nombre del cliente %d: ",i+1);
+    puts(Clientes.ApeNom);
+
+    printf("\nIngrese la direccion del cliente %d: ",i+1);
+    puts(Clientes.dire);
+
+    printf("\nIngrese el monto maximo de credito %d: %.2f\n\n",i+1,Clientes.monCred);
+
+    printf("\nIngrese la fecha: ");
+    printf("\nDia: %d",&Clientes.fecha.dia);
+    printf("\nMes: %d",&Clientes.fecha.mes);
+    printf("\nAnio: %d",&Clientes.fecha.year);
+
+    system("pause");
+}
 
 void end()
 {
