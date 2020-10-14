@@ -13,7 +13,7 @@ struct datosCliente
 
 //Protipos de funciones:
 void end();
-
+void Mostrar(int i,datosCliente Clientes);
 
 //Variables globales:
 
@@ -52,7 +52,7 @@ main()
 	end();
 }
 
-void Mostrar(int i,datosCliente Clientes);
+void Mostrar(int i,datosCliente Clientes)
 {
     printf("\nIngrese el codigo del cliente %d: %d",i+1,Clientes.codCli);
 
