@@ -91,9 +91,9 @@ void Mostrar(int i,datosCliente Clientes)
     printf("\nMonto del vehiculo %d: %.2f",i+1,Clientes.monVehi);
 
     printf("\nIngrese la fecha: ");
-    printf("\nDia: %d",&Clientes.fecVenta.dia);
-    printf("\nMes: %d",&Clientes.fecVenta.mes);
-    printf("\nAnio: %d\n\n",&Clientes.fecVenta.year);
+    printf("\nDia: %d",Clientes.fecVenta.dia);
+    printf("\nMes: %d",Clientes.fecVenta.mes);
+    printf("\nAnio: %d\n\n",Clientes.fecVenta.year);
 
     system("pause");
 }
