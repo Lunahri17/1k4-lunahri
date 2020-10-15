@@ -1,3 +1,8 @@
+
+//agregar una opcion de modificar y otra de borrar.
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +22,7 @@ struct registro
 	char proveedor[35];
 };
 
-int cargar(registro amp[50]);
+int cargar(registro amp[50],int &i);
 void ordenar(int n, registro amp[50]);
 void mostrar(int n, registro amp[50]);
 void consultar(int n, registro amp[50]);
@@ -25,25 +30,34 @@ int menuPrincipal();
 
 main()
 {
-	int n, i, nOp;
+	int n=0, i=0, nOp;
 	registro ampere[50];
 
 	do
 	 {
-	  nOp = menuPrincipal(); //Llama la función que muestra el menú. 
+	  nOp = menuPrincipal(); //Llama la funciï¿½n que muestra el menï¿½. 
 	  switch(nOp)
 	  {
 	   case 1:
-	    n=cargar(ampere);
+	    n=cargar(ampere,i);
 	    break;
 	   case 2:
-	    mostrar(n,ampere); 
+	   if(n>0)
+	    mostrar(n,ampere);
+		else
+			printf("\nNo se cargaron datos."); 
 	    break;                                 
 	   case 3:
+	   if(n>0)
 	   	consultar(n,ampere);
+		else
+			printf("\nNo se cargaron datos.");
 	    break;
 	   case 4:
+	   if(n>0)
 	    ordenar(n,ampere);
+		else
+			printf("\nNo se cargaron datos.");
 	    break;
 	   case 5:
 	    system("CLS");
@@ -63,10 +77,10 @@ main()
 	
 }
 
-int cargar(registro amp[50])
+int cargar(registro amp[50],int &i)
 {
 	system("cls");
-	int i=0,cod;
+	int cod;
 	printf("\nIngrese el codigo del producto: ");
 	scanf("%d",&cod);
        
@@ -96,7 +110,6 @@ int cargar(registro amp[50])
 	}
 	return i;
 }
-
 
 void mostrar(int n, registro amp[50])
 {
@@ -158,23 +171,79 @@ void ordenar(int n, registro amp[50])
 {
 	bool bandera;
 	registro auxiliar[50];
-	int i, valor;
+	int i, valor,opcion;
 	
-	do
+	printf("\nComo desea ordenar? (1:Por descripcion / 2: Por Codigo / 3: Por Proveedor)");
+	scanf("%d",&opcion);
+
+	switch (opcion)
 	{
-		bandera=false;
-		for(i=0;i<n-1;i++)
+	case 1:
+		do
 		{
-			if(strcmp(amp[i].descripcion,amp[i+1].descripcion)>0)
+			bandera=false;
+			for(i=0;i<n-1;i++)
 			{
-				auxiliar[i]=amp[i];
-				amp[i]=amp[i+1];
-				amp[i+1]=auxiliar[i];
-				bandera=true;
+				if(strcmp(amp[i].descripcion,amp[i+1].descripcion)>0)
+				{
+					auxiliar[i]=amp[i];
+					amp[i]=amp[i+1];
+					amp[i+1]=auxiliar[i];
+					bandera=true;
+				}
 			}
 		}
+		while(bandera==true);
+		
+		printf("\nSe ordeno por Descripcion.\n\n");
+		system("pause");
+		break;
+	case 2:
+		do
+		{
+			bandera=false;
+			for(i=0;i<n-1;i++)
+			{
+				if(amp[i].codigo>amp[i+1].codigo)
+				{
+					auxiliar[i]=amp[i];
+					amp[i]=amp[i+1];
+					amp[i+1]=auxiliar[i];
+					bandera=true;
+				}
+			}
+		}
+		while(bandera==true);
+
+		printf("\nSe ordeno por Codigo.\n\n");
+		system("pause");
+		break;
+	
+	case 3:
+		do
+		{
+			bandera=false;
+			for(i=0;i<n-1;i++)
+			{
+				if(strcmp(amp[i].proveedor,amp[i+1].proveedor)>0)
+				{
+					auxiliar[i]=amp[i];
+					amp[i]=amp[i+1];
+					amp[i+1]=auxiliar[i];
+					bandera=true;
+				}
+			}
+		}
+		while(bandera==true);
+		
+		printf("\nSe ordeno por Proveedor.\n\n");
+		system("pause");
+		break;
+
+	default:
+		printf("\nIngreso una opcion incorrecta, regresara al menu.");
+		break;
 	}
-	while(bandera==true);
 }
 
 int menuPrincipal()
@@ -206,6 +275,6 @@ int menuPrincipal()
     printf("\t*************************************************\n\n");
     printf("  Seleccione Opcion: "); 
     scanf("%d", &opc);
-    return opc;  //retorna el número de opción seleccionada.
+    return opc;  //retorna el nï¿½mero de opciï¿½n seleccionada.
 }
 
