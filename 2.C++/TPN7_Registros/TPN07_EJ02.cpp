@@ -17,7 +17,7 @@ main()
 {
 	Punto P1,P2;
     int opcion;
-    float Distancia;
+    float Distancia,Segmento;
     bool stop=false;
 
     do
@@ -77,7 +77,15 @@ main()
                 break;
             
             case 4:
-
+                if (stop)
+                {
+                    Segmento=sqrt(pow((P2.x-P1.x),2)+pow((P2.y-P1.y),2));
+                    printf("\nLa longitud del segmento entre ambos puntos es: %.2f",Segmento);
+                }
+                else
+                {
+                    printf("\nNo cargo los puntos.");
+                }
                 break;
             
             case 5:
