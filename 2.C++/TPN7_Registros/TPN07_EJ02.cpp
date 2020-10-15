@@ -5,8 +5,8 @@
 //Estructuras:
 struct Punto
 {
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 
@@ -17,6 +17,7 @@ main()
 {
 	Punto P1,P2;
     int opcion;
+    float Distancia;
     bool stop=false;
 
     do
@@ -39,23 +40,23 @@ main()
                 
                 printf("\nPunto 1:");
                 printf("\nX1= ");
-                scanf("%d",&P1.x);
+                scanf("%f",&P1.x);
                 printf("\nY1= ");
-                scanf("%d",&P1.y);
+                scanf("%f",&P1.y);
                 
                 printf("\nPunto 2:");
-                printf("\nX1= ");
-                scanf("%d",&P1.x);
-                printf("\nY1= ");
-                scanf("%d",&P1.y);
+                printf("\nX2= ");
+                scanf("%f",&P2.x);
+                printf("\nY2= ");
+                scanf("%f",&P2.y);
                 break;
             
             case 2:
                 if (stop)
                 {
                     printf("\nPares ordenados");
-                    printf("\nP1(%d,%d)",P1.x,P1.y);
-                    printf("\nP2(%d,%d)",P2.x,P2.y);
+                    printf("\nP1(%.2f,%.2f)",P1.x,P1.y);
+                    printf("\nP2(%.2f,%.2f)",P2.x,P2.y);
                 }
                 else
                 {
@@ -64,7 +65,15 @@ main()
                 break;
             
             case 3:
-                
+                if (stop)
+                {
+                    Distancia=sqrt((P1.x*P1.x)+(P1.y*P1.y));
+                    printf("\nLa distancia del origen al punto 1 es: %.2f",Distancia);
+                }
+                else
+                {
+                    printf("\nNo cargo los puntos.");
+                }
                 break;
             
             case 4:
