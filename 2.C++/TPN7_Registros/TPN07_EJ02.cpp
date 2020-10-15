@@ -63,8 +63,6 @@ main()
                 {
                     printf("\nNo cargo los puntos.");
                 }
-
-                system("pause");
                 break;
             
             case 3:
@@ -90,7 +88,3 @@ main()
     while (opcion!=4);
 }
 
-void CargarPuntos(Punto &P1,Punto &P2)
-{
-
-}
