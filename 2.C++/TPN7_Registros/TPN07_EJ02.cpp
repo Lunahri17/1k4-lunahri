@@ -48,8 +48,6 @@ main()
                 scanf("%d",&P1.x);
                 printf("\nY1= ");
                 scanf("%d",&P1.y);
-
-                system("pause");
                 break;
             
             case 2:
@@ -85,6 +83,6 @@ main()
         printf("\n\n");
         system("pause");
     } 
-    while (opcion!=4);
+    while (opcion!=5);
 }
 
