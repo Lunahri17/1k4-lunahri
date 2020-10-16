@@ -19,7 +19,7 @@ struct Registro
 };
 
 //Protipos de funciones:
-
+int CargarEmpleados(int &i,Regstro &reg[20]);
 
 
 main()
