@@ -71,7 +71,7 @@ main()
             Mayor8++;
         }
 
-        printf("\nHay %d Alumnos que superaron el promedio de 8",Mayor8);
+        printf("\nHay %d Alumnos que superaron el promedio de 8.\n\n",Mayor8);
 
         system("pause");
     }
