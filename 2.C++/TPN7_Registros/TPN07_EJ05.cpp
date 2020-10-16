@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<conio.h>
+#include<string.h>
 
 //Estructuras:
 struct Fecha
@@ -19,7 +21,8 @@ struct Registro
 };
 
 //Protipos de funciones:
-int CargarEmpleados(int &i,Regstro &reg[20]);
+int CargarEmpleados(int &i,Registro reg[20]);
+void RegistrarVentas(int n,Registro reg[20]);
 
 
 main()
@@ -32,7 +35,7 @@ main()
         system("cls");
         printf("\n\t.Sistema de seguimiento de Empleados.");
         printf("\n\n1. Cargar empleados.");
-        printf("\n\n2. Registrar ventas.");
+        printf("\n\n2. Registrar venta de un empleado.");
         printf("\n\n3. Listado de ventas.");
         printf("\n\n4. Modificar datos de la lista.");
         printf("\n\n5. Salir.");
@@ -45,6 +48,16 @@ main()
             n=CargarEmpleados(i,reg);
             break;
         
+        case 2:
+            if (n>0)
+            {
+                RegistrarVentas(n,reg);
+            }
+            else
+            {
+                printf("\nNo se ingresaron todavia empleados.");
+            }
+
         case 5:
             printf("\nGracias por utilizar nuestros servicios.");
             break;
@@ -60,7 +73,7 @@ main()
     
 }
 
-int CargarEmpleados(int &i,Regstro &reg[20])
+int CargarEmpleados(int &i,Registro reg[20])
 {
     int aux;
     
@@ -79,7 +92,7 @@ int CargarEmpleados(int &i,Regstro &reg[20])
         printf("\nDia: ");
         scanf("%d",&reg[i].FechIng.dia);
         printf("\nMes: ");
-        scanf("%d",&reg[i].FechIng.mes;
+        scanf("%d",&reg[i].FechIng.mes);
         printf("\nAnio: ");
         scanf("%d",&reg[i].FechIng.year);
 
@@ -88,6 +101,51 @@ int CargarEmpleados(int &i,Regstro &reg[20])
         printf("\nIngrese el DNI del empleado %d (0: Para cerrar): ",i+1);
         scanf("%d",&aux);
     }
-    
+
     return i;
 }
+
+void RegistrarVentas(int n,Registro reg[20])
+{
+    char buscar[60];
+    int aux1;
+    bool stop=false,esta=false;
+
+    do
+    {
+        system("cls");
+
+        printf("\nIngrese el Apellido y Nombre del empleado (z: Para cancelar): ");
+        _flushall();
+        gets(buscar);
+
+        if (strcmp(buscar,'z')==0)
+        {
+            stop==true;
+        }
+        else
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (strcmp(reg[i].ApeNom,buscar)==0)
+                {
+                    aux=i;
+                    i=n;
+                    esta=true;
+                }
+            }
+
+            if (esta)
+            {
+                CargarVentas(aux,reg);
+            }
+            else
+            {
+                printf("\nEl apellido y nombre ingresado no se encuentra en la lista.");
+            }
+        }  
+    } while (stop==false);
+}
+
+void CargarVentas
+
