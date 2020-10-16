@@ -72,6 +72,8 @@ main()
         }
 
         printf("\nHay %d Alumnos que superaron el promedio de 8",Mayor8);
+
+        system("pause");
     }
 	end();
 }
