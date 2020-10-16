@@ -23,6 +23,7 @@ struct Registro
 //Protipos de funciones:
 int CargarEmpleados(int &i,Registro reg[20]);
 void RegistrarVentas(int n,Registro reg[20]);
+void CargarVentas(int aux,Registro reg[20]);
 
 
 main()
@@ -207,6 +208,5 @@ void CargarVentas(int aux,Registro reg[20])
         printf("\n\n");
         system("pause");
     } while (opcion<0 and opcion>5);
-
 }
 
