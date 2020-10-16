@@ -60,6 +60,8 @@ main()
             }
             break;
         
+
+        
         case 4:
             if (n>0)
             {
@@ -209,7 +211,7 @@ void CargarVentas(int aux,Registro reg[20])
 
 void Modificar(int n,Registro reg[20])
 {
-    int buscar,aux;
+    int buscar,aux,opcion;
     bool esta=false;
 
     system("cls");
