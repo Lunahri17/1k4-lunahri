@@ -60,7 +60,16 @@ main()
             }
             break;
         
-
+        case 3:
+            if (n>0)
+            {
+                
+            }
+            else
+            {
+                printf("\nNo se ingresaron todavia empleados.");
+            }
+            break;
         
         case 4:
             if (n>0)
