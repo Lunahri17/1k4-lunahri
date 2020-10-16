@@ -24,6 +24,7 @@ struct Registro
 int CargarEmpleados(int &i,Registro reg[20]);
 void RegistrarVentas(int n,Registro reg[20]);
 void CargarVentas(int aux,Registro reg[20]);
+void Modificar(int n,Registro reg[20]);
 
 main()
 {
@@ -58,6 +59,17 @@ main()
                 printf("\nNo se ingresaron todavia empleados.");
             }
             break;
+        
+        case 4:
+            if (n>0)
+            {
+                Modificar(n,reg);
+            }
+            else
+            {
+                printf("\nNo se ingresaron todavia empleados.");
+            }
+            break;
 
         case 5:
             printf("\nGracias por utilizar nuestros servicios.");
@@ -70,8 +82,7 @@ main()
 
         printf("\n\n");
         system("pause");
-    } while (opcion!=5);
-    
+    } while (opcion!=5); 
 }
 
 int CargarEmpleados(int &i,Registro reg[20])
@@ -108,7 +119,7 @@ int CargarEmpleados(int &i,Registro reg[20])
 
 void RegistrarVentas(int n,Registro reg[20])
 {
-    char buscar[60],comp[]="terminar";
+    char buscar[60];
     int aux;
     bool esta=false;
 
@@ -196,3 +207,82 @@ void CargarVentas(int aux,Registro reg[20])
     } while (opcion<0 and opcion>5);
 }
 
+void Modificar(int n,Registro reg[20])
+{
+    int buscar,aux;
+    bool esta=false;
+
+    system("cls");
+
+    printf("\nIngrese el D.N.I. del empleado: ");
+    scanf("%d",&buscar);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (reg[i].NroDNI==buscar)
+        {
+            aux=i;
+            i=n;
+            esta=true;
+        }
+    }
+
+    if (esta)
+    {
+        system("cls");
+
+        printf("\nEmpleado Nro:%d ",aux+1);
+        puts(reg[aux].ApeNom);
+        
+        do
+        {
+            printf("\nIngrese el numero que corresponda al dia de la venta que desea modificar");
+            printf("\n0. Lunes.");
+            printf("\n1. Martes.");
+            printf("\n2. Miercoles.");
+            printf("\n3. Jueves.");
+            printf("\n4. Viernes.");
+            printf("\nIngrese la opcion: ");
+            scanf("%d",&opcion);
+
+            switch (opcion)
+            {
+            case 0:
+                printf("Ingrese el monto del dia Lunes: ");
+                scanf("%f",&reg[aux].VentSem[0]);
+                break;
+            
+            case 1:
+                printf("Ingrese el monto del dia Martes: ");
+                scanf("%f",&reg[aux].VentSem[1]);
+                break;
+            
+            case 2:
+                printf("Ingrese el monto del dia Miercoles: ");
+                scanf("%f",&reg[aux].VentSem[2]);
+                break;
+            
+            case 3:
+                printf("Ingrese el monto del dia Jueves: ");
+                scanf("%f",&reg[aux].VentSem[3]);
+                break;
+            
+            case 4:
+                printf("Ingrese el monto del dia Viernes: ");
+                scanf("%f",&reg[aux].VentSem[4]);
+                break;
+            
+            default:
+                printf("\nIngreso una opcion no valida.");
+                break;
+            }
+        } while (opcion<0 and opcion>5);
+        
+        printf("\nSe modifico con exito!");
+    }
+    else
+    {
+        printf("\nEl D.N.I. no se encuentra en la lista.");
+        printf("\nRegresara al menu.");
+    }
+}
