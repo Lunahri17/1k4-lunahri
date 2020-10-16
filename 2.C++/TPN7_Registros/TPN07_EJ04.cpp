@@ -44,7 +44,7 @@ main()
         printf("\nIngrese el D.N.I. del alumno %d: ",i+1);
         scanf("%d",&Listado.NroDNI);
 
-        printf("\nIngrese el Apellido y Nombre del alumno %d",i+1);
+        printf("\nIngrese el Apellido y Nombre del alumno %d: ",i+1);
         _flushall();
         gets(Listado.ApeNom);
 
