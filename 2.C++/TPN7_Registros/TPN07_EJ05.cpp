@@ -137,15 +137,76 @@ void RegistrarVentas(int n,Registro reg[20])
 
             if (esta)
             {
+                system("cls");
+
+                printf("\nEmpleado Nro:%d ",aux+1);
+                puts(reg[aux].ApeNom);
+                
                 CargarVentas(aux,reg);
+                
+                printf("\nSe cargo con exito!");
             }
             else
             {
                 printf("\nEl apellido y nombre ingresado no se encuentra en la lista.");
             }
-        }  
+        } 
+
+        printf("\n\n");
+        system("pause"); 
     } while (stop==false);
 }
 
-void CargarVentas
+void CargarVentas(int aux,Registro reg[20])
+{
+    int opcion;
+
+    do
+    {
+        printf("\nIngrese el numero que corresponda al dia de la venta");
+        printf("\n0. Lunes.");
+        printf("\n1. Martes.");
+        printf("\n2. Miercoles.");
+        printf("\n3. Jueves.");
+        printf("\n4. Viernes.");
+        printf("\nIngrese la opcion: ");
+        scanf("%d",&opcion);
+
+        switch (opcion)
+        {
+        case 0:
+            printf("Ingrese el monto del dia Lunes: ");
+            scanf("%f",&reg[aux],VentSem[0]);
+            break;
+        
+        case 1:
+            printf("Ingrese el monto del dia Martes: ");
+            scanf("%f",&reg[aux],VentSem[1]);
+            break;
+        
+        case 2:
+            printf("Ingrese el monto del dia Miercoles: ");
+            scanf("%f",&reg[aux],VentSem[2]);
+            break;
+        
+        case 3:
+            printf("Ingrese el monto del dia Jueves: ");
+            scanf("%f",&reg[aux],VentSem[3]);
+            break;
+        
+        case 4:
+            printf("Ingrese el monto del dia Viernes: ");
+            scanf("%f",&reg[aux],VentSem[4]);
+            break;
+        
+        default:
+            printf("\nIngreso una opcion no valida.");
+            break;
+        }
+
+        printf("\n\n");
+        system("pause");
+    } while (opcion<0 and opcion>5);
+
+}
 
