@@ -25,7 +25,6 @@ int CargarEmpleados(int &i,Registro reg[20]);
 void RegistrarVentas(int n,Registro reg[20]);
 void CargarVentas(int aux,Registro reg[20]);
 
-
 main()
 {
     Registro reg[20];
@@ -58,6 +57,7 @@ main()
             {
                 printf("\nNo se ingresaron todavia empleados.");
             }
+            break;
 
         case 5:
             printf("\nGracias por utilizar nuestros servicios.");
@@ -108,54 +108,43 @@ int CargarEmpleados(int &i,Registro reg[20])
 
 void RegistrarVentas(int n,Registro reg[20])
 {
-    char buscar[60];
-    int aux1;
-    bool stop=false,esta=false;
+    char buscar[60],comp[]="terminar";
+    int aux;
+    bool esta=false;
 
-    do
+    system("cls");
+
+    printf("\nIngrese el Apellido y Nombre del empleado: ");
+    _flushall();
+    gets(buscar);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (strcmp(reg[i].ApeNom,buscar)==0)
+        {
+            aux=i;
+            i=n;
+            esta=true;
+        }
+    }
+
+    if (esta)
     {
         system("cls");
 
-        printf("\nIngrese el Apellido y Nombre del empleado (z: Para cancelar): ");
-        _flushall();
-        gets(buscar);
-
-        if (strcmp(buscar,'z')==0)
-        {
-            stop==true;
-        }
-        else
-        {
-            for (int i = 0; i < n; i++)
-            {
-                if (strcmp(reg[i].ApeNom,buscar)==0)
-                {
-                    aux=i;
-                    i=n;
-                    esta=true;
-                }
-            }
-
-            if (esta)
-            {
-                system("cls");
-
-                printf("\nEmpleado Nro:%d ",aux+1);
-                puts(reg[aux].ApeNom);
-                
-                CargarVentas(aux,reg);
-                
-                printf("\nSe cargo con exito!");
-            }
-            else
-            {
-                printf("\nEl apellido y nombre ingresado no se encuentra en la lista.");
-            }
-        } 
-
-        printf("\n\n");
-        system("pause"); 
-    } while (stop==false);
+        printf("\nEmpleado Nro:%d ",aux+1);
+        puts(reg[aux].ApeNom);
+        
+        CargarVentas(aux,reg);
+        
+        printf("\nSe cargo con exito!");
+    }
+    else
+    {
+        printf("\nEl apellido y nombre ingresado no se encuentra en la lista.");
+        printf("\nRegresara al menu.");
+    }
+    
 }
 
 void CargarVentas(int aux,Registro reg[20])
@@ -177,36 +166,33 @@ void CargarVentas(int aux,Registro reg[20])
         {
         case 0:
             printf("Ingrese el monto del dia Lunes: ");
-            scanf("%f",&reg[aux],VentSem[0]);
+            scanf("%f",&reg[aux].VentSem[0]);
             break;
         
         case 1:
             printf("Ingrese el monto del dia Martes: ");
-            scanf("%f",&reg[aux],VentSem[1]);
+            scanf("%f",&reg[aux].VentSem[1]);
             break;
         
         case 2:
             printf("Ingrese el monto del dia Miercoles: ");
-            scanf("%f",&reg[aux],VentSem[2]);
+            scanf("%f",&reg[aux].VentSem[2]);
             break;
         
         case 3:
             printf("Ingrese el monto del dia Jueves: ");
-            scanf("%f",&reg[aux],VentSem[3]);
+            scanf("%f",&reg[aux].VentSem[3]);
             break;
         
         case 4:
             printf("Ingrese el monto del dia Viernes: ");
-            scanf("%f",&reg[aux],VentSem[4]);
+            scanf("%f",&reg[aux].VentSem[4]);
             break;
         
         default:
             printf("\nIngreso una opcion no valida.");
             break;
         }
-
-        printf("\n\n");
-        system("pause");
     } while (opcion<0 and opcion>5);
 }
 
