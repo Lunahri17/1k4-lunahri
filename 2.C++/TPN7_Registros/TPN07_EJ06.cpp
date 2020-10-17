@@ -56,7 +56,10 @@ main()
         case 2:
             RegistrarMonto(i,cli);
             break;
-
+        
+        case 3:
+            Listar(i,cli);
+            break;
         case 4:
             printf("\nGracias por utilizar nuestros servicios.");
             break;
@@ -70,6 +73,52 @@ main()
     } while (opcion!=4);
     
 	
+}
+
+void Listar(int n, Clientes cli[30])
+{
+    char buscar[40];
+    bool esta=false;
+    int aux;
+
+    do
+    {
+        system("cls");
+
+        printf("\nIngresar el Expediente del propietario: ");
+        _flushall();
+        gets(buscar);
+
+        for (int i = 0; i < n; i++)
+        {
+            if (strcmp(cli[i].NroExpe,buscar)==0)
+            {
+                esta=true;
+                aux=i;
+            }
+        }
+
+        if (esta==false)
+        {
+            printf("\nEl Numero de expediente no se encontro, vuelva a intentarlo\n");
+            system("pause");
+        }
+    } while (esta==false);
+    
+    system("cls");
+
+    printf("\nExpediente: ");
+    puts(cli[aux].NroExpe);
+    printf("\nPropietario: ");
+    puts(cli[aux].ApeNom);
+    printf("\nTipo de obra: ");
+    TipoDeObra(cli[aux].TipoObra);
+
+    //tabla:
+    printf("\n\nFecha                               Monto");
+    printf("\n===========================================");
+    printf("\n%d/%d/%d",cli[aux].Registro.dia,cli[aux].Registro.mes,cli[aux].Registro.year);
+    printf("\t%-6.2f",cli[aux].Monto);
 }
 
 void CargarClientes(int &i,Clientes cli[30])
@@ -258,3 +307,28 @@ void RegistrarMonto(int n,Clientes cli[30])
     scanf("%f",&cli[aux1].Monto);
 }
 
+void TipoDeObra(int n)
+{
+    switch (n)
+    {
+    case 0:
+        printf("Vivienda basica.");
+        break;
+    
+    case 1:
+        printf("Vivienda de lujo.");
+        break;
+
+    case 2:
+        printf("Edificio.");
+        break;
+    
+    case 3:
+        printf("Predio especial.");
+        break;
+
+    default:
+        printf("\n Esta opcion no debe aparecer.");
+        break;
+    }
+}
