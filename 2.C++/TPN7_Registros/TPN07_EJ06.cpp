@@ -24,13 +24,13 @@ struct Clientes
 
 
 //Protipos de funciones:
-void CargarClientes(int &i,Clientes cli[30])
+void CargarClientes(int &i,Clientes cli[30]);
 
 
 main()
 {
-	Clintes cli[30];
-    int i=0
+	Clientes cli[30];
+    int i=0;
 
     printf("\nIngrese datos de al menos 5 clientes.");
     CargarClientes(i,cli);
@@ -42,7 +42,7 @@ void CargarClientes(int &i,Clientes cli[30])
 {
     int aux,aux2=1;
 
-    if (n<5)
+    if (i<5)
     {
         for (i = 0; i < 5; i++)
         {
@@ -79,7 +79,7 @@ void CargarClientes(int &i,Clientes cli[30])
         scanf("%d",&aux2);
     }
 
-    while (aux1==1)
+    while (aux2==1)
     {
         printf("\nIngrese el expediente del propietario %d: ",i+1);
         _flushall();
