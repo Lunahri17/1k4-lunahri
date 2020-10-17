@@ -191,7 +191,7 @@ void RegistrarMonto(int n,Clientes cli[30])
 
         if (esta==false)
         {
-            printf("\nEl Numero de expediente no se encontro, vuelva a intentarlo");
+            printf("\nEl Numero de expediente no se encontro, vuelva a intentarlo\n");
             system("pause");
         }
     } while (esta==false);
@@ -211,7 +211,7 @@ void RegistrarMonto(int n,Clientes cli[30])
         
         if (esta==false)
         {
-            printf("\nEl dia ingresado no se encontro, vuelva a intentarlo");
+            printf("\nEl dia ingresado no se encontro, vuelva a intentarlo\n");
             system("pause");
         }
     } while (esta==false);
@@ -230,7 +230,7 @@ void RegistrarMonto(int n,Clientes cli[30])
         
         if (esta==false)
         {
-            printf("\nEl mes ingresado no se encontro, vuelva a intentarlo");
+            printf("\nEl mes ingresado no se encontro, vuelva a intentarlo\n");
             system("pause");
         }
     } while (esta==false);
@@ -249,7 +249,7 @@ void RegistrarMonto(int n,Clientes cli[30])
         
         if (esta==false)
         {
-            printf("\nEl anio ingresado no se encontro, vuelva a intentarlo");
+            printf("\nEl anio ingresado no se encontro, vuelva a intentarlo\n");
             system("pause");
         }
     } while (esta==false);
