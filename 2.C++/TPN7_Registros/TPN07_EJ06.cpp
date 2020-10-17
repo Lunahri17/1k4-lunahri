@@ -117,9 +117,9 @@ void Listar(int n, Clientes cli[30])
     TipoDeObra(cli[aux].TipoObra);
 
     //tabla:
-    printf("\n\nFecha                               Monto");
-    printf("\n===========================================");
-    printf("\n%d/%d/%d",cli[aux].Registro.dia,cli[aux].Registro.mes,cli[aux].Registro.year);
+    printf("\n\nFecha               Monto");
+    printf("\n===========================");
+    printf("\n%2d/%2d/%4d",cli[aux].Registro.dia,cli[aux].Registro.mes,cli[aux].Registro.year);
     printf("\t%-6.2f",cli[aux].Monto);
 }
 
