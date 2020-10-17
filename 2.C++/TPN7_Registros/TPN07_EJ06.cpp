@@ -26,6 +26,8 @@ struct Clientes
 //Protipos de funciones:
 void CargarClientes(int &i,Clientes cli[30]);
 void RegistrarMonto(int n,Clientes cli[30]);
+void Listar(int n, Clientes cli[30]);
+void TipoDeObra(int n);
 
 
 main()
