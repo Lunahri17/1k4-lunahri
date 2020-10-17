@@ -18,8 +18,8 @@ struct Clientes
     char ApeNom[40];
     float Area;
     int TipoObra; //0: vivienda basica, 1: vivienda de Lujo, 2: Edificio, 3: predio especial.
-    Fecha Registracion[10];
-    float Monto[10];
+    Fecha Registro;
+    float Monto;
 };
 
 
@@ -52,6 +52,11 @@ main()
             CargarClientes(i,cli);
             break;
         
+        case 2:
+
+
+            break;
+
         case 4:
             printf("\nGracias por utilizar nuestros servicios.");
             break;
@@ -98,13 +103,21 @@ void CargarClientes(int &i,Clientes cli[30])
                 {
                     printf("\nSe ingreso un dato no valido, vuleva a intentarlo.");
                 }
-            } while (aux<0 and aux>3);
+            } while (aux<0 or aux>3);
+
+            printf("\nIngrese la fecha del registro:");
+            printf("\nDia: ");
+            scanf("%d",&cli.Registro.dia);
+            printf("\nMes: ");
+            scanf("%d",&cli.Registro.mes);
+            printf("\nAnio: ");
+            scanf("%d",&cli.Registro.year);
             
             printf("\nIngrese el monto inicial: ");
             scanf("%f",&cli[i].Monto[0]);
         }
 
-        printf("\n¿Desea ingresar otro propietario? (1: Si / 0: No)");
+        printf("\nDesea ingresar otro propietario? (1: Si / 0: No): ");
         scanf("%d",&aux2);
     }
 
@@ -134,13 +147,21 @@ void CargarClientes(int &i,Clientes cli[30])
                 printf("\nSe ingreso un dato no valido, vuleva a intentarlo.");
             }
         } while (aux<0 and aux>3);
+
+        printf("\nIngrese la fecha del registro:");
+        printf("\nDia: ");
+        scanf("%d",&cli.Registro.dia);
+        printf("\nMes: ");
+        scanf("%d",&cli.Registro.mes);
+        printf("\nAnio: ");
+        scanf("%d",&cli.Registro.year);
         
         printf("\nIngrese el monto inicial: ");
         scanf("%f",&cli[i].Monto[0]);
 
         i++;
         
-        printf("\n¿Desea ingresar otro propietario? (1: Si / 0: No)");
+        printf("\n¿Desea ingresar otro propietario? (1: Si / 0: No): ");
         scanf("%d",&aux2);
     }
 }
