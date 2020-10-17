@@ -30,10 +30,39 @@ void CargarClientes(int &i,Clientes cli[30]);
 main()
 {
 	Clientes cli[30];
-    int i=0;
+    int i=0,opcion;
 
     printf("\nIngrese datos de al menos 5 clientes.");
     CargarClientes(i,cli);
+    
+    do
+    {
+        system("cls");
+        printf("\n\t..Sistema de registro de propietarios");
+        printf("\n\n1. Cargar propietario.");
+        printf("\n\n2. Registar monto de un propietario.");
+        printf("\n\n3. Listar datos de un propietario.");
+        printf("\n\n4. Salir");
+        printf("\n\nIngrese la opcion: ");
+        scanf("%d",&opcion);
+
+        switch (opcion)
+        {
+        case 1:
+            CargarClientes(i,cli);
+            break;
+        
+        case 4:
+            printf("\nGracias por utilizar nuestros servicios.");
+            break;
+
+        default:
+            printf("\nIngreso una opcion incorrecta, volvera al menu.");
+            break;
+        }
+        printf("\n\n");
+        system("pause");
+    } while (opcion!=4);
     
 	
 }
