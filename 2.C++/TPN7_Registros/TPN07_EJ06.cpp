@@ -176,7 +176,7 @@ void RegistrarMonto(int n,Clientes cli[30])
     {
         system("cls");
 
-        printf("\nIngresar el nombre del propietario: ");
+        printf("\nIngresar el Expediente del propietario: ");
         _flushall();
         gets(buscar1);
 
