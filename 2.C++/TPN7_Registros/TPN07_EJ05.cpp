@@ -102,20 +102,9 @@ void Mostrar(int n,Registro reg[20])
     int i,j,k;
     float Acumulador=0;
 
-    printf("\n  Documento      ");
-    printf("  Apellido y Nombre");
-    printf("      Lunes    ");
-    printf("Martes ");
-    printf("Miercoles");
-    printf(" Jueves   ");
-    printf("Viernes  ");
-    printf("  Total\n");
+    printf("\n  Documento      Apellido y Nombre        Lunes     Martes   Miercoles  Jueves   Viernes    Total");
+    printf("\n====================================================================================================");
     
-    for (i = 0; i < 100; i++)
-    {
-        printf("=");
-    }
-
     for (j = 0; j < n; j++)
     {
         Acumulador=0;
@@ -124,10 +113,10 @@ void Mostrar(int n,Registro reg[20])
         
         for (k = 0; k < 5; k++)
         {
-            printf("%7.2f\t",reg[j].VentSem[k]);
+            printf("  %-6.2f",reg[j].VentSem[k]);
             Acumulador+=reg[j].VentSem[k];
         }
-        printf("%7.2f",Acumulador);
+        printf("  %-7.2f",Acumulador);
     }
 }
 
