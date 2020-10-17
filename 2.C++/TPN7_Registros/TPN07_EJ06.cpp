@@ -25,6 +25,7 @@ struct Clientes
 
 //Protipos de funciones:
 void CargarClientes(int &i,Clientes cli[30]);
+void RegistrarMonto(int n,Clientes cli[30]);
 
 
 main()
@@ -40,7 +41,7 @@ main()
         system("cls");
         printf("\n\t..Sistema de registro de propietarios");
         printf("\n\n1. Cargar propietario.");
-        printf("\n\n2. Registar monto de un propietario.");
+        printf("\n\n2. Registar el monto de un propietario.");
         printf("\n\n3. Listar datos de un propietario.");
         printf("\n\n4. Salir");
         printf("\n\nIngrese la opcion: ");
@@ -53,8 +54,7 @@ main()
             break;
         
         case 2:
-
-
+            RegistrarMonto(i,cli);
             break;
 
         case 4:
@@ -107,14 +107,14 @@ void CargarClientes(int &i,Clientes cli[30])
 
             printf("\nIngrese la fecha del registro:");
             printf("\nDia: ");
-            scanf("%d",&cli.Registro.dia);
+            scanf("%d",&cli[i].Registro.dia);
             printf("\nMes: ");
-            scanf("%d",&cli.Registro.mes);
+            scanf("%d",&cli[i].Registro.mes);
             printf("\nAnio: ");
-            scanf("%d",&cli.Registro.year);
+            scanf("%d",&cli[i].Registro.year);
             
             printf("\nIngrese el monto inicial: ");
-            scanf("%f",&cli[i].Monto[0]);
+            scanf("%f",&cli[i].Monto);
         }
 
         printf("\nDesea ingresar otro propietario? (1: Si / 0: No): ");
@@ -150,14 +150,14 @@ void CargarClientes(int &i,Clientes cli[30])
 
         printf("\nIngrese la fecha del registro:");
         printf("\nDia: ");
-        scanf("%d",&cli.Registro.dia);
+        scanf("%d",&cli[i].Registro.dia);
         printf("\nMes: ");
-        scanf("%d",&cli.Registro.mes);
+        scanf("%d",&cli[i].Registro.mes);
         printf("\nAnio: ");
-        scanf("%d",&cli.Registro.year);
+        scanf("%d",&cli[i].Registro.year);
         
         printf("\nIngrese el monto inicial: ");
-        scanf("%f",&cli[i].Monto[0]);
+        scanf("%f",&cli[i].Monto);
 
         i++;
         
@@ -165,3 +165,96 @@ void CargarClientes(int &i,Clientes cli[30])
         scanf("%d",&aux2);
     }
 }
+
+void RegistrarMonto(int n,Clientes cli[30])
+{
+    char buscar1[40];
+    bool esta=false;
+    int aux1,buscar2;
+
+    do
+    {
+        system("cls");
+
+        printf("\nIngresar el nombre del propietario: ");
+        _flushall();
+        gets(buscar1);
+
+        for (int i = 0; i < n; i++)
+        {
+            if (strcmp(cli[i].NroExpe,buscar1)==0)
+            {
+                esta=true;
+                aux1=i;
+            }
+        }
+
+        if (esta==false)
+        {
+            printf("\nEl Numero de expediente no se encontro, vuelva a intentarlo");
+            system("pause");
+        }
+    } while (esta==false);
+    
+    esta=false;
+
+    printf("\nIngrese la fecha de adelanto:"); 
+    do
+    {
+        printf("\nDia: ");
+        scanf("%d",&buscar2);
+
+        if (cli[aux1].Registro.dia==buscar2)
+        {
+            esta=true;
+        }
+        
+        if (esta==false)
+        {
+            printf("\nEl dia ingresado no se encontro, vuelva a intentarlo");
+            system("pause");
+        }
+    } while (esta==false);
+    
+    esta=false;
+
+    do
+    {
+        printf("\nMes: ");
+        scanf("%d",&buscar2);
+
+        if (cli[aux1].Registro.mes==buscar2)
+        {
+            esta=true;
+        }
+        
+        if (esta==false)
+        {
+            printf("\nEl mes ingresado no se encontro, vuelva a intentarlo");
+            system("pause");
+        }
+    } while (esta==false);
+
+    esta=false;
+
+    do
+    {
+        printf("\nAnio: ");
+        scanf("%d",&buscar2);
+
+        if (cli[aux1].Registro.year==buscar2)
+        {
+            esta=true;
+        }
+        
+        if (esta==false)
+        {
+            printf("\nEl anio ingresado no se encontro, vuelva a intentarlo");
+            system("pause");
+        }
+    } while (esta==false);
+    
+    printf("\nIngresar el monto: ");
+    scanf("%f",&cli[aux1].Monto);
+}
+
