@@ -20,6 +20,7 @@ void end();
 int IngresarDatos(Empleados emp[20]);
 void CalculoAntiguedad(int i,Empleados emp[20]);
 void BuscarEmpleado(int i,Empleados emp[20]);
+void Listar(int i,Empleados emp[20]);
 
 main()
 {
@@ -31,6 +32,8 @@ main()
     CalculoAntiguedad(i,emp);
 
     BuscarEmpleado(i,emp);
+
+    Listar(i,emp);
 	
 	end();
 }
@@ -120,6 +123,16 @@ void BuscarEmpleado(int i,Empleados emp[20])
             system("cls");
         }
    } while (esta==false);
+}
+
+void Listar(int i,Empleados emp[20])
+{
+    for (int k = 0; k < i; k++)
+    {
+        printf("\nEmpleado %d: ",k+1);
+        puts(emp[k].ApeNom);
+    }
+    
 }
 
 void end()
