@@ -19,7 +19,7 @@ struct Empleados
 void end();
 int IngresarDatos(Empleados emp[20]);
 void CalculoAntiguedad(int i,Empleados emp[20]);
-void BuscarEmpleado(int i,Emplados emp[20]);
+void BuscarEmpleado(int i,Empleados emp[20]);
 
 main()
 {
@@ -85,7 +85,7 @@ void CalculoAntiguedad(int i,Empleados emp[20])
     
 }
 
-void BuscarEmpleado(int i,Emplados emp[20])
+void BuscarEmpleado(int i,Empleados emp[20])
 {
     char buscar[40];
     bool esta=false;
@@ -120,10 +120,6 @@ void BuscarEmpleado(int i,Emplados emp[20])
             system("cls");
         }
    } while (esta==false);
-   
-    
-    
-    
 }
 
 void end()
