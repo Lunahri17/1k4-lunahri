@@ -17,6 +17,7 @@ struct Empleados
 
 //Protipos de funciones:
 void end();
+int IngresarDatos(Empleados emp[20]);
 
 
 //Variables globales:
@@ -32,7 +33,7 @@ main()
 	end();
 }
 
-int IngresarDatos(Registro emp[20])
+int IngresarDatos(Empleados emp[20])
 {
     int stop=1,i=0;
 
