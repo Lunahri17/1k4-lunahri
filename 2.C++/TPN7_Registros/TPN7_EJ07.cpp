@@ -19,10 +19,7 @@ struct Empleados
 void end();
 int IngresarDatos(Empleados emp[20]);
 void CalculoAntiguedad(int i,Empleados emp[20]);
-
-
-//Variables globales:
-
+void BuscarEmpleado(int i,Emplados emp[20]);
 
 main()
 {
@@ -32,6 +29,8 @@ main()
     i=IngresarDatos(emp);
 
     CalculoAntiguedad(i,emp);
+
+    BuscarEmpleado(i,emp);
 	
 	end();
 }
@@ -81,8 +80,49 @@ void CalculoAntiguedad(int i,Empleados emp[20])
     for (int k = 0; k < i; k++)
     {
         emp[k].Antiguedad=emp[k].YearProceso-emp[k].YearIngreso;
-        printf("\nAntiguedad del empleado %d: %d",k+1,emp[k].Antiguedad);
+        printf("\nAntiguedad del empleado %d: %d anios.",k+1,emp[k].Antiguedad);
     }
+    
+}
+
+void BuscarEmpleado(int i,Emplados emp[20])
+{
+    char buscar[40];
+    bool esta=false;
+    int nro;
+    
+   do
+   {
+        printf("\n\nIngrese el Apellido y nombre del empleado a buscar: ");
+        _flushall();
+        gets(buscar);
+
+        for (int k = 0; k < i; k++)
+        {
+            if (strcmp(emp[k].ApeNom,buscar))
+            {
+                esta=true;
+                nro=k;
+            }  
+        }
+
+        if (esta)
+        {
+            printf("\nEmpleado Nro%d.",nro+1);
+            printf("\nApellido y nombre: ");
+            puts(emp[nro].ApeNom);
+            printf("\nAntiguedad: %d",emp[nro].Antiguedad);      
+        }
+        else
+        {
+            printf("\nEl Apellido y Nombre ingreaso no se encuntra en la lista.\n");
+            system("pause");
+            system("cls");
+        }
+   } while (esta==false);
+   
+    
+    
     
 }
 
