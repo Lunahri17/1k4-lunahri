@@ -80,8 +80,8 @@ void CalculoAntiguedad(int i,Empleados emp[20])
 
     for (int k = 0; k < i; k++)
     {
-        emp[i].Antiguedad=emp[i].YearProceso-emp[i].YearIngreso;
-        printf("\nAntiguedad del empleado %d: %d",k+1,emp[i].Antiguedad);
+        emp[k].Antiguedad=emp[k].YearProceso-emp[k].YearIngreso;
+        printf("\nAntiguedad del empleado %d: %d",k+1,emp[k].Antiguedad);
     }
     
 }
