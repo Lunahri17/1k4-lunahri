@@ -18,6 +18,7 @@ struct Empleados
 //Protipos de funciones:
 void end();
 int IngresarDatos(Empleados emp[20]);
+void CalculoAntiguedad(int i,Empleados emp[20]);
 
 
 //Variables globales:
@@ -29,6 +30,8 @@ main()
     int i;
 
     i=IngresarDatos(emp);
+
+    CalculoAntiguedad(i,emp);
 	
 	end();
 }
@@ -39,6 +42,8 @@ int IngresarDatos(Empleados emp[20])
 
     do
     {
+        printf("\n\n------------------------------------------------------------------------------\n");
+
         printf("\nIngrese el Apellido y Nombre del empleado %d: ",i+1);
         _flushall();
         gets(emp[i].ApeNom);
@@ -67,6 +72,18 @@ int IngresarDatos(Empleados emp[20])
     } while (stop!=0);
     
     return i;    
+}
+
+void CalculoAntiguedad(int i,Empleados emp[20])
+{
+    system("cls");
+
+    for (int k = 0; k < i; k++)
+    {
+        emp[i].Antiguedad=emp[i].YearProceso-emp[i].YearIngreso;
+        printf("\nAntiguedad del empleado %d: ",k+1);
+    }
+    
 }
 
 void end()
