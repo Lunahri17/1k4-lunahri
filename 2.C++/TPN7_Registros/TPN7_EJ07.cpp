@@ -111,7 +111,7 @@ void BuscarEmpleado(int i,Empleados emp[20])
 
         if (esta)
         {
-            printf("\nEmpleado Solicitado: \n")
+            printf("\nEmpleado Solicitado: \n");
             printf("\nEmpleado Nro%d.",nro+1);
             printf("\nApellido y nombre: ");
             puts(emp[nro].ApeNom);
@@ -128,7 +128,7 @@ void BuscarEmpleado(int i,Empleados emp[20])
 
 void Listar(int i,Empleados emp[20])
 {
-    printf("\nListado de empleados: ")
+    printf("\n\nListado de empleados: ");
     for (int k = 0; k < i; k++)
     {
         printf("\nEmpleado %d: ",k+1);
