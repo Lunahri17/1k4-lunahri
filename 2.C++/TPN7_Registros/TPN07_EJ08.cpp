@@ -84,6 +84,7 @@ int IngresarProductos(Productos pro[40])
         
         if (i>9)
         {
+            printf("\n\n------------------------------------------------------------------------------\n");
             printf("\nDesea ingresar otro empleado? (1: Si / 0: No): ");
             scanf("%d",&stop);
         }
@@ -95,15 +96,15 @@ int IngresarProductos(Productos pro[40])
 
 bool CantDigitos(int num)
 {
-    int cont=1;
+    int cont=0;
 
-    while (num/10>0)
+    while (num>0)
     {
         num=num/10;
         cont++;
     }
     
-    if (num>5)
+    if (cont>5)
     {
         return false;
     }
