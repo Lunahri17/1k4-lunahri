@@ -116,22 +116,6 @@ void Eliminar(int n,Articulos art[40],int nro)
         art[i]=art[i+1];
         i++;
     }
-
-    /*
-    for (int i = 0; i < n; i++)
-    {
-        if (i==nro)
-        {
-            while (i<n)
-            {
-                art[i]=art[i+1];
-                i++;
-            }
-            
-        }
-        
-    }
-    */
 }
 
 void end()
