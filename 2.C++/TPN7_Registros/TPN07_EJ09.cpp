@@ -20,11 +20,11 @@ void CargarArticulos(int n,Articulos art[40]);
 void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
 void Eliminar(int n,Articulos art[40],int nro);
-void Listar(int n,Articulos art[40]);
+void Listar(int n,Articulos art[40],Articulos decreciente[40]);
 
 main()
 {
-	Articulos art[40];
+	Articulos art[40],decreciente[40];
     int n;
 
     printf("\nIngrese la cantidad de articulo que ingresara: ");
@@ -34,7 +34,7 @@ main()
 
     EliminarArticulo(n,art);
 	
-    Listar(n,art);
+    Listar(n,art,decreciente);
 
 	end();
 }
@@ -121,26 +121,41 @@ void Eliminar(int n,Articulos art[40],int nro)
     }
 }
 
-void Listar(int n,Articulos art[40])
+void Listar(int n,Articulos art[40],Articulos decreciente[40])
 {
-    Articulos decreciente[40];
     bool stop;
+    Articulos aux;
 
+    for (int i = 0; i < n; i++)
+    {
+        decreciente[i]=art[i];
+    }
+    
     do
     {
         stop=false;
         
         for (int i=0 ; i < n-1 ; i++)
         {
-            if(strcmp(art[i].descripcion,art[i+1].descripcion)<0)
+            if(strcmp(decreciente[i].descripcion,decreciente[i+1].descripcion)<0)
             {
-                strcpy(dereciente[i+1],art[i]);
-                strcpy(Personas[i],art[i+1]);
+                strcpy(aux,decreciente[i]);
+                strcpy(decreciente[i],decreciente[i+1]);
+                strcpy(decreciente[i+1],aux);
                 stop=true;
             }
         }
     }
     while (stop);
+
+    for (int k = 0; k < n; k++)
+    {
+        printf("\nCodigo %d.",decreciente[k].codigo);
+        printf("\nDescripcion: ");
+        puts(decreciente[k].descripcion);
+        printf("\nCantidad en stock: %d.",decreciente[k].stock);
+        printf("\nPrecio: %.2f",decreciente[k].precio);
+    }
 }
 
 void end()
