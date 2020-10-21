@@ -21,6 +21,7 @@ void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
 void Eliminar(int n,Articulos art[40],int nro);
 void Listar(int n,Articulos art[40],Articulos decreciente[40]);
+void ListarStock(int n,Articulos art[40],Articulos decreciente[40])
 
 main()
 {
@@ -33,8 +34,13 @@ main()
     CargarArticulos(n,art);
 
     EliminarArticulo(n,art);
+    system("pause");
 	
     Listar(n,art,decreciente);
+    system("pause");
+
+    ListarStock(n,art,decreciente);
+    system("pause");
 
 	end();
 }
@@ -91,7 +97,10 @@ void EliminarArticulo(int n,Articulos art[40])
             if (opcion==1)
             {
                 Eliminar(n,art,nro);
+                printf("\nEl articulo se elimino con exito.");
             }
+
+            printf("\n\n");
         }
         else
         {
@@ -126,6 +135,8 @@ void Listar(int n,Articulos art[40],Articulos decreciente[40])
     bool stop;
     Articulos aux;
 
+    system("cls");
+
     for (int i = 0; i < n; i++)
     {
         decreciente[i]=art[i];
@@ -156,6 +167,48 @@ void Listar(int n,Articulos art[40],Articulos decreciente[40])
         printf("\nCantidad en stock: %d.",decreciente[k].stock);
         printf("\nPrecio: %.2f",decreciente[k].precio);
     }
+    printf("\n\n");
+}
+
+void ListarStock(int n,Articulos art[40],Articulos decreciente[40])
+{
+    bool stop;
+    Articulos aux;
+
+    system("cls");
+    
+    for (int i = 0; i < n; i++)
+    {
+        decreciente[i]=art[i];
+    }
+    
+    do
+    {
+        stop=false;
+        
+        for (int i=0 ; i < n-1 ; i++)
+        {
+            if(decreciente[i].codigo>decreciente[i+1].codigo)
+            {
+                aux=decreciente[i];
+                decreciente[i]=decreciente[i+1];
+                decreciente[i+1]=aux;
+                stop=true;
+            }
+        }
+    }
+    while (stop);
+
+    for (int k = 0; k < n; k++)
+    {
+        printf("\nCodigo %d.",decreciente[k].codigo);
+        printf("\nDescripcion: ");
+        puts(decreciente[k].descripcion);
+        printf("\nCantidad en stock: %d.",decreciente[k].stock);
+        printf("\nPrecio: %.2f",decreciente[k].precio);
+    }
+
+    printf("\n\n");
 }
 
 void end()
