@@ -136,7 +136,7 @@ void Decreciente(int CantNombres)
                 strcpy(Personas[i+1],aux);
                 stop=true;
             }
-        }         
+        }
     }
     while (stop);
 }
