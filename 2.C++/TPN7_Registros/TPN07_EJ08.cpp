@@ -27,6 +27,7 @@ struct Productos
 void end();
 int IngresarProductos(Productos pro[40]);
 bool CantDigitos(int num);
+void ActualizarCompra(int i,Productos pro[40]);
 
 main()
 {
@@ -34,7 +35,9 @@ main()
     int i;
 
     i=IngresarProductos(pro);
-	
+
+    ActualizarCompra(i,pro);
+
 	end();
 }
 
@@ -92,6 +95,52 @@ int IngresarProductos(Productos pro[40])
     } while (stop!=0);
     
     return i;    
+}
+
+void ActualizarCompra(int i,Productos pro[40])
+{
+    bool esta=false;
+    int buscar,nro,aux;
+    
+    do
+    {
+        system("cls");
+
+        printf("\n\nIngrese el codigo del producto a buscar: ");
+        scanf("%d",&buscar);
+
+        for (int k = 0; k < i; k++)
+        {
+            if (pro[i].codigo==buscar)
+            {
+                esta=true;
+                nro=k;
+            }  
+        }
+
+        if (esta)
+        {
+            printf("\nProducto %d Solicitado: ",nro+1);
+            puts(pro[nro].articulo);            
+            
+            printf("\nIngrese la nueva fecha de compra: ");
+            printf("\nDia: ");
+            scanf("%d",&pro[nro].compra.dia);
+            printf("\nMes: ");
+            scanf("%d",&pro[nro].compra.mes);
+            printf("\nAnio: ");
+            scanf("%d",&pro[nro].compra.year);
+
+            printf("\nIngrese la cantidad de la nueva compra: ");
+            scanf("%d",&aux);
+            pro[nro].stock+=aux;
+        }
+        else
+        {
+            printf("\nEl producto ingresado no se encuntra en la lista.\n");
+            system("pause");
+        }
+    } while (esta==false);
 }
 
 bool CantDigitos(int num)
