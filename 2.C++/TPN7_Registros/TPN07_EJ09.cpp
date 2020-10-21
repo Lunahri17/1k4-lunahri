@@ -17,6 +17,8 @@ struct Articulos
 //Protipos de funciones:
 void end();
 void CargarArticulos(int n,Articulos art[40]);
+void EliminarArticulo(int n,Articulos art[40]);
+void MostrarUnDato(int x,Articulos art[40]);
 
 main()
 {
@@ -27,6 +29,8 @@ main()
     scanf("%d",&n);
 
     CargarArticulos(n,art);
+
+    EliminarArticulo(n,art);
 	
 	end();
 }
@@ -50,6 +54,57 @@ void CargarArticulos(int n,Articulos art[40])
         printf("\nIngrese el precio del articulo %d: ",i+1);
         scanf("%f",&art[i].precio);
     }
+}
+
+void EliminarArticulo(int n,Articulos art[40])
+{
+    bool esta=false
+    int aux,nro;
+    
+    do
+    {
+        system("cls");
+        printf("\nIngrese el codigo del articulo que desee buscar: ");
+        scanf("%d",&aux1);
+
+        for (int i = 0; i < n; i++)
+        {
+            if (art[i].codigo==aux1)
+            {
+                esta=true;
+                nro=i;
+                break;
+            }
+        }
+
+        if (esta)
+        {
+            MostrarUnDato(nro,art);
+
+            printf("\nDesea eliminar el articulo? (1:Si | 0:No): ");
+            scanf("%d",&opcion);
+
+            if (opcion==1)
+            {
+                
+            }
+            
+        }
+        else
+        {
+            printf("\nEl codigo ingresado no se encuentra en la lista.");
+        }
+    } while (esta==false);
+    
+}
+
+void MostrarUnDato(int x,Articulos art[40])
+{
+    printf("\nCodigo %d.",art[x].codigo);
+    printf("\nDescripcion: ");
+    puts(art[x].descripcion);
+    printf("\nCantidad en stock: %d.",art[x].stock);
+    printf("\nPrecio: %.2f",art[x].precio);
 }
 
 void end()
