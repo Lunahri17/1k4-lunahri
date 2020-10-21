@@ -20,6 +20,7 @@ void CargarArticulos(int n,Articulos art[40]);
 void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
 void Eliminar(int n,Articulos art[40],int nro);
+void Listar(int n,Articulos art[40]);
 
 main()
 {
@@ -33,6 +34,8 @@ main()
 
     EliminarArticulo(n,art);
 	
+    Listar(n,art);
+
 	end();
 }
 
@@ -116,6 +119,28 @@ void Eliminar(int n,Articulos art[40],int nro)
         art[i]=art[i+1];
         i++;
     }
+}
+
+void Listar(int n,Articulos art[40])
+{
+    Articulos decreciente[40];
+    bool stop;
+
+    do
+    {
+        stop=false;
+        
+        for (int i=0 ; i < n-1 ; i++)
+        {
+            if(strcmp(art[i].descripcion,art[i+1].descripcion)<0)
+            {
+                strcpy(dereciente[i+1],art[i]);
+                strcpy(Personas[i],art[i+1]);
+                stop=true;
+            }
+        }
+    }
+    while (stop);
 }
 
 void end()
