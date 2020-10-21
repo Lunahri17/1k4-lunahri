@@ -25,7 +25,7 @@ struct Productos
 
 //Protipos de funciones:
 void end();
-int IngresarProductos(Empleados pro[40]);
+int IngresarProductos(Productos pro[40]);
 
 main()
 {
@@ -37,11 +37,11 @@ main()
 	end();
 }
 
-int IngresarProductos(Empleados pro[40])
+int IngresarProductos(Productos pro[40])
 {
     int stop=1,i=0;
 
-    printf("\nIngrese al menos 10 productos")
+    printf("\nIngrese al menos 10 productos");
     
     do
     {
@@ -83,7 +83,7 @@ int IngresarProductos(Empleados pro[40])
     
     return i;    
 }
-}
+
 
 void end()
 {
