@@ -119,7 +119,7 @@ void BuscarEmpleado(int i,Empleados emp[20])
         }
         else
         {
-            printf("\nEl Apellido y Nombre ingreaso no se encuntra en la lista.\n");
+            printf("\nEl Apellido y Nombre ingresado no se encuntra en la lista.\n");
             system("pause");
             system("cls");
         }
