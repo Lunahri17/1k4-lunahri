@@ -7,7 +7,7 @@
 //Estructuras:
 struct Articulos
 {
-    int codigo
+    int codigo;
     char descripcion[40];
     int stock;
     float precio;
@@ -16,14 +16,14 @@ struct Articulos
 
 //Protipos de funciones:
 void end();
-void CargarArticulos(int n,Articulo art[40]);
+void CargarArticulos(int n,Articulos art[40]);
 
 main()
 {
 	Articulos art[40];
     int n;
 
-    printf("\nInrese la cantidad de articulo que ingresara: ");
+    printf("\nIngrese la cantidad de articulo que ingresara: ");
     scanf("%d",&n);
 
     CargarArticulos(n,art);
@@ -31,7 +31,7 @@ main()
 	end();
 }
 
-void CargarArticulos(int n,Articulo art[40])
+void CargarArticulos(int n,Articulos art[40])
 {
     for (int i = 0; i < n; i++)
     {
