@@ -19,6 +19,7 @@ void end();
 void CargarArticulos(int n,Articulos art[40]);
 void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
+void Eliminar(n,art,nro);
 
 main()
 {
@@ -58,18 +59,18 @@ void CargarArticulos(int n,Articulos art[40])
 
 void EliminarArticulo(int n,Articulos art[40])
 {
-    bool esta=false
-    int aux,nro;
+    bool esta=false;
+    int aux,nro,opcion;
     
     do
     {
         system("cls");
         printf("\nIngrese el codigo del articulo que desee buscar: ");
-        scanf("%d",&aux1);
+        scanf("%d",&aux);
 
         for (int i = 0; i < n; i++)
         {
-            if (art[i].codigo==aux1)
+            if (art[i].codigo==aux)
             {
                 esta=true;
                 nro=i;
