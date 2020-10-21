@@ -26,6 +26,7 @@ struct Productos
 //Protipos de funciones:
 void end();
 int IngresarProductos(Productos pro[40]);
+bool CantDigitos(int num);
 
 main()
 {
@@ -47,9 +48,17 @@ int IngresarProductos(Productos pro[40])
     {
         printf("\n\n------------------------------------------------------------------------------\n");
 
-        printf("\nIngrese el codigo del producto %d: ",i+1);
-        scanf("%d",&pro[i].codigo);
+        do
+        {
+            printf("\nIngrese el codigo del producto %d: ",i+1);
+            scanf("%d",&pro[i].codigo);
 
+            if (CantDigitos(pro[i].codigo)==false)
+            {
+                printf("\nIngreso un numero de mas de 5 cifras. Vuelva a intentarlo.");
+            }
+        } while (CantDigitos(pro[i].codigo)==false);
+        
         printf("\nIngrese el nombre del producto %d: ",i+1);
         _flushall();
         gets(pro[i].articulo);
@@ -84,6 +93,25 @@ int IngresarProductos(Productos pro[40])
     return i;    
 }
 
+bool CantDigitos(int num)
+{
+    int cont=1;
+
+    while (num/10>0)
+    {
+        num=num/10;
+        cont++;
+    }
+    
+    if (num>5)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
 
 void end()
 {
