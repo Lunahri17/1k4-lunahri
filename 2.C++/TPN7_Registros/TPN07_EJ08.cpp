@@ -88,7 +88,7 @@ int IngresarProductos(Productos pro[40])
 
         i++;
         
-        if (i>1) //cambiar a 9!!!!!!!!!!!
+        if (i>9)
         {
             printf("\n\n------------------------------------------------------------------------------\n");
             printf("\nDesea ingresar otro empleado? (1: Si / 0: No): ");
@@ -156,7 +156,7 @@ void Venta(int i,Productos pro[40])
     {
         system("cls");
 
-        printf("\n\nIngrese el codigo del producto a buscar: ");
+        printf("\n\nIngrese el codigo del producto a comprar: ");
         scanf("%d",&buscar);
 
         for (int k = 0; k < i; k++)
@@ -174,28 +174,26 @@ void Venta(int i,Productos pro[40])
             {
                 esta=true;
 
-                printf("\n  Codigo  |    Descripcion    |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar |");
-                printf("\n============================================================================================");
-                printf("\n %5d  |  %40s  |  %6.2f  |  ",pro[nro].codigo,pro[nro].articulo,pro[nro].precio);
+                printf("\n  Codigo  |            Descripcion            |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar  |");
+                printf("\n=============================================================================================================");
+                printf("\n  %6d  |  %31s  |  %13.2f    | ", pro[nro].codigo , pro[nro].articulo , pro[nro].precio);
 
                 scanf("%d",&aux);
 
                 if (aux>pro[nro].stock)
                 {
-                    printf("\n\nLa cantidad ingresada supera al de stock. Stock del producto: %d",pro[nro].stock);
+                    printf("\n\nLa cantidad ingresada supera al de stock. Stock del producto: %d\n",pro[nro].stock);
                     esta=false;
                 }
                 else
                 {
                     system("cls");
-
-                    printf("\n  Codigo  |            Descripcion            |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar |");
-                    printf("\n============================================================================================================");
-                    printf("\n  %6d  |  %31s  |  %13.2f  |  %6d  |  %6.2f  |", pro[nro].codigo , pro[nro].articulo , pro[nro].precio ,aux,aux2);
+                    aux2=aux*pro[nro].precio;
+                    printf("\n  Codigo  |            Descripcion            |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar  |");
+                    printf("\n=============================================================================================================");
+                    printf("\n  %6d  |  %31s  |  %13.2f    |  %19d  |  %11.2f    |", pro[nro].codigo , pro[nro].articulo , pro[nro].precio ,aux,aux2);
                 }
-                
             } while (esta==false);
-            
         }
         else
         {
