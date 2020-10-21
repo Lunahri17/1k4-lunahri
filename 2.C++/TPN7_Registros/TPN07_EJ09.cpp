@@ -88,9 +88,7 @@ void EliminarArticulo(int n,Articulos art[40])
             if (opcion==1)
             {
                 Eliminar(n,art,nro);
-                MostrarUnDato(nro,art); //caso de prueba.
             }
-            
         }
         else
         {
