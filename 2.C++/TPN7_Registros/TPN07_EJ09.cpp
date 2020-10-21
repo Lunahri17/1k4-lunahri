@@ -19,7 +19,7 @@ void end();
 void CargarArticulos(int n,Articulos art[40]);
 void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
-void Eliminar(n,art,nro);
+void Eliminar(int n,Articulos art[40],int nro);
 
 main()
 {
@@ -109,7 +109,7 @@ void MostrarUnDato(int x,Articulos art[40])
     printf("\nPrecio: %.2f",art[x].precio);
 }
 
-void Eliminar(n,art,nro)
+void Eliminar(int n,Articulos art[40],int nro)
 {
     int i=nro;
 
