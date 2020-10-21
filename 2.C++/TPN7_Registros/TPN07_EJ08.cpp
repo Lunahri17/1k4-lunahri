@@ -19,7 +19,7 @@ struct Productos
     int cantMin;
     Fecha compra;
     int stock;
-    int precio;
+    float precio;
 };
 
 
@@ -37,6 +37,8 @@ main()
     i=IngresarProductos(pro);
 
     ActualizarCompra(i,pro);
+
+    Venta(i,pro);
 
 	end();
 }
@@ -81,11 +83,11 @@ int IngresarProductos(Productos pro[40])
         scanf("%d",&pro[i].stock);
 
         printf("\nIngrese el precio final del producto %d: ",i+1);
-        scanf("%d",&pro[i].precio);
+        scanf("%f",&pro[i].precio);
 
         i++;
         
-        if (i>9)
+        if (i>1) //cambiar a 9!!!!!!!!!!!
         {
             printf("\n\n------------------------------------------------------------------------------\n");
             printf("\nDesea ingresar otro empleado? (1: Si / 0: No): ");
@@ -111,7 +113,7 @@ void ActualizarCompra(int i,Productos pro[40])
 
         for (int k = 0; k < i; k++)
         {
-            if (pro[i].codigo==buscar)
+            if (pro[k].codigo==buscar)
             {
                 esta=true;
                 nro=k;
@@ -141,6 +143,65 @@ void ActualizarCompra(int i,Productos pro[40])
             system("pause");
         }
     } while (esta==false);
+}
+
+void Venta(int i,Productos pro[40])
+{
+    bool esta=false;
+    int buscar,nro,aux;
+    float aux2;
+    
+    do
+    {
+        system("cls");
+
+        printf("\n\nIngrese el codigo del producto a buscar: ");
+        scanf("%d",&buscar);
+
+        for (int k = 0; k < i; k++)
+        {
+            if (pro[k].codigo==buscar)
+            {
+                esta=true;
+                nro=k;
+            }  
+        }
+
+        if (esta)
+        {
+            do
+            {
+                esta=true;
+
+                printf("\n  Codigo  |    Descripcion    |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar |");
+                printf("\n============================================================================================");
+                printf("\n %5d  |  %40s  |  %6.2f  |  ",pro[nro].codigo,pro[nro].articulo,pro[nro].precio);
+
+                scanf("%d",&aux);
+
+                if (aux>pro[nro].stock)
+                {
+                    printf("\n\nLa cantidad ingresada supera al de stock. Stock del producto: %d",pro[nro].stock);
+                    esta=false;
+                }
+                else
+                {
+                    system("cls");
+
+                    printf("\n  Codigo  |            Descripcion            |  Precio/Unitario  |  Cantidad Solicitada  |  Monto a pagar |");
+                    printf("\n============================================================================================================");
+                    printf("\n  %6d  |  %31s  |  %13.2f  |  %6d  |  %6.2f  |", pro[nro].codigo , pro[nro].articulo , pro[nro].precio ,aux,aux2);
+                }
+                
+            } while (esta==false);
+            
+        }
+        else
+        {
+            printf("\nEl producto ingresado no se encuntra en la lista.\n");
+            system("pause");
+        }
+    } while (esta==false); 
 }
 
 bool CantDigitos(int num)
