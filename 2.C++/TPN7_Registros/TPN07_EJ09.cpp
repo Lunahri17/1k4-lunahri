@@ -139,9 +139,9 @@ void Listar(int n,Articulos art[40],Articulos decreciente[40])
         {
             if(strcmp(decreciente[i].descripcion,decreciente[i+1].descripcion)<0)
             {
-                strcpy(aux,decreciente[i]);
-                strcpy(decreciente[i],decreciente[i+1]);
-                strcpy(decreciente[i+1],aux);
+                aux=decreciente[i];
+                decreciente[i]=decreciente[i+1];
+                decreciente[i+1]=aux;
                 stop=true;
             }
         }
