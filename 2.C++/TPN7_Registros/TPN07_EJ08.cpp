@@ -28,6 +28,7 @@ void end();
 int IngresarProductos(Productos pro[40]);
 bool CantDigitos(int num);
 void ActualizarCompra(int i,Productos pro[40]);
+void Venta(int i,Productos pro[40]);
 
 main()
 {
