@@ -21,7 +21,7 @@ void EliminarArticulo(int n,Articulos art[40]);
 void MostrarUnDato(int x,Articulos art[40]);
 void Eliminar(int n,Articulos art[40],int nro);
 void Listar(int n,Articulos art[40],Articulos decreciente[40]);
-void ListarStock(int n,Articulos art[40],Articulos decreciente[40])
+void ListarStock(int n,Articulos art[40],Articulos decreciente[40]);
 
 main()
 {
