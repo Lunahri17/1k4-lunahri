@@ -86,7 +86,8 @@ void EliminarArticulo(int n,Articulos art[40])
 
             if (opcion==1)
             {
-                
+                Eliminar(n,art,nro);
+                MostrarUnDato(nro,art); //caso de prueba.
             }
             
         }
@@ -105,6 +106,33 @@ void MostrarUnDato(int x,Articulos art[40])
     puts(art[x].descripcion);
     printf("\nCantidad en stock: %d.",art[x].stock);
     printf("\nPrecio: %.2f",art[x].precio);
+}
+
+void Eliminar(n,art,nro)
+{
+    int i=nro;
+
+    while (i<n)
+    {
+        art[i]=art[i+1];
+        i++;
+    }
+
+    /*
+    for (int i = 0; i < n; i++)
+    {
+        if (i==nro)
+        {
+            while (i<n)
+            {
+                art[i]=art[i+1];
+                i++;
+            }
+            
+        }
+        
+    }
+    */
 }
 
 void end()
