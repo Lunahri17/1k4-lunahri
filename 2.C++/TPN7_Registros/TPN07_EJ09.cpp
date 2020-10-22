@@ -104,7 +104,8 @@ void EliminarArticulo(int n,Articulos art[40])
         }
         else
         {
-            printf("\nEl codigo ingresado no se encuentra en la lista.");
+            printf("\nEl codigo ingresado no se encuentra en la lista.\n\n");
+            system("pause");
         }
     } while (esta==false);
     
@@ -136,6 +137,8 @@ void Listar(int n,Articulos art[40],Articulos decreciente[40])
     Articulos aux;
 
     system("cls");
+
+    printf("\nListado por descripcion decreciente:\n");
 
     for (int i = 0; i < n; i++)
     {
@@ -177,6 +180,8 @@ void ListarStock(int n,Articulos art[40],Articulos decreciente[40])
 
     system("cls");
     
+    printf("\nListado por numero de codigo creciente:\n");
+
     for (int i = 0; i < n; i++)
     {
         decreciente[i]=art[i];
