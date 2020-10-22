@@ -97,6 +97,7 @@ void EliminarArticulo(int n,Articulos art[40])
             if (opcion==1)
             {
                 Eliminar(n,art,nro);
+                n--; //Esta corrección no esta en lo presentado.
                 printf("\nEl articulo se elimino con exito.");
             }
 
