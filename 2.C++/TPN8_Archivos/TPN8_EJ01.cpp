@@ -117,6 +117,7 @@ void MayorMonto(FILE *archivo) {
 
 void ListarMontos(FILE *archivo) {
     float monto;
+    int i=0;
 
     rewind(archivo);
 
@@ -126,7 +127,15 @@ void ListarMontos(FILE *archivo) {
     
     while (!feof(archivo))
     {
-        printf("- %06.2f ",monto);
+        printf(" %06.2f -",monto);
+
+        i++;
+
+        if (i==9) {
+            printf("\n\t\t");
+            i=0;
+        }
+        
         fread(&monto,sizeof(float),1,archivo);
     }
 }
