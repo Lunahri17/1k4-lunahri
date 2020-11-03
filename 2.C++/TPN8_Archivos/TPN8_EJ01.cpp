@@ -112,7 +112,7 @@ void MayorMonto(FILE *archivo) {
         fread(&monto,sizeof(float),1,archivo);
     }
 
-    printf("\nLa mayor venta registrada fue de %.2f, y se repito %d veces.",mayor,conta);
+    printf("\nLa mayor venta registrada fue de %.2f, y se repito %d veces.",mayor,cont);
 }
 
 void ListarMontos(FILE *archivo) {
