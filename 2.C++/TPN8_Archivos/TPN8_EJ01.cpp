@@ -55,7 +55,12 @@ main() {
                 break;
             
             case 4:
-                
+                if (i>0) {
+                    MontoTotal(archivo);
+                }
+                else {
+                    printf("\nNo se ingresaron datos.");
+                }
                 break;
 
             case 5:
@@ -140,3 +145,23 @@ void ListarMontos(FILE *archivo) {
         fread(&monto,sizeof(float),1,archivo);
     }
 }
+
+void MontoTotal(FILE *archivo){
+    float monto,acumulador;
+
+    rewind(archivo);
+
+    fread(&monto,sizeof(float),1,archivo);
+
+    while (!feof(archivo))
+    {
+        acumulador+=monto;
+        
+        fread(&monto,sizeof(float),1,archivo);
+    }
+
+    printf("\nEl monto total es: %.2f",acumulador);
+}
+
+
+
