@@ -9,7 +9,7 @@
 
 //Protipos de funciones:
 void CargarMontos(FILE *archivo,int &i);
-
+void ListarMontos(archivo);
 
 main() {
     FILE *archivo;
@@ -40,7 +40,12 @@ main() {
                 break;
             
             case 3:
-                
+                if (i>0) {
+                    ListarMontos(archivo,i);
+                }
+                else {
+                    printf("\nNo se ingresaron datos.")
+                }
                 break;
             
             case 4:
@@ -75,5 +80,21 @@ void CargarMontos(FILE *archivo,int &i) {
 
         printf("\nIngrese el monto total %d (Ingrese 0 para salir): ",i+1);
         scanf("%d",&n);
+    }
+}
+
+void ListarMontos(archivo) {
+    int monto;
+
+    rewind(archivo);
+
+    printf("Montos almacenados:\n");
+    
+    fread(&monto,sizeof(float),1,archivo);
+    
+    while (!feof(archivo))
+    {
+        printf("- %6.2f ",monto);
+        fread(&monto,sizeof(float),1,archivo);
     }
 }
