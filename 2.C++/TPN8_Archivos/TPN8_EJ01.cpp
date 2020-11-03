@@ -9,7 +9,7 @@
 
 //Protipos de funciones:
 void CargarMontos(FILE *archivo,int &i);
-void ListarMontos(archivo);
+void ListarMontos(FILE *archivo);
 
 main() {
     FILE *archivo;
@@ -41,10 +41,10 @@ main() {
             
             case 3:
                 if (i>0) {
-                    ListarMontos(archivo,i);
+                    ListarMontos(archivo);
                 }
                 else {
-                    printf("\nNo se ingresaron datos.")
+                    printf("\nNo se ingresaron datos.");
                 }
                 break;
             
@@ -83,7 +83,7 @@ void CargarMontos(FILE *archivo,int &i) {
     }
 }
 
-void ListarMontos(archivo) {
+void ListarMontos(FILE *archivo) {
     int monto;
 
     rewind(archivo);
