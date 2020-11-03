@@ -66,6 +66,7 @@ main() {
                 break;
 
             case 5:
+                fclose(archivo);
                 if (i>0) {
                     Eliminar();
                 }
@@ -82,7 +83,6 @@ main() {
         system("pause");
     } 
     while (opcion!=5);
-    fclose(archivo);
 }
 
 void CargarMontos(FILE *archivo,int &i) {
