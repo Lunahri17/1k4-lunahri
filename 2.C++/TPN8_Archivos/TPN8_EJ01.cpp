@@ -9,7 +9,7 @@
 
 //Protipos de funciones:
 void CargarMontos(FILE *archivo,int &i);
-void MayorMonto(archivo);
+void MayorMonto(FILE *archivo);
 void ListarMontos(FILE *archivo);
 
 main() {
@@ -91,7 +91,7 @@ void CargarMontos(FILE *archivo,int &i) {
     }
 }
 
-void MayorMonto(archivo) {
+void MayorMonto(FILE *archivo) {
     float monto,mayor;
     int cont=0;
 
