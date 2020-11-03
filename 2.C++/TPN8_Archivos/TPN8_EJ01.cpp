@@ -86,7 +86,7 @@ void CargarMontos(FILE *archivo,int &i) {
 }
 
 void ListarMontos(FILE *archivo) {
-    int monto;
+    float monto;
 
     rewind(archivo);
 
