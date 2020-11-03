@@ -78,6 +78,8 @@ void CargarMontos(FILE *archivo,int &i) {
     {
         fwrite(&n,sizeof(n),1,archivo);
 
+        i++;
+
         printf("\nIngrese el monto total %d (Ingrese 0 para salir): ",i+1);
         scanf("%d",&n);
     }
