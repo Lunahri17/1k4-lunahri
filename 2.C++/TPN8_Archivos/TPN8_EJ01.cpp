@@ -59,7 +59,8 @@ main() {
         printf("\n\n");
         system("pause");
     } 
-    while (opcion!=4);
+    while (opcion!=5);
+    fclose(archivo);
 }
 
 void CargarMontos(FILE *archivo,int &i) {
