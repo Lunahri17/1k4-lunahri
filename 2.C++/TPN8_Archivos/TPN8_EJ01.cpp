@@ -69,10 +69,10 @@ main() {
 }
 
 void CargarMontos(FILE *archivo,int &i) {
-    int n;
+    float n;
 
     printf("\nIngrese el monto total %d (Ingrese 0 para salir): ",i+1);
-    scanf("%d",&n);
+    scanf("%f",&n);
 
     while (n!=0)
     {
