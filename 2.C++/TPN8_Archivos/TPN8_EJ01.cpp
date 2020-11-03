@@ -9,6 +9,7 @@
 
 //Protipos de funciones:
 void CargarMontos(FILE *archivo,int &i);
+void MayorMonto(archivo);
 void ListarMontos(FILE *archivo);
 
 main() {
@@ -36,7 +37,12 @@ main() {
                 break;
             
             case 2:
-                
+                if (i>0) {
+                    MayorMonto(archivo);
+                }
+                else {
+                    printf("\nNo se ingresaron datos.");
+                }
                 break;
             
             case 3:
@@ -85,6 +91,30 @@ void CargarMontos(FILE *archivo,int &i) {
     }
 }
 
+void MayorMonto(archivo) {
+    float monto,mayor;
+    int cont=0;
+
+    rewind(archivo);
+
+    fread(&monto,sizeof(float),1,archivo);
+    
+    mayor=monto;
+
+    while (!feof(archivo))
+    {
+        if (monto>=mayor)
+        {
+            mayor=monto;
+            cont++;
+        }
+        
+        fread(&monto,sizeof(float),1,archivo);
+    }
+
+    printf("\nLa mayor venta registrada fue de %.2f, y se repito %d veces.",mayor,conta);
+}
+
 void ListarMontos(FILE *archivo) {
     float monto;
 
@@ -96,7 +126,7 @@ void ListarMontos(FILE *archivo) {
     
     while (!feof(archivo))
     {
-        printf("- %6.2f ",monto);
+        printf("- %06.2f ",monto);
         fread(&monto,sizeof(float),1,archivo);
     }
 }
