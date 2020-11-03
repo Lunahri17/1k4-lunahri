@@ -12,7 +12,7 @@ void CargarMontos(FILE *archivo,int &i);
 void MayorMonto(FILE *archivo);
 void ListarMontos(FILE *archivo);
 void MontoTotal(FILE *archivo);
-void Eliminar(FILE *archivo);
+void Eliminar();
 
 main() {
     FILE *archivo;
@@ -67,7 +67,7 @@ main() {
 
             case 5:
                 if (i>0) {
-                    Eliminar(archivo);
+                    Eliminar();
                 }
 
                 printf("\nGracias por utilizar nuestros servicios.");
@@ -169,14 +169,14 @@ void MontoTotal(FILE *archivo) {
     printf("\nEl monto total es: %.2f",acumulador);
 }
 
-void Eliminar(FILE *archivo) {
+void Eliminar() {
     int opcion;
 
     printf("\nDesea eliminar el Archivo? (1: Si / 0: No); ");
     scanf("%d",&opcion);
 
     if (opcion==1){
-        remove(archivo);
+        remove("Montos.dat");
     }
 }
 
