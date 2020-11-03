@@ -127,12 +127,13 @@ void ListarMontos(FILE *archivo) {
     
     while (!feof(archivo))
     {
-        printf(" %06.2f -",monto);
+        printf("- %06.2f ",monto);
 
         i++;
 
-        if (i==9) {
-            printf("\n\t\t");
+        if (i==10) {
+            printf("-");
+            printf("\n");
             i=0;
         }
         
