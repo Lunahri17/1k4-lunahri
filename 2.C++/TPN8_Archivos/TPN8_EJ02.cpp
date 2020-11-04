@@ -92,21 +92,22 @@ main()
 
 void Aleatorios(FILE *arch)
 {
-    fopen("numeros.dat","a+b");
+    arch=fopen("numeros.dat","rb");
     int nro_azar,cont=0;
 
-    while (!feof(arch)){
-        cont++;
-    }
-    
-    if (cont<276)
+    if (arch == NULL)
     {
+        fclose(arch);
+        arch=fopen("numeros.dat","a+b");
+
         for (int i = 0; i < 276; i++)
         {
             nro_azar=125+(rand()%665);
             fwrite(&nro_azar,sizeof(int),1,arch);
-        }   
+        }
     }
+
+    fclose(arch);
 }
 
 
