@@ -10,6 +10,8 @@ void Aleatorios(FILE *arch);
 void ParesImpares(FILE *arch);
 void Listar(FILE *arch);
 
+void Buscar(FILE *arch);
+
 main() 
 {
 	FILE *arch;
@@ -46,7 +48,7 @@ main()
                 break;
             
             case 4:
-                
+                Buscar(arch);
                 break;
             
             case 5:
@@ -130,7 +132,7 @@ void Listar(FILE *arch)
         printf("- %d",aux);
         i++;
 
-        if (i==10)
+        if (i==20)
         {
             printf("-\n");
             i=0;
@@ -141,6 +143,37 @@ void Listar(FILE *arch)
     fclose(arch);
 }
 
+void Buscar(FILE *arch)
+{
+    arch=fopen("numeros.dat","rb");
+    int aux,buscado;
+    bool esta=false;
 
+    printf("\nIngrese el numero que desea buscar: ");
+    scanf("%d",&buscado);
+
+    fread(&aux,sizeof(int),1,arch);
+
+    while (!feof(arch))
+    {
+        if (aux==buscado)
+        {
+            esta=true;
+            break;
+        }
+        fread(&aux,sizeof(int),1,arch);
+    }
+
+    if (esta)
+    {
+        printf("\nEl numero se encuentra dentro del archivo.");
+    }
+    else
+    {
+        printf("\nEl numero no se encuentra dentro del archivo.");
+    }
+    
+    fclose(arch);
+}
 
 
