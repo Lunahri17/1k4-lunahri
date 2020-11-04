@@ -9,7 +9,7 @@
 void Aleatorios(FILE *arch);
 void ParesImpares(FILE *arch);
 void Listar(FILE *arch);
-
+void Agregar(FILE *arch);
 void Buscar(FILE *arch);
 void Rangos(FILE *arch);
 
@@ -45,7 +45,7 @@ main()
                 break;
             
             case 3:
-
+                Agregar(arch);
                 break;
             
             case 4:
@@ -200,4 +200,22 @@ void Rangos(FILE *arch)
 
     printf("\nCantidad de nuemros en el intervarlo [125-500]: %d",cont1);
     printf("\nCantidad de nuemros en el intervarlo (500-789]: %d",cont2);
+}
+
+void Agregar(FILE *arch)
+{
+    arch=fopen("numeros.dat","a+b");
+    int aux;
+
+    printf("\nIngrese el numero a agregar (0: Salir): ");
+    scanf("%d",&aux);
+
+    while (aux!=0)
+    {
+        fwrite(&aux,sizeof(int),1,arch);
+        
+        printf("\nIngrese el numero a agregar (0: Salir): ");
+        scanf("%d",&aux);
+    }
+    fclose(arch);
 }
