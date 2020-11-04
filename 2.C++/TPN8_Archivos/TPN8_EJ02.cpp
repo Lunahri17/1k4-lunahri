@@ -37,7 +37,7 @@ main()
                 break;
             
             case 2:
-                
+                Listar(arch)
                 break;
             
             case 3:
@@ -115,7 +115,30 @@ void ParesImpares(FILE *arch)
     printf("\nLa cantidad de numeros impares es: %d",cont_impar);
 }
 
+void Listar(FILE *arch)
+{
+    arch=fopen("numeros.dat","rb");
+    int aux,i=0;
 
+    printf("\nListado de numeros:\n");
+
+    fread(&aux,sizeof(int),1,arch);
+    
+    while (!feof(arch))
+    {
+        printf("- %d",aux);
+        i++;
+
+        if (i==10)
+        {
+            printf("-\n");
+            i=0;
+        }
+        
+        fread(&aux,sizeof(int),1,arch);
+    }
+    fclose(arch);
+}
 
 
 
