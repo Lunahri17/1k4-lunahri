@@ -121,7 +121,7 @@ void cargar(FILE *arch,ventas reg,int i)
     int k=0,aux;
 
     arch=fopen("ventas.dat","a+b");
-
+    fseek(arch,i,SEEK_SET); //esto esta como el culo
 
     reg[i].nro_vendedor=i;
     
