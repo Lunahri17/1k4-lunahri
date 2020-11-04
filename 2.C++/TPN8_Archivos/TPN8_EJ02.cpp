@@ -7,16 +7,16 @@
 
 //Protipos de funciones:
 void Aleatorios(FILE *arch);
-void ParesImpares(FILE *arch);
+void ParesImpares(FILE *arch,int &cont_par,int &ont_impar);
 void Listar(FILE *arch);
 void Agregar(FILE *arch);
-void Buscar(FILE *arch);
-void Rangos(FILE *arch);
+bool Buscar(FILE *arch);
+void Rangos(FILE *arch,int &cont1,int &cont2);
 
 main()
 {
 	FILE *arch;
-    int opcion,i=0;
+    int opcion,i=0,cont_par=0,cont_impar=0,cont1=0,cont2=0;
     
     srand(time(0));
     Aleatorios(arch);
@@ -37,7 +37,9 @@ main()
         switch(opcion)
         {
             case 1:
-                ParesImpares(arch);
+                ParesImpares(arch,cont_par,cont_impar);
+                printf("\nLa cantidad de numeros pares es: %d",cont_par);
+                printf("\nLa cantidad de numeros impares es: %d",cont_impar);
                 break;
             
             case 2:
@@ -49,11 +51,21 @@ main()
                 break;
             
             case 4:
-                Buscar(arch);
+                if (Buscar(arch))
+                {
+                    printf("\nEl numero se encuentra dentro del archivo.");
+                }
+                else
+                {
+                    printf("\nEl numero no se encuentra dentro del archivo.");
+                }
                 break;
             
             case 5:
-                Rangos(arch);
+                Rangos(arch,cont1,cont2);
+                
+                printf("\nCantidad de nuemros en el intervarlo [125-500]: %d",cont1);
+                printf("\nCantidad de nuemros en el intervarlo (500-789]: %d",cont2);
                 break;
 
             case 6:
@@ -91,11 +103,13 @@ void Aleatorios(FILE *arch)
     fclose(arch);
 }
 
-void ParesImpares(FILE *arch)
+void ParesImpares(FILE *arch,int &cont_par,int &cont_impar)
 {
     arch=fopen("numeros.dat","rb");
-
-    int aux,cont_par=0,cont_impar=0;
+    
+    int aux;
+    cont_par=0;
+    cont_impar=0;
 
     fread(&aux,sizeof(int),1,arch);
 
@@ -113,9 +127,6 @@ void ParesImpares(FILE *arch)
         fread(&aux,sizeof(int),1,arch);
     }
     fclose(arch);
-    
-    printf("\nLa cantidad de numeros pares es: %d",cont_par);
-    printf("\nLa cantidad de numeros impares es: %d",cont_impar);
 }
 
 void Listar(FILE *arch)
@@ -143,7 +154,7 @@ void Listar(FILE *arch)
     fclose(arch);
 }
 
-void Buscar(FILE *arch)
+bool Buscar(FILE *arch)
 {
     arch=fopen("numeros.dat","rb");
     int aux,buscado;
@@ -163,23 +174,17 @@ void Buscar(FILE *arch)
         }
         fread(&aux,sizeof(int),1,arch);
     }
-
-    if (esta)
-    {
-        printf("\nEl numero se encuentra dentro del archivo.");
-    }
-    else
-    {
-        printf("\nEl numero no se encuentra dentro del archivo.");
-    }
-    
     fclose(arch);
+    
+    return esta;
 }
 
-void Rangos(FILE *arch)
+void Rangos(FILE *arch,int &cont1,int &cont2)
 {
     arch=fopen("numeros.dat","rb");
-    int aux,cont1=0,cont2=0;
+    int aux;
+    cont1=0;
+    cont2=0;
 
     fread(&aux,sizeof(int),1,arch);
 
@@ -196,9 +201,7 @@ void Rangos(FILE *arch)
         
         fread(&aux,sizeof(int),1,arch);
     }
-
-    printf("\nCantidad de nuemros en el intervarlo [125-500]: %d",cont1);
-    printf("\nCantidad de nuemros en el intervarlo (500-789]: %d",cont2);
+    fclose(arch);
 }
 
 void Agregar(FILE *arch)
