@@ -52,7 +52,7 @@ main()
                 break;
             
             case 5:
-                
+                Rangos(arch);
                 break;
 
             case 6:
@@ -176,4 +176,27 @@ void Buscar(FILE *arch)
     fclose(arch);
 }
 
+void Rangos(FILE *arch)
+{
+    arch=fopen("numeros.dat","rb");
+    int aux,cont1=0,cont2=0;
 
+    fread(&aux,sizeof(int),1,arch);
+
+    while (!feof(arch))
+    {
+        if (aux>124 and aux<501)
+        {
+            cont1++;
+        }
+        else
+        {
+            cont2++;
+        }
+        
+        fread(&aux,sizeof(int),1,arch);
+    }
+
+    printf("\nCantidad de nuemros en el intervarlo [125-500]: %d",cont1);
+    printf("\nCantidad de nuemros en el intervarlo (500-789]: %d",cont2);
+}
