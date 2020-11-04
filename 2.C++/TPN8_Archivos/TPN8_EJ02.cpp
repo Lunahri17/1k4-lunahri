@@ -11,6 +11,7 @@ void ParesImpares(FILE *arch);
 void Listar(FILE *arch);
 
 void Buscar(FILE *arch);
+void Rangos(FILE *arch);
 
 main() 
 {
