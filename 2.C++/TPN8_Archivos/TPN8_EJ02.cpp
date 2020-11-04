@@ -38,6 +38,7 @@ main()
         {
             case 1:
                 ParesImpares(arch,cont_par,cont_impar);
+                
                 printf("\nLa cantidad de numeros pares es: %d",cont_par);
                 printf("\nLa cantidad de numeros impares es: %d",cont_impar);
                 break;
