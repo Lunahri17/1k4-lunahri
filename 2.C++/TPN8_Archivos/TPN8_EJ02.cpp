@@ -8,6 +8,7 @@
 //Protipos de funciones:
 void Aleatorios(FILE *arch);
 void ParesImpares(FILE *arch);
+void Listar(FILE *arch);
 
 main() 
 {
