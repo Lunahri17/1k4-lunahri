@@ -38,7 +38,7 @@ main()
                 break;
             
             case 2:
-                Listar(arch)
+                Listar(arch);
                 break;
             
             case 3:
