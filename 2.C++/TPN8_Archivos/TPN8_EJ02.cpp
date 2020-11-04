@@ -13,7 +13,7 @@ void Agregar(FILE *arch);
 void Buscar(FILE *arch);
 void Rangos(FILE *arch);
 
-main() 
+main()
 {
 	FILE *arch;
     int opcion,i=0;
@@ -69,7 +69,6 @@ main()
         system("pause");
     } 
     while (opcion!=6);
-
 }
 
 void Aleatorios(FILE *arch)
