@@ -5,11 +5,9 @@
 #include<string.h>
 #include<ctime>
 
-//Estructuras:
-
-
 //Protipos de funciones:
 void Aleatorios(FILE *arch);
+void ParesImpares(FILE *arch);
 
 main() 
 {
@@ -35,43 +33,23 @@ main()
         switch(opcion)
         {
             case 1:
-                
+                ParesImpares(arch);
                 break;
             
             case 2:
-                if (i>0) {
-                    
-                }
-                else {
-                    printf("\nNo se ingresaron datos.");
-                }
+                
                 break;
             
             case 3:
-                if (i>0) {
-                    
-                }
-                else {
-                    printf("\nNo se ingresaron datos.");
-                }
+
                 break;
             
             case 4:
-                if (i>0) {
-                    
-                }
-                else {
-                    printf("\nNo se ingresaron datos.");
-                }
+                
                 break;
             
             case 5:
-                if (i>0) {
-                    
-                }
-                else {
-                    printf("\nNo se ingresaron datos.");
-                }
+                
                 break;
 
             case 6:
@@ -98,7 +76,7 @@ void Aleatorios(FILE *arch)
     if (arch == NULL)
     {
         fclose(arch);
-        arch=fopen("numeros.dat","a+b");
+        arch=fopen("numeros.dat","w+b");
 
         for (int i = 0; i < 276; i++)
         {
@@ -109,5 +87,36 @@ void Aleatorios(FILE *arch)
 
     fclose(arch);
 }
+
+void ParesImpares(FILE *arch)
+{
+    arch=fopen("numeros.dat","rb");
+
+    int aux,cont_par=0,cont_impar=0;
+
+    fread(&aux,sizeof(int),1,arch);
+
+    while (!feof(arch))
+    {
+        if (aux%2==0)
+        {
+            cont_par++;
+        }
+        else
+        {
+            cont_impar++;
+        }
+        
+        fread(&aux,sizeof(int),1,arch);
+    }
+    fclose(arch);
+    
+    printf("\nLa cantidad de numeros pares es: %d",cont_par);
+    printf("\nLa cantidad de numeros impares es: %d",cont_impar);
+}
+
+
+
+
 
 
