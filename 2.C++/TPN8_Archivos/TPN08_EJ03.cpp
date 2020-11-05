@@ -26,6 +26,7 @@ void cargar(FILE *arch,ventas reg);
 void mes_buscar(FILE *arch,ventas reg);
 void forma_mes_buscar(FILE *arch,ventas reg);
 void importe_mes_vendedor(FILE *arch,ventas reg);
+void listar_datos(arch,reg);
 
 main()
 {
@@ -40,8 +41,8 @@ main()
         printf("\n\n1. Cargar datos.");
         printf("\n\n2. Obtener las ventas totales de un mes.");
         printf("\n\n3. Obtener la cantidad de ventas de Contado y Credito en un mes.");
-        printf("\n\n4. .");
-        printf("\n\n5. .");
+        printf("\n\n4. Obtener el importe total de un mes de un vendedor.");
+        printf("\n\n5. Listar todos los datos.");
         printf("\n\n6. Salir.");
         printf("\n\nIngrese la opcion: ");
         scanf("%d",&opcion);
@@ -65,7 +66,7 @@ main()
                 break;
             
             case 5:
-               
+                listar_datos(arch,reg);
                 break;
 
             case 6:
@@ -81,7 +82,6 @@ main()
         system("pause");
     } 
     while (opcion!=6);
-	
 }
 
 void cargar(FILE *arch,ventas reg)
@@ -237,7 +237,7 @@ void forma_mes_buscar(FILE *arch,ventas reg)
 void importe_mes_vendedor(FILE *arch,ventas reg)
 {
     arch=fopen("ventas.dat","rb");
-    int buscar_mes,bucar_vend,cont_cont=0,cont_cred=0;
+    int buscar_mes,buscar_vend,cont_cont=0,cont_cred=0;
     bool esta=false;
     char buscar_apenom[40];
     float acumulador=0;
@@ -265,7 +265,7 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
             {
                 if (reg.nro_vendedor==buscar_vend)
                 {
-                    if (srtcmp(reg.apenom,buscar_apenom))
+                    if (strcmp(reg.apenom,buscar_apenom)==0)
                     {
                         esta=true;
                         acumulador+=reg.importe_factura;
@@ -287,3 +287,40 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
     }
 }
 
+void listar_datos(arch,reg)
+{
+       arch=fopen("ventas.dat","rb");
+    int buscar;
+    float acumulador=0;
+    bool esta=false;
+
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {    
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            printf("\nNumero del vendedor: %d",reg.nro_vendedor);
+            printf("\nApellido y nombre del vendedor: %s",apenom);
+            printf("\nNumero de factura: %d",reg.nro_factura);
+            printf("\nImporte: %.2f",reg.importe_factura);
+            if (reg.forma_venta==1)
+            {
+                printf("\nVenta realizada por: Contado.");
+            }
+            else
+            {
+                printf("\nVenta realizada por: Credito.");
+            }
+            printf("\nFecha de venta:");
+            printf("\nDia: %d",reg.fecha_venta.dia);
+            printf("\nMes: %d",reg.fecha_venta.mes);
+            printf("\nAnio: %d",reg.fecha_venta.year);
+            printf("\n------------------------------------------------------------");
+            fread(&reg,sizeof(reg),1,arch);
+        }
+    } 
+}
