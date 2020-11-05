@@ -15,10 +15,10 @@ struct ventas
 {
     int nro_vendedor;
     char apenom[40];
-    int nro_factura[25];
-    float importe_factura[25];
-    int forma_venta[25];
-    Fecha fecha_venta[25];
+    int nro_factura;
+    float importe_factura;
+    int forma_venta;
+    Fecha fecha_venta;
 };
 
 //Protipos de funciones:
