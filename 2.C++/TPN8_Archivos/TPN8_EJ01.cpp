@@ -109,14 +109,23 @@ void MayorMonto(FILE *archivo) {
     rewind(archivo);
 
     fread(&monto,sizeof(float),1,archivo);
-    
     mayor=monto;
-
     while (!feof(archivo))
     {
         if (monto>=mayor)
         {
             mayor=monto;
+        }
+        
+        fread(&monto,sizeof(float),1,archivo);
+    }
+
+    rewind(archivo);
+    fread(&monto,sizeof(float),1,archivo);
+    while (!feof(archivo))
+    {
+        if (monto==mayor)
+        {
             cont++;
         }
         
