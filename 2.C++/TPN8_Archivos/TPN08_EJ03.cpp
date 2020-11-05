@@ -304,7 +304,7 @@ void listar_datos(FILE *arch,ventas reg)
         while (!feof(arch))
         {
             printf("\nNumero del vendedor: %d",reg.nro_vendedor);
-            printf("\nApellido y nombre del vendedor: %s",apenom);
+            printf("\nApellido y nombre del vendedor: %s",reg.apenom);
             printf("\nNumero de factura: %d",reg.nro_factura);
             printf("\nImporte: %.2f",reg.importe_factura);
             if (reg.forma_venta==1)
