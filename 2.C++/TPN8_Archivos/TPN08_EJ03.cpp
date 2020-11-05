@@ -93,7 +93,7 @@ void cargar(FILE *arch,ventas reg[50])
         scanf("%d",&aux);
         if (aux>4 or aux<0)
         {
-            printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo");
+            printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo\n");
             
         }
     } while (aux>4 or aux<0);
@@ -106,7 +106,7 @@ void cargar(FILE *arch,ventas reg[50])
         _flushall();
         gets(reg[k].apenom);
 
-        printf("\nIngrese el numero de la factura (0: para salir): ");
+        printf("\nIngrese el numero de la factura: ");
         scanf("%d",&reg[k].nro_factura);
         
         printf("\nIngrese el importe de la factura: ");
@@ -119,7 +119,7 @@ void cargar(FILE *arch,ventas reg[50])
             
             if (reg[k].forma_venta>2 or reg[k].forma_venta<1)
             {
-                printf("\nIngreso un numero erroneo, vuelva a intentarlo.");
+                printf("\nIngreso un numero erroneo, vuelva a intentarlo.\n");
             }     
         } while (reg[k].forma_venta>2 or reg[k].forma_venta<1);
             
@@ -140,7 +140,7 @@ void cargar(FILE *arch,ventas reg[50])
             scanf("%d",&aux);
             if (aux>4 or aux<0)
             {
-                printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo");
+                printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo\n");
                 
             }
         } while (aux>4 or aux<0);
