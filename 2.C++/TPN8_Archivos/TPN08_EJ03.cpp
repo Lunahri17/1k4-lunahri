@@ -103,6 +103,7 @@ void cargar(FILE *arch,ventas reg[50])
         reg[k].nro_vendedor=aux;
 
         printf("\nIngrese el Apellido y Nombre del vendedor: ");
+        _flushall();
         gets(reg[k].apenom);
 
         printf("\nIngrese el numero de la factura (0: para salir): ");
