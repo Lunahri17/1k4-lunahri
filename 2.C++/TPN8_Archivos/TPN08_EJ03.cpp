@@ -26,7 +26,7 @@ void cargar(FILE *arch,ventas reg);
 void mes_buscar(FILE *arch,ventas reg);
 void forma_mes_buscar(FILE *arch,ventas reg);
 void importe_mes_vendedor(FILE *arch,ventas reg);
-void listar_datos(arch,reg);
+void listar_datos(FILE *arch,ventas reg);
 
 main()
 {
@@ -287,7 +287,7 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
     }
 }
 
-void listar_datos(arch,reg)
+void listar_datos(FILE *arch,ventas reg)
 {
        arch=fopen("ventas.dat","rb");
     int buscar;
