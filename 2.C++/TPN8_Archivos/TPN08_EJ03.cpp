@@ -22,12 +22,12 @@ struct ventas
 };
 
 //Protipos de funciones:
-void cargar(FILE *arch,ventas reg[50]);
+void cargar(FILE *arch,ventas reg);
 
 main()
 {
     FILE *arch;
-    ventas reg[50];
+    ventas reg;
     int opcion;
 
 	do
@@ -81,9 +81,9 @@ main()
 	
 }
 
-void cargar(FILE *arch,ventas reg[50])
+void cargar(FILE *arch,ventas reg)
 {       
-    int k=0,aux;
+    int aux;
 
     arch=fopen("ventas.dat","a+b");
     
@@ -100,40 +100,39 @@ void cargar(FILE *arch,ventas reg[50])
 
     while (aux!=0)
     {
-        reg[k].nro_vendedor=aux;
+        reg.nro_vendedor=aux;
 
         printf("\nIngrese el Apellido y Nombre del vendedor: ");
         _flushall();
-        gets(reg[k].apenom);
+        gets(reg.apenom);
 
         printf("\nIngrese el numero de la factura: ");
-        scanf("%d",&reg[k].nro_factura);
+        scanf("%d",&reg.nro_factura);
         
         printf("\nIngrese el importe de la factura: ");
-        scanf("%f",&reg[k].importe_factura);
+        scanf("%f",&reg.importe_factura);
 
         do
         {
             printf("\nIngrese la forma de pago (1: Contado / 2: Credito): ");
-            scanf("%d",&reg[k].forma_venta);
+            scanf("%d",&reg.forma_venta);
             
-            if (reg[k].forma_venta>2 or reg[k].forma_venta<1)
+            if (reg.forma_venta>2 or reg.forma_venta<1)
             {
                 printf("\nIngreso un numero erroneo, vuelva a intentarlo.\n");
             }     
-        } while (reg[k].forma_venta>2 or reg[k].forma_venta<1);
+        } while (reg.forma_venta>2 or reg.forma_venta<1);
             
         printf("\nFecha de venta:");
         printf("\nDia: ");
-        scanf("%d",&reg[k].fecha_venta.dia);
+        scanf("%d",&reg.fecha_venta.dia);
         printf("\nMes: ");
-        scanf("%d",&reg[k].fecha_venta.mes);
+        scanf("%d",&reg.fecha_venta.mes);
         printf("\nAnio: ");
-        scanf("%d",&reg[k].fecha_venta.year);
+        scanf("%d",&reg.fecha_venta.year);
         
-        fwrite(&reg,sizeof(reg[50]),1,arch);
-        k++;
-
+        fwrite(&reg,sizeof(reg),1,arch);
+    
         do
         {
             printf("\nIngrese el numero del vendedor,(0: Volver al menu): ");
