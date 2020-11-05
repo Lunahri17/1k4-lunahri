@@ -50,7 +50,7 @@ main()
                 break;
             
             case 2:
-                
+                mes_buscar(arch,reg);
                 break;
             
             case 3:
@@ -148,7 +148,43 @@ void cargar(FILE *arch,ventas reg)
     fclose(arch);
 }
 
+void mes_buscar(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","rb");
+    int buscar;
+    float acumulador=0;
+    bool esta=false;
 
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        printf("\nIngrese el mes a buscar: ");
+        scanf("%d",&buscar);
+        
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            if (reg.fecha_venta.mes==buscar)
+            {
+                esta=true;
+                acumulador+=reg.importe_factura;
+            }
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        
+        if (esta)
+        {
+            printf("\nLa venta total del mes %d es de: %.2f",buscar,acumulador);
+        }
+        else
+        {
+            printf("\nEl mes buscado no se encontro, volvera al menu.");
+        }
+    }
+}
 
 
 
