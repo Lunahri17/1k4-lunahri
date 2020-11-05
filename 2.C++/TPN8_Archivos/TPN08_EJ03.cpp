@@ -22,12 +22,12 @@ struct ventas
 };
 
 //Protipos de funciones:
-void cargar(FILE *arch,ventas reg);
+void cargar(FILE *arch,ventas reg[50]);
 
 main()
 {
-    File *arch;
-    ventas reg[5];
+    FILE *arch;
+    ventas reg[50];
     int opcion;
 
 	do
@@ -81,7 +81,7 @@ main()
 	
 }
 
-void cargar(FILE *arch,ventas reg)
+void cargar(FILE *arch,ventas reg[50])
 {       
     int k=0,aux;
 
@@ -102,7 +102,7 @@ void cargar(FILE *arch,ventas reg)
     {
         reg[k].nro_vendedor=aux;
 
-        printf("\nIngrese el Apellido y Nombre del vendedor %d: ",i+1);
+        printf("\nIngrese el Apellido y Nombre del vendedor: ");
         gets(reg[k].apenom);
 
         printf("\nIngrese el numero de la factura (0: para salir): ");
@@ -130,7 +130,7 @@ void cargar(FILE *arch,ventas reg)
         printf("\nAnio: ");
         scanf("%d",&reg[k].fecha_venta.year);
         
-        fwrite(&reg,sizeof(reg),1,arch);
+        fwrite(&reg,sizeof(reg[50]),1,arch);
         k++;
 
         do
