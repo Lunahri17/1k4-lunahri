@@ -23,6 +23,8 @@ struct ventas
 
 //Protipos de funciones:
 void cargar(FILE *arch,ventas reg);
+void mes_buscar(FILE *arch,ventas reg);
+void forma_mes_buscar(FILE *arch,ventas reg);
 
 main()
 {
@@ -35,8 +37,8 @@ main()
         system("cls");
         printf("\n\tMenu:");
         printf("\n\n1. Cargar datos.");
-        printf("\n\n2. .");
-        printf("\n\n3. .");
+        printf("\n\n2. Obtener las ventas totales de un mes.");
+        printf("\n\n3. Obtener la cantidad de ventas de Contado y Credito en un mes.");
         printf("\n\n4. .");
         printf("\n\n5. .");
         printf("\n\n6. Salir.");
@@ -54,7 +56,7 @@ main()
                 break;
             
             case 3:
-                
+                forma_mes_buscar(arch,reg);
                 break;
             
             case 4:
@@ -186,7 +188,50 @@ void mes_buscar(FILE *arch,ventas reg)
     }
 }
 
+void forma_mes_buscar(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","rb");
+    int buscar,cont_cont=0,cont_cred=0;
+    bool esta=false;
 
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        printf("\nIngrese el mes a buscar: ");
+        scanf("%d",&buscar);
+        
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            if (reg.fecha_venta.mes==buscar)
+            {
+                esta=true;
+                if (reg.forma_venta==1)
+                {
+                    cont_cont++;
+                }
+                else
+                {
+                    cont_cred++;
+                }
+            }
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        
+        if (esta)
+        {
+            printf("\nLa cantidad de ventas por contado del mes %d es de: %d",buscar,cont_cont);
+            printf("\nLa cantidad de ventas por credito del mes %d es de: %d",buscar,cont_cred);
+        }
+        else
+        {
+            printf("\nEl mes buscado no se encontro, volvera al menu.");
+        }
+    }
+}
 
 
 
