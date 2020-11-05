@@ -25,6 +25,7 @@ struct ventas
 void cargar(FILE *arch,ventas reg);
 void mes_buscar(FILE *arch,ventas reg);
 void forma_mes_buscar(FILE *arch,ventas reg);
+void importe_mes_vendedor(FILE *arch,ventas reg);
 
 main()
 {
@@ -60,7 +61,7 @@ main()
                 break;
             
             case 4:
-                
+                importe_mes_vendedor(arch,reg);
                 break;
             
             case 5:
@@ -233,5 +234,56 @@ void forma_mes_buscar(FILE *arch,ventas reg)
     }
 }
 
+void importe_mes_vendedor(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","rb");
+    int buscar_mes,bucar_vend,cont_cont=0,cont_cred=0;
+    bool esta=false;
+    char buscar_apenom[40];
+    float acumulador=0;
 
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        printf("\nIngrese el mes a buscar: ");
+        scanf("%d",&buscar_mes);
+        
+        printf("\nIngrese el vendedor a buscar: ");
+        scanf("%d",&buscar_vend);
+
+        printf("\nIngrse el Apellido y Nombre del vendedor: ");
+        _flushall();
+        gets(buscar_apenom);
+
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            if (reg.fecha_venta.mes==buscar_mes)
+            {
+                if (reg.nro_vendedor==buscar_vend)
+                {
+                    if (srtcmp(reg.apenom,buscar_apenom))
+                    {
+                        esta=true;
+                        acumulador+=reg.importe_factura;
+                    }
+                }
+            }
+
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        
+        if (esta)
+        {
+            printf("\nEl importe total del mes %d del vendedor %d es de: %.2f",buscar_mes,buscar_vend,acumulador);
+        }
+        else
+        {
+            printf("\nLos datos ingresados no se encontraron, volvera al menu.");
+        }
+    }
+}
 
