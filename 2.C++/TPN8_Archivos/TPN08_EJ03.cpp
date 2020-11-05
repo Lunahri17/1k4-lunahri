@@ -22,8 +22,7 @@ struct ventas
 };
 
 //Protipos de funciones:
-void vendedor(FILE *arch,ventas reg);
-void cargar(FILE *arch,ventas reg,int i);
+void cargar(FILE *arch,ventas reg);
 
 main()
 {
@@ -47,7 +46,7 @@ main()
         switch(opcion)
         {
             case 1:
-               vendedor(arch,reg);
+                cargar(arch,reg);
                 break;
             
             case 2:
@@ -82,82 +81,68 @@ main()
 	
 }
 
-void vendedor(FILE *arch,ventas reg)
-{
-    int i;
-
-    do
-    {
-        system("cls");
-        printf("\nIngrese el numero del vendedor,(4: Volver al menu): ");
-        scanf("%d",&i);
-        switch (i)
-        {
-        case 1:
-            cargar(arch,reg,i);
-            break;
-        
-        case 2:
-            cargar(arch,reg,i);
-            break;
-
-        case 3:
-            cargar(arch,reg,i);
-            break;
-
-        case 4:
-            break;
-
-        default:
-            printf("\nIngreso un vendedor incorrecto.");
-            break;
-        }    
-    } while (i!=4);
-    
-}
-
-void cargar(FILE *arch,ventas reg,int i)
+void cargar(FILE *arch,ventas reg)
 {       
     int k=0,aux;
 
     arch=fopen("ventas.dat","a+b");
-    fseek(arch,i,SEEK_SET); //esto esta como el culo
-
-    reg[i].nro_vendedor=i;
     
-    printf("\nIngrese el Apellido y Nombre del vendedor %d: ",i+1);
-    gets(reg[i].apenom);
-
-    printf("\nIngrese el numero de la factura (0: para salir): ");
-    scanf("%d",&aux);
+    do
+    {
+        printf("\nIngrese el numero del vendedor,(0: Volver al menu): ");
+        scanf("%d",&aux);
+        if (aux>4 or aux<0)
+        {
+            printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo");
+            
+        }
+    } while (aux>4 or aux<0);
 
     while (aux!=0)
     {
-        reg[i].nro_factura[k]=aux;
+        reg[k].nro_vendedor=aux;
 
+        printf("\nIngrese el Apellido y Nombre del vendedor %d: ",i+1);
+        gets(reg[k].apenom);
+
+        printf("\nIngrese el numero de la factura (0: para salir): ");
+        scanf("%d",&reg[k].nro_factura);
+        
         printf("\nIngrese el importe de la factura: ");
-        scanf("%f",&reg[i].importe_factura[k]);
+        scanf("%f",&reg[k].importe_factura);
 
         do
         {
             printf("\nIngrese la forma de pago (1: Contado / 2: Credito): ");
-            scanf("%d",&reg[i].forma_venta[k]);
+            scanf("%d",&reg[k].forma_venta);
             
-            if (reg[i].forma_venta[k]>2 or reg[i].forma_venta[k]<1)
+            if (reg[k].forma_venta>2 or reg[k].forma_venta<1)
             {
                 printf("\nIngreso un numero erroneo, vuelva a intentarlo.");
             }     
-        } while (reg[i].forma_venta[k]>2 or reg[i].forma_venta[k]<1);
+        } while (reg[k].forma_venta>2 or reg[k].forma_venta<1);
             
         printf("\nFecha de venta:");
         printf("\nDia: ");
-        scanf("%d",&reg[i].fecha_venta[k].dia);
+        scanf("%d",&reg[k].fecha_venta.dia);
         printf("\nMes: ");
-        scanf("%d",&reg[i].fecha_venta[k].mes);
+        scanf("%d",&reg[k].fecha_venta.mes);
         printf("\nAnio: ");
-        scanf("%d",&reg[i].fecha_venta[k].year);
+        scanf("%d",&reg[k].fecha_venta.year);
         
         fwrite(&reg,sizeof(reg),1,arch);
+        k++;
+
+        do
+        {
+            printf("\nIngrese el numero del vendedor,(0: Volver al menu): ");
+            scanf("%d",&aux);
+            if (aux>4 or aux<0)
+            {
+                printf("\nIngreso un vendedor incorrecto, vuelva a intentarlo");
+                
+            }
+        } while (aux>4 or aux<0);
     }
     
     fclose(arch);
