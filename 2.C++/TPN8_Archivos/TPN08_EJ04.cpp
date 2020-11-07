@@ -392,18 +392,23 @@ void modificar_tipo(FILE *arch,ventas reg)
                         printf("\nIngreso un numero erroneo, vuelva a intentarlo.\n");  
                 } while (reg.forma_venta>2 or reg.forma_venta<1);
 
-                //fseek(arch,- sizeof(reg),SEEK_CUR); 
+                fseek(arch,- sizeof(reg),SEEK_CUR); 
                 fwrite(&reg,sizeof(reg),1,arch);
-                
+                prit
                 break;
             }
             fread(&reg,sizeof(reg),1,arch);
         }
         
-        if (!esta)
+        if (esta)
+        {
+            printf("\nEl campo fue modificado correctamente.");
+        }
+        else
         {
             printf("\nEl mes buscado no se encontro, volvera al menu.");
         }
+        
     }
     fclose(arch);
 }
