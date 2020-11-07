@@ -32,6 +32,7 @@ void modificar_tipo(FILE *arch,ventas reg);
 void borrado_logico(FILE *arch,ventas reg);
 void listar_datos_baja(FILE *arch,ventas reg);
 void eliminar_baja(FILE *arch,ventas reg);
+void ordenar(FILE *arch,ventas reg);
 
 main()
 {
@@ -52,7 +53,7 @@ main()
         printf("\n\n7. Dar de baja una factura.");
         printf("\n\n8. Listar datos dados de baja.");
         printf("\n\n9. Eliminar registros dados de baja.");
-        printf("\n\n10. .");
+        printf("\n\n10. Ordenar archivo por numero de factura.");
         printf("\n\n11. Salir.");
         printf("\n\nIngrese la opcion: ");
         scanf("%d",&opcion);
@@ -96,7 +97,7 @@ main()
                 break;
             
             case 10:
-                
+                ordenar(arch,reg);
                 break;
             
             case 11:
@@ -530,27 +531,35 @@ void eliminar_baja(FILE *arch,ventas reg)
         if (conf==1)
         {
             arch=fopen("ventas.dat","r+b");      
-            auxiliar=fopen("auxiliar.dat","wb");
-
-            fread(&reg,sizeof(reg),1,arch);
-            while (!feof(arch))
+            
+            if (arch==NULL)
             {
-                if(!reg.borrado)
-                {
-                    fwrite(&reg,sizeof(reg),1,auxiliar);
-                    fread(&reg,sizeof(reg),1,arch);
-                }
-                else
-                {
-                    fread(&reg,sizeof(reg),1,arch);
-                }
+                printf("\nEl archivo no esta creado, o fue eliminado.");
             }
+            else
+            {
+                auxiliar=fopen("auxiliar.dat","wb");
 
-            printf("\nLos archivos dados de baja se eliminaron con exito.");
-            fclose(arch);
-            fclose(auxiliar);
-            remove("ventas.dat");
-            rename("auxiliar.dat","ventas.dat");
+                fread(&reg,sizeof(reg),1,arch);
+                while (!feof(arch))
+                {
+                    if(!reg.borrado)
+                    {
+                        fwrite(&reg,sizeof(reg),1,auxiliar);
+                        fread(&reg,sizeof(reg),1,arch);
+                    }
+                    else
+                    {
+                        fread(&reg,sizeof(reg),1,arch);
+                    }
+                }
+
+                printf("\nLos archivos dados de baja se eliminaron con exito.");
+                fclose(arch);
+                fclose(auxiliar);
+                remove("ventas.dat");
+                rename("auxiliar.dat","ventas.dat");
+            } 
         }
     }
     else
@@ -559,11 +568,53 @@ void eliminar_baja(FILE *arch,ventas reg)
     }
 }
 
+void ordenar(FILE *arch,ventas reg)
+{
+    ventas auxiliar[100],aux;
+    int i=0,n;
+    bool b;
 
+    arch=("ventas.dat","rb");
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            auxiliar[i]=reg;
+            i++;
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        n=i;
+        fclose(arch);
 
+        do
+        {
+            b=false;
+            for (i = 0; i < n-1; i++)
+            {
+                if (auxiliar[i].nro_factura>auxiliar[i+1].nro_factura)
+                {
+                    aux=auxiliar[i];
+                    auxiliar[i]=auxiliar[i+1];
+                    auxiliar[i+1]=aux;
+                    b=true;
+                }
+            }
+        } while (b);
+        
+        arch=("ventas.dat","w+b");
+        for (i = 0; i < n; i++)
+        {
+            reg=auxiliar[i];
+            fwrite(&reg,sizeof(reg),1,arch);
+        }
+        fclose(arch);
 
-
-
-
-
-
+        printf("\nDatos Ordenados: \n");
+        listar_datos(arch,reg);
+    }
+}
