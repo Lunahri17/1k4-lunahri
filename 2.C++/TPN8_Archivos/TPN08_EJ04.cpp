@@ -30,6 +30,7 @@ void importe_mes_vendedor(FILE *arch,ventas reg);
 void listar_datos(FILE *arch,ventas reg);
 void modificar_tipo(FILE *arch,ventas reg);
 void borrado_logico(FILE *arch,ventas reg);
+void listar_datos_baja(FILE *arch,ventas reg);
 
 main()
 {
@@ -48,8 +49,8 @@ main()
         printf("\n\n5. Listar todos los datos.");
         printf("\n\n6. Modificar forma de venta de alguna factura.");
         printf("\n\n7. Dar de baja una factura.");
-        printf("\n\n8. .");
-        printf("\n\n9. .");
+        printf("\n\n8. Listar datos dados de baja.");
+        printf("\n\n9. Eliminar registros dados de baja.");
         printf("\n\n10. .");
         printf("\n\n11. Salir.");
         printf("\n\nIngrese la opcion: ");
@@ -86,11 +87,11 @@ main()
                 break;
             
             case 8:
-                
+                listar_datos_baja(arch,reg);
                 break;
             
             case 9:
-                
+                eliminar_baja(arch,reg);
                 break;
             
             case 10:
@@ -321,9 +322,7 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
 void listar_datos(FILE *arch,ventas reg)
 {
     arch=fopen("ventas.dat","rb");
-    int buscar;
-    float acumulador=0;
-
+    
     if (arch==NULL)
     {
         printf("\nEl archivo no esta creado, o fue eliminado.");
@@ -333,7 +332,7 @@ void listar_datos(FILE *arch,ventas reg)
         fread(&reg,sizeof(reg),1,arch);
         while (!feof(arch))
         {   
-            if (reg.borrado==false)
+            if (!reg.borrado)
             {
                 printf("\nNumero del vendedor: %d",reg.nro_vendedor);
                 printf("\nApellido y nombre del vendedor: %s",reg.apenom);
@@ -352,8 +351,8 @@ void listar_datos(FILE *arch,ventas reg)
                 printf("\nMes: %d",reg.fecha_venta.mes);
                 printf("\nAnio: %d",reg.fecha_venta.year);
                 printf("\n------------------------------------------------------------");
-                fread(&reg,sizeof(reg),1,arch);   
             }
+            fread(&reg,sizeof(reg),1,arch);
         }
     } 
     fclose(arch);
@@ -460,28 +459,104 @@ void borrado_logico(FILE *arch,ventas reg)
                     reg.borrado=true;
                     fseek(arch,- sizeof(reg),SEEK_CUR); 
                     fwrite(&reg,sizeof(reg),1,arch);
+                    printf("\nla factura fue dada de baja correctamente.");
                 }
                 break;
             }
             fread(&reg,sizeof(reg),1,arch);
         }
         
-        if (esta)
-        {
-            printf("\nla factura fue dada de baja correctamente.");
-        }
-        else
+        if (!esta)
         {
             printf("\nLa factura no se encontro, volvera al menu.");
         }
-        
     }
     fclose(arch);
 }
 
+void listar_datos_baja(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","rb");
+    
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {    
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {   
+            if (reg.borrado)
+            {
+                printf("\nNumero del vendedor: %d",reg.nro_vendedor);
+                printf("\nApellido y nombre del vendedor: %s",reg.apenom);
+                printf("\nNumero de factura: %d",reg.nro_factura);
+                printf("\nImporte: %.2f",reg.importe_factura);
+                if (reg.forma_venta==1)
+                {
+                    printf("\nVenta realizada por: Contado.");
+                }
+                else
+                {
+                    printf("\nVenta realizada por: Credito.");
+                }
+                printf("\nFecha de venta:");
+                printf("\nDia: %d",reg.fecha_venta.dia);
+                printf("\nMes: %d",reg.fecha_venta.mes);
+                printf("\nAnio: %d",reg.fecha_venta.year);
+                printf("\n------------------------------------------------------------");
+            }
+            fread(&reg,sizeof(reg),1,arch);
+        }
+    } 
+    fclose(arch);
+}
 
+void eliminar_baja(FILE *arch,ventas reg)
+{
+    FILE *auxiliar
 
+    int clave,conf;
+    printf("\nIngrese la clave: ");
+    scanf("%d",&clave);
+    if (clave==12345)
+    {
+        printf("\nLa clave es correcta.");
+        printf("\nEsta seguro de querer eliminar los datos dados de baja? (1:SI/0:NO): ");
+        scanf("%d",&conf);
+        
+        if (conf==1)
+        {
+            arch=fopen("ventas.dat","r+b");      
+            auxiliar=fopen("auxiliar.dat","wb");
 
+            fread(&reg,sizeof(reg),1,arch);
+            while (!feof(arch))
+            {
+                if(!reg.borrado)
+                {
+                    fwrite(&reg,sizeof(reg),1,auxiliar);
+                    fread(&reg,sizeof(reg),1,arch);
+                }
+                else
+                {
+                    fread(&reg,sizeof(reg),1,arch);
+                }
+            }
+
+            printf("\nLos archivos dados de baja se eliminaron con exito.");
+            fclose(arch);
+            fclose(auxiliar);
+            remove("ventas.dat");
+            rename("auxiliar.dat","ventas.dat");
+        }
+    }
+    else
+    {
+        printf("\nLa clave ingresada es incorrecta, volvera al menu.");
+    }
+}
 
 
 
