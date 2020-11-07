@@ -43,7 +43,12 @@ main()
         printf("\n\n3. Obtener la cantidad de ventas de Contado y Credito en un mes.");
         printf("\n\n4. Obtener el importe total de un mes de un vendedor.");
         printf("\n\n5. Listar todos los datos.");
-        printf("\n\n6. Salir.");
+        printf("\n\n6. Modificar forma de venta de alguna factura.");
+        printf("\n\n7. .");
+        printf("\n\n8. .");
+        printf("\n\n9. .");
+        printf("\n\n10. .");
+        printf("\n\n11. Salir.");
         printf("\n\nIngrese la opcion: ");
         scanf("%d",&opcion);
     
@@ -68,8 +73,28 @@ main()
             case 5:
                 listar_datos(arch,reg);
                 break;
-
+            
             case 6:
+                
+                break;
+            
+            case 7:
+                
+                break;
+            
+            case 8:
+                
+                break;
+            
+            case 9:
+                
+                break;
+            
+            case 10:
+                
+                break;
+            
+            case 11:
                 printf("\nGracias por utilizar nuestros servicios.");
                 break;
             
@@ -324,3 +349,20 @@ void listar_datos(FILE *arch,ventas reg)
         }
     } 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
