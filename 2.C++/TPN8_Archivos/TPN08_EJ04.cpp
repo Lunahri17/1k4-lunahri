@@ -574,7 +574,7 @@ void ordenar(FILE *arch,ventas reg)
     int i=0,n;
     bool b;
 
-    arch=("ventas.dat","rb");
+    arch=fopen("ventas.dat","rb");
     if (arch==NULL)
     {
         printf("\nEl archivo no esta creado, o fue eliminado.");
@@ -606,7 +606,7 @@ void ordenar(FILE *arch,ventas reg)
             }
         } while (b);
         
-        arch=("ventas.dat","w+b");
+        arch=fopen("ventas.dat","w+b");
         for (i = 0; i < n; i++)
         {
             reg=auxiliar[i];
