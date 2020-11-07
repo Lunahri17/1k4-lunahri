@@ -31,6 +31,7 @@ void listar_datos(FILE *arch,ventas reg);
 void modificar_tipo(FILE *arch,ventas reg);
 void borrado_logico(FILE *arch,ventas reg);
 void listar_datos_baja(FILE *arch,ventas reg);
+void eliminar_baja(FILE *arch,ventas reg);
 
 main()
 {
@@ -516,8 +517,8 @@ void listar_datos_baja(FILE *arch,ventas reg)
 void eliminar_baja(FILE *arch,ventas reg)
 {
     FILE *auxiliar
-
     int clave,conf;
+
     printf("\nIngrese la clave: ");
     scanf("%d",&clave);
     if (clave==12345)
