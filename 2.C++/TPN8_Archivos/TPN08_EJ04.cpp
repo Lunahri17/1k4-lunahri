@@ -516,7 +516,7 @@ void listar_datos_baja(FILE *arch,ventas reg)
 
 void eliminar_baja(FILE *arch,ventas reg)
 {
-    FILE *auxiliar
+    FILE *auxiliar;
     int clave,conf;
 
     printf("\nIngrese la clave: ");
