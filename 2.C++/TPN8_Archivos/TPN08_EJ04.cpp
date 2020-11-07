@@ -197,7 +197,7 @@ void mes_buscar(FILE *arch,ventas reg)
         fread(&reg,sizeof(reg),1,arch);
         while (!feof(arch))
         {
-            if (reg.fecha_venta.mes==buscar)
+            if (reg.fecha_venta.mes==buscar and reg.borrado==false)
             {
                 esta=true;
                 acumulador+=reg.importe_factura;
@@ -235,7 +235,7 @@ void forma_mes_buscar(FILE *arch,ventas reg)
         fread(&reg,sizeof(reg),1,arch);
         while (!feof(arch))
         {
-            if (reg.fecha_venta.mes==buscar)
+            if (reg.fecha_venta.mes==buscar and reg.borrado==false)
             {
                 esta=true;
                 if (reg.forma_venta==1)
@@ -290,7 +290,7 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
         fread(&reg,sizeof(reg),1,arch);
         while (!feof(arch))
         {
-            if (reg.fecha_venta.mes==buscar_mes)
+            if (reg.fecha_venta.mes==buscar_mes and reg.borrado==false)
             {
                 if (reg.nro_vendedor==buscar_vend)
                 {
@@ -332,25 +332,28 @@ void listar_datos(FILE *arch,ventas reg)
     {    
         fread(&reg,sizeof(reg),1,arch);
         while (!feof(arch))
-        {
-            printf("\nNumero del vendedor: %d",reg.nro_vendedor);
-            printf("\nApellido y nombre del vendedor: %s",reg.apenom);
-            printf("\nNumero de factura: %d",reg.nro_factura);
-            printf("\nImporte: %.2f",reg.importe_factura);
-            if (reg.forma_venta==1)
+        {   
+            if (reg.borrado==false)
             {
-                printf("\nVenta realizada por: Contado.");
+                printf("\nNumero del vendedor: %d",reg.nro_vendedor);
+                printf("\nApellido y nombre del vendedor: %s",reg.apenom);
+                printf("\nNumero de factura: %d",reg.nro_factura);
+                printf("\nImporte: %.2f",reg.importe_factura);
+                if (reg.forma_venta==1)
+                {
+                    printf("\nVenta realizada por: Contado.");
+                }
+                else
+                {
+                    printf("\nVenta realizada por: Credito.");
+                }
+                printf("\nFecha de venta:");
+                printf("\nDia: %d",reg.fecha_venta.dia);
+                printf("\nMes: %d",reg.fecha_venta.mes);
+                printf("\nAnio: %d",reg.fecha_venta.year);
+                printf("\n------------------------------------------------------------");
+                fread(&reg,sizeof(reg),1,arch);   
             }
-            else
-            {
-                printf("\nVenta realizada por: Credito.");
-            }
-            printf("\nFecha de venta:");
-            printf("\nDia: %d",reg.fecha_venta.dia);
-            printf("\nMes: %d",reg.fecha_venta.mes);
-            printf("\nAnio: %d",reg.fecha_venta.year);
-            printf("\n------------------------------------------------------------");
-            fread(&reg,sizeof(reg),1,arch);
         }
     } 
     fclose(arch);
@@ -394,7 +397,7 @@ void modificar_tipo(FILE *arch,ventas reg)
 
                 fseek(arch,- sizeof(reg),SEEK_CUR); 
                 fwrite(&reg,sizeof(reg),1,arch);
-                prit
+                
                 break;
             }
             fread(&reg,sizeof(reg),1,arch);
