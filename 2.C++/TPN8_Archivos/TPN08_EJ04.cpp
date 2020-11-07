@@ -29,6 +29,7 @@ void forma_mes_buscar(FILE *arch,ventas reg);
 void importe_mes_vendedor(FILE *arch,ventas reg);
 void listar_datos(FILE *arch,ventas reg);
 void modificar_tipo(FILE *arch,ventas reg);
+void borrado_logico(FILE *arch,ventas reg);
 
 main()
 {
@@ -46,7 +47,7 @@ main()
         printf("\n\n4. Obtener el importe total de un mes de un vendedor.");
         printf("\n\n5. Listar todos los datos.");
         printf("\n\n6. Modificar forma de venta de alguna factura.");
-        printf("\n\n7. .");
+        printf("\n\n7. Dar de baja una factura.");
         printf("\n\n8. .");
         printf("\n\n9. .");
         printf("\n\n10. .");
@@ -81,7 +82,7 @@ main()
                 break;
             
             case 7:
-                
+                borrado_logico(arch,reg);
                 break;
             
             case 8:
@@ -322,7 +323,6 @@ void listar_datos(FILE *arch,ventas reg)
     arch=fopen("ventas.dat","rb");
     int buscar;
     float acumulador=0;
-    bool esta=false;
 
     if (arch==NULL)
     {
@@ -362,7 +362,7 @@ void listar_datos(FILE *arch,ventas reg)
 void modificar_tipo(FILE *arch,ventas reg)
 {
     arch=fopen("ventas.dat","r+b");
-    int buscar,cont_cont=0,cont_cred=0;
+    int buscar;
     bool esta=false;
 
     if (arch==NULL)
@@ -409,14 +409,75 @@ void modificar_tipo(FILE *arch,ventas reg)
         }
         else
         {
-            printf("\nEl mes buscado no se encontro, volvera al menu.");
+            printf("\nNo se encontro la factura buscada, volvera al menu.");
         }
         
     }
     fclose(arch);
 }
 
+void borrado_logico(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","r+b");
+    int buscar,aux;
+    bool esta=false;
 
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        printf("\nIngrese el numero de factura a buscar: ");
+        scanf("%d",&buscar);
+        
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            if (reg.nro_factura==buscar and reg.borrado==false)
+            {
+                esta=true;
+
+                printf("\nVendedor: %d",reg.nro_vendedor);
+                printf("\nApellido y nombre: %s",reg.apenom);
+                printf("\nNumero de factura: %d",reg.nro_factura);
+                printf("\nImporte de la factura: %.2f",reg.importe_factura);
+                if (reg.forma_venta==1)
+                    printf("\nVenta realizada por: Contado.");
+                else
+                    printf("\nVenta realizada por: Credito.");
+
+                printf("\nFecha de venta:");
+                printf("\nDia: %d",reg.fecha_venta.dia);
+                printf("\nMes: %d",reg.fecha_venta.mes);
+                printf("\nAnio: %d",reg.fecha_venta.year);
+
+                printf("\n\nSeguro que desea dar de baja la factura? (1:SI / 0:NO): ");
+                scanf("%d",&aux);
+
+                if (aux==1)
+                {
+                    reg.borrado=true;
+                    fseek(arch,- sizeof(reg),SEEK_CUR); 
+                    fwrite(&reg,sizeof(reg),1,arch);
+                }
+                break;
+            }
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        
+        if (esta)
+        {
+            printf("\nla factura fue dada de baja correctamente.");
+        }
+        else
+        {
+            printf("\nLa factura no se encontro, volvera al menu.");
+        }
+        
+    }
+    fclose(arch);
+}
 
 
 
