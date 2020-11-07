@@ -17,8 +17,9 @@ struct ventas
     char apenom[40];
     int nro_factura;
     float importe_factura;
-    int forma_venta;
-    Fecha fecha_venta;
+    int forma_venta;//1.contado
+    Fecha fecha_venta;//2.credito
+    bool borrado=false;
 };
 
 //Protipos de funciones:
@@ -27,6 +28,7 @@ void mes_buscar(FILE *arch,ventas reg);
 void forma_mes_buscar(FILE *arch,ventas reg);
 void importe_mes_vendedor(FILE *arch,ventas reg);
 void listar_datos(FILE *arch,ventas reg);
+void modificar_tipo(FILE *arch,ventas reg);
 
 main()
 {
@@ -75,7 +77,7 @@ main()
                 break;
             
             case 6:
-                
+                modificar_tipo(arch,reg);
                 break;
             
             case 7:
@@ -106,7 +108,7 @@ main()
         printf("\n\n");
         system("pause");
     } 
-    while (opcion!=6);
+    while (opcion!=11);
 }
 
 void cargar(FILE *arch,ventas reg)
@@ -212,6 +214,7 @@ void mes_buscar(FILE *arch,ventas reg)
             printf("\nEl mes buscado no se encontro, volvera al menu.");
         }
     }
+    fclose(arch);
 }
 
 void forma_mes_buscar(FILE *arch,ventas reg)
@@ -257,6 +260,7 @@ void forma_mes_buscar(FILE *arch,ventas reg)
             printf("\nEl mes buscado no se encontro, volvera al menu.");
         }
     }
+    fclose(arch);
 }
 
 void importe_mes_vendedor(FILE *arch,ventas reg)
@@ -310,11 +314,12 @@ void importe_mes_vendedor(FILE *arch,ventas reg)
             printf("\nLos datos ingresados no se encontraron, volvera al menu.");
         }
     }
+    fclose(arch);
 }
 
 void listar_datos(FILE *arch,ventas reg)
 {
-       arch=fopen("ventas.dat","rb");
+    arch=fopen("ventas.dat","rb");
     int buscar;
     float acumulador=0;
     bool esta=false;
@@ -348,9 +353,60 @@ void listar_datos(FILE *arch,ventas reg)
             fread(&reg,sizeof(reg),1,arch);
         }
     } 
+    fclose(arch);
 }
 
+void modificar_tipo(FILE *arch,ventas reg)
+{
+    arch=fopen("ventas.dat","r+b");
+    int buscar,cont_cont=0,cont_cred=0;
+    bool esta=false;
 
+    if (arch==NULL)
+    {
+        printf("\nEl archivo no esta creado, o fue eliminado.");
+    }
+    else
+    {
+        printf("\nIngrese el numero de factura a buscar: ");
+        scanf("%d",&buscar);
+        
+        fread(&reg,sizeof(reg),1,arch);
+        while (!feof(arch))
+        {
+            if (reg.nro_factura==buscar and reg.borrado==false)
+            {
+                esta=true;
+                printf("\nLa forma de pago de la factura %d es: ",reg.nro_factura);
+                if (reg.forma_venta==1)
+                    printf("Contado.");
+                else
+                    printf("Credito.");
+                
+                do
+                {
+                    printf("\nIngrese la forma de pago (1: Contado / 2: Credito): ");
+                    scanf("%d",&reg.forma_venta);
+                    
+                    if (reg.forma_venta>2 or reg.forma_venta<1)
+                        printf("\nIngreso un numero erroneo, vuelva a intentarlo.\n");  
+                } while (reg.forma_venta>2 or reg.forma_venta<1);
+
+                //fseek(arch,- sizeof(reg),SEEK_CUR); 
+                fwrite(&reg,sizeof(reg),1,arch);
+                
+                break;
+            }
+            fread(&reg,sizeof(reg),1,arch);
+        }
+        
+        if (!esta)
+        {
+            printf("\nEl mes buscado no se encontro, volvera al menu.");
+        }
+    }
+    fclose(arch);
+}
 
 
 
