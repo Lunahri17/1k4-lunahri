@@ -7,6 +7,7 @@
 void end();
 int carga_arch(FILE *arch,char frase[80]);
 void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n,int n1,int n2);
+void mostrar(FILE *arch,int n);
 
 main()
 {
@@ -57,7 +58,8 @@ main()
 		}
 	} while (opcion!=3);
 	
-	
+	mostrar(arch1,1);
+	mostrar(arch2,2);
 	
 	end();
 }
@@ -112,6 +114,37 @@ void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n,int n1,int n2)
 	fclose(archcomb);
 }
 
+void mostrar(FILE *arch,int n)
+{
+	char frase[80]
+	switch (n)
+	{
+		case 1:
+			arch=fopen("Archivo1.txt","r");
+			fgets(frase,80,arch); 
+			while (!feof(arch))
+			{
+				strlwr(frase);
+				printf("%s",frase);
+				fgets(frase,80,arch);
+			}
+			break;
+		
+		case 2:
+			arch=fopen("Archivo2.txt","r");
+			fgets(frase,80,arch); 
+			while (!feof(arch))
+			{
+				strupr(frase);
+				printf("%s",frase);
+				fgets(frase,80,arch);
+			}
+			break;
+
+		default:
+			break;
+	}
+}
 
 void end()
 {
