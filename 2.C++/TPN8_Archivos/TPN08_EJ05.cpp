@@ -161,10 +161,10 @@ void mostrar(FILE *arch,int n)
 			arch=fopen("Frases.txt","r");
 			
 			c=getc(arch);
-			strupr(c);
+			c-=32;
 			while (!feof(arch))
 			{
-				if (c==32)
+				if (c==32 or c=='\n')
 				{
 					b=true;
 				}
@@ -178,7 +178,7 @@ void mostrar(FILE *arch,int n)
 				
 				if (b)
 				{
-					strupr(c);
+					c-=32;
 				}	
 			}
 			fclose(arch);
