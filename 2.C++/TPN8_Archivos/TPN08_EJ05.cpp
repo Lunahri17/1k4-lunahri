@@ -6,6 +6,7 @@
 
 //Protipos de funciones:
 void end();
+void carga_arch1(FILE *arch1,char frase[80]);
 
 main()
 {
@@ -15,7 +16,7 @@ main()
 	char frase[80];
 	int opcion;
 	
-	arch1=fopen("Archivo1.txt","w");
+	arch1=fopen("Archivo1.txt","a+");
 	arch2=fopen("Archivo2.txt","w");
 
 	do
@@ -31,7 +32,7 @@ main()
 		switch (opcion)
 		{
 		case 1:
-			
+			carga_arch1(arch1,frase);
 			break;
 
 		case 2:
@@ -48,10 +49,26 @@ main()
 		}
 	} while (opcion!=3);
 	
+	fclose(arch1);
+	fclose(arch2);
 	
 	end();
 }
 
+void carga_arch1(FILE *arch1,char frase[80])
+{
+	printf("\nIngrese la/s frase/s (Ingrese 'final' para terminar): ");
+	_flushall();
+	gets(frase);
+	while (strcmp(frase,"final")==0)
+	{
+		fprintf(arch1,strcat(frase,"\n"));
+		printf("\nIngrese la/s frase/s (Ingrese 'final' para terminar): ");
+		_flushall();
+		gets(frase);
+	}
+	
+}
 
 
 void end()
