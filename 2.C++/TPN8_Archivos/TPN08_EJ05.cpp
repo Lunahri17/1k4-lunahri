@@ -6,7 +6,7 @@
 //Protipos de funciones:
 void end();
 int carga_arch(FILE *arch,char frase[80]);
-void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n);
+void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n,int n1,int n2);
 
 main()
 {
@@ -42,11 +42,11 @@ main()
 			fclose(arch2);
 			if (n1>=n2)
 			{
-				combinar(arch1,arch2,archcomb,n1);
+				combinar(arch1,arch2,archcomb,n1,n1,n2);
 			}
 			else
 			{
-				combinar(arch1,arch2,archcomb,n2);
+				combinar(arch1,arch2,archcomb,n2,n1,n2);
 			}
 			break;
 		
@@ -65,20 +65,24 @@ main()
 int carga_arch(FILE *arch,char frase[80])
 {
 	int i=0;
+	
 	printf("\nIngrese la/s frase/s (Ingrese 'final' para terminar): ");
 	_flushall();
 	gets(frase);
+	
 	while (strcmp(frase,"final")!=0)
 	{
 		fprintf(arch,strcat(frase,"\n"));
 		printf("\nIngrese la/s frase/s (Ingrese 'final' para terminar): ");
 		_flushall();
 		gets(frase);
+
+		i++;
 	}
 	return i;
 }
 
-void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n)
+void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n,int n1,int n2)
 {
 	char frase[80];
 
@@ -87,11 +91,20 @@ void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n)
 	archcomb=fopen("Frases.txt","a+");
 
 	for (int i = 0; i < n; i++)
-	{
-		fgets(frase,80,arch1);
-		fprintf(archcomb,frase);
-		fgets(frase,80,arch2);
-		fprintf(archcomb,frase);
+	{	
+		if (n1!=0)
+		{
+			fgets(frase,80,arch1);
+			fprintf(archcomb,frase);
+			n1--;
+		}
+		
+		if (n2!=0)
+		{
+			fgets(frase,80,arch2);
+			fprintf(archcomb,frase);
+			n2--;
+		}
 	}
 	
 	fclose(arch1);
