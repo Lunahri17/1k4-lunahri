@@ -58,9 +58,21 @@ main()
 		}
 	} while (opcion!=3);
 	
+	system("cls");
+	printf("\nFrases de Jose Luis: \n\n");
 	mostrar(arch1,1);
+	printf("\n\nFrases de Maria Emilia: \n\n");
 	mostrar(arch2,2);
 	
+	printf("\n\n");
+	system("pause");
+
+	printf("\n\nFrases Combinadas: \n\n");
+	mostrar(archcomb,3);
+
+	remove("Archivo1.txt");
+	remove("Archivo2.txt");
+
 	end();
 }
 
@@ -116,7 +128,9 @@ void combinar(FILE *arch1,FILE *arch2,FILE *archcomb,int n,int n1,int n2)
 
 void mostrar(FILE *arch,int n)
 {
-	char frase[80]
+	char frase[80],c;
+	bool b;
+	
 	switch (n)
 	{
 		case 1:
@@ -128,6 +142,7 @@ void mostrar(FILE *arch,int n)
 				printf("%s",frase);
 				fgets(frase,80,arch);
 			}
+			fclose(arch);
 			break;
 		
 		case 2:
@@ -139,9 +154,34 @@ void mostrar(FILE *arch,int n)
 				printf("%s",frase);
 				fgets(frase,80,arch);
 			}
+			fclose(arch);
 			break;
 
 		default:
+			arch=fopen("Frases.txt","r");
+			
+			c=getc(arch);
+			strupr(c);
+			while (!feof(arch))
+			{
+				if (c==32)
+				{
+					b=true;
+				}
+				else
+				{
+					b=false;
+				}	
+				
+				printf("%c",c);
+				c=getc(arch);
+				
+				if (b)
+				{
+					strupr(c);
+				}	
+			}
+			fclose(arch);
 			break;
 	}
 }
