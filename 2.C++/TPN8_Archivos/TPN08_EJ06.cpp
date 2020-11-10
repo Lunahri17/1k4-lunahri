@@ -92,7 +92,7 @@ void listar_estudiantes(FILE *arch)
 
 void buscar_estudiante(FILE *arch)
 {
-	char aux[50],aux2[50],aux3[1],estudiante[150],carrera[20];
+	char aux[50],aux2[50],aux3,estudiante[150],carrera[20];
 	int pos,i=0,k=0,cont1=0;
 	bool stop=false;
 
@@ -136,11 +136,11 @@ void buscar_estudiante(FILE *arch)
 			}
 			else
 			{
-				strcpy(aux3,estudiante[i]);
+				aux3=estudiante[i];
 
 				if (cont1>2 and cont1<3)
 				{
-					strcpy(carrera[k],aux3);
+					carrera[k]=aux3;
 					k++;
 				}
 
