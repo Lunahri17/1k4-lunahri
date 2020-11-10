@@ -7,6 +7,7 @@
 void end();
 void cargar_estudiantes(FILE *arch);
 void listar_estudiantes(FILE *arch);
+void buscar_estudiante(FILE *arch);
 
 main()
 {
