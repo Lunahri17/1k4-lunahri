@@ -16,7 +16,7 @@ main()
 	system("pause");
 
 	system("cls");
-	printf("\nListador de estudiantes: ");
+	printf("\nListador de estudiantes: \n\n");
 	listar_estudiantes(arch);
 	
 	end();
@@ -68,15 +68,16 @@ void cargar_estudiantes(FILE *arch)
 
 void listar_estudiantes(FILE *arch)
 {
+	char estudiante[150];
+
 	arch=fopen("Estudiantes.txt","r");
 
-	char estudiante[150]
-
+	printf("-----------------------------------------------------------------------------\n");
 	fgets(estudiante,150,arch);
 	while (!feof(arch))
 	{
-		printf("\n-----------------------------------------------------------------------------");
 		printf("%s",estudiante);
+		printf("-----------------------------------------------------------------------------\n");
 		fgets(estudiante,150,arch);
 	}
 	fclose(arch);
