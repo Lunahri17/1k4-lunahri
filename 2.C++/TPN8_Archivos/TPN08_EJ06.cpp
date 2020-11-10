@@ -92,9 +92,9 @@ void listar_estudiantes(FILE *arch)
 
 void buscar_estudiante(FILE *arch)
 {
-	char aux[50],aux2[50],estudiante[150];
-	int pos;
-	bool esta=false;
+	char aux[50],aux2[50],aux3[1],estudiante[150],carrera[20];
+	int pos,i=0,k=0,cont1=0;
+	bool stop=false;
 
 	arch=fopen("Estudiantes.txt","r");
 
@@ -117,18 +117,43 @@ void buscar_estudiante(FILE *arch)
 		pos=strstr(estudiante,aux2)-estudiante;
 		if (pos>=0) 
 		{
-			esta=true;
+			stop=true;
 			break;
 		}
 		fgets(estudiante,150,arch);
 	}
 
-	printf("\nvariable estudiante: %s",estudiante); //quitar, solo caso de prueba.
+	printf("\nvariable estudiante antes: %s",estudiante); //quitar, solo caso de prueba.
 
-	if (esta)
+	if (stop)
 	{
-		removerCaracteres(estudiante,aux2);
-		printf("\nvariable estudiante: %s",estudiante); //quitar, solo caso de prueba.
+		stop=false;
+		while (!stop) //Este wihle recorre la variable estudiante hasta que encuentre la carrera y el promedio, ubicandolos en un nuevo vector.
+		{
+			if (cont1==4)
+			{
+				stop=true;
+			}
+			else
+			{
+				strcpy(aux3,estudiante[i]);
+
+				if (cont1>2 and cont1<3)
+				{
+					strcpy(carrera[k],aux3);
+					k++;
+				}
+
+				if (strcmp(aux3,";")==0)
+				{
+					cont1++;
+				}
+
+				i++;
+			}
+		}
+		
+		printf("\nCarrera: %s",carrera);
 	}
 	
 
