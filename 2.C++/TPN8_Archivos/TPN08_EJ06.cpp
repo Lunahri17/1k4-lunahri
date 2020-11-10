@@ -156,7 +156,6 @@ void buscar_estudiante(FILE *arch)
 		printf("\nCarrera: %s",carrera);
 	}
 	
-
 	fclose(arch);
 }
 
