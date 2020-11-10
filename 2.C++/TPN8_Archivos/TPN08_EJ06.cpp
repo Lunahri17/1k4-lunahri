@@ -144,7 +144,7 @@ void buscar_estudiante(FILE *arch)
 					k++;
 				}
 
-				if (strcmp(aux3,";")==0)
+				if (aux3==';')
 				{
 					cont1++;
 				}
