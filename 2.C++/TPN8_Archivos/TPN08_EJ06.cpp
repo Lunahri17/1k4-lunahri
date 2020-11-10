@@ -8,7 +8,6 @@ void end();
 void cargar_estudiantes(FILE *arch);
 void listar_estudiantes(FILE *arch);
 void buscar_estudiante(FILE *arch);
-void removerCaracteres(char *cadena, char *caracteres);
 
 main()
 {
@@ -134,47 +133,6 @@ void buscar_estudiante(FILE *arch)
 	
 
 	fclose(arch);
-}
-
-void removerCaracteres(char *cadena, char *caracteres)
-{
-	int indiceCadena = 0, indiceCadenaLimpia = 0;
-	int deberiaAgregarCaracter = 1;
-	
-	// Recorrer cadena carácter por carácter
-	while (cadena[indiceCadena]) 
-	{
-		// Primero suponemos que la letra sí debe permanecer
-		deberiaAgregarCaracter = 1;
-		
-		int indiceCaracteres = 0;
-		
-		// Recorrer los caracteres prohibidos
-		
-		while (caracteres[indiceCaracteres]) 
-		{
-			// Y si la letra actual es uno de los caracteres, ya no se agrega
-			if (cadena[indiceCadena] == caracteres[indiceCaracteres]) 
-			{
-				deberiaAgregarCaracter = 0;
-			}
-
-			indiceCaracteres++;
-		}
-
-		// Dependiendo de la variable de arriba, la letra se agrega a la "nueva
-		// cadena"
-		if (deberiaAgregarCaracter) 
-		{
-			cadena[indiceCadenaLimpia] = cadena[indiceCadena];
-			indiceCadenaLimpia++;
-		}
-
-		indiceCadena++;
-	}
-	
-	// Al final se agrega el carácter NULL para terminar la cadena
-	cadena[indiceCadenaLimpia] = 0;
 }
 
 
