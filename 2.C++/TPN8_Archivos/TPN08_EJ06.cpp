@@ -19,6 +19,8 @@ main()
 	printf("\nListador de estudiantes: \n\n");
 	listar_estudiantes(arch);
 	
+
+	buscar_estudiante(arch);
 	end();
 }
 
@@ -81,6 +83,46 @@ void listar_estudiantes(FILE *arch)
 		fgets(estudiante,150,arch);
 	}
 	fclose(arch);
+}
+
+
+
+
+
+void buscar_estudiante(FILE *arch)
+{
+	char aux[50],aux2[50],estudiante[150];
+	int pos;
+
+	arch=fopen("Estudiantes.txt","r");
+
+	printf("\nIngrse el apellido del estudiante: ");
+	_flushall();
+	gets(aux);
+	srtcat(aux2,aux);
+	srtcat(aux2,";");
+
+	printf("\nIngrse el nombre del estudiante: ");
+	_flushall();
+	gets(aux);
+	srtcat(aux2,aux);
+	srtcat(aux2,";");
+
+	strupr(aux2);
+
+	
+	fgets(estudiante,150,arch);
+	while (!feof(arch))
+	{
+		pos=strstr(estudiante,aux2)-estudiante;
+		if (pos>=0) 
+			printf("esta");
+		else
+			printf("no esta");
+		
+		
+		fgets(estudiante,150,arch);
+	}
 }
 
 void end()
