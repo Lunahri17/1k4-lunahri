@@ -5,6 +5,7 @@
 
 //Protipos de funciones:
 void end();
+void cargar_estudiantes(FILE *arch);
 
 main()
 {
@@ -15,7 +16,7 @@ main()
 	end();
 }
 
-void cargar_estudiantes(arch)
+void cargar_estudiantes(FILE *arch)
 {
 	int n;
 	char estudiante[150],aux[40];
@@ -30,25 +31,25 @@ void cargar_estudiantes(arch)
 		printf("\nIngrese el Apellido del estudiante %d: ",i+1);
 		_flushall();
 		gets(estudiante);
-		strcat(estudiante,';');
+		strcat(estudiante,";");
 
 		printf("\nIngrese el Nombre del estudiante %d: ",i+1);
 		_flushall();
 		gets(aux);
 		strcat(estudiante,aux);
-		strcat(estudiante,';');
+		strcat(estudiante,";");
 
 		printf("\nIngrese la Carrera del estudiante %d: ",i+1);
 		_flushall();
 		gets(aux);
 		strcat(estudiante,aux);
-		strcat(estudiante,';');
+		strcat(estudiante,";");
 		
 		printf("\nIngrese el promedio del estudiante %d: ",i+1);
 		_flushall();
 		gets(aux);
 		strcat(estudiante,aux);
-		strcat(estudiante,';');
+		strcat(estudiante,";");
 
 		fprintf(arch,strcat(estudiante,"\n"));
 	}
