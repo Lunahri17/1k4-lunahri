@@ -30,7 +30,7 @@ void cargar_estudiantes(FILE *arch)
 	int n;
 	char estudiante[150],aux[40];
 
-	arch=fopen("Estudiantes.txt","w");
+	arch=fopen("Estudiantes.txt","a"); //cambiar por "w", solo es para caso de prueba.
 
 	printf("\nIngrese la cantidad de estudiantes: ");
 	scanf("%d",&n);
@@ -99,8 +99,7 @@ void buscar_estudiante(FILE *arch)
 
 	printf("\nIngrse el apellido del estudiante: ");
 	_flushall();
-	gets(aux);
-	strcat(aux2,aux);
+	gets(aux2);
 	strcat(aux2,";");
 
 	printf("\nIngrse el nombre del estudiante: ");
@@ -110,16 +109,16 @@ void buscar_estudiante(FILE *arch)
 	strcat(aux2,";");
 
 	strupr(aux2);
-
+	printf("%s",aux2);//quitar, solo caso de prueba.
 	
 	fgets(estudiante,150,arch);
 	while (!feof(arch))
 	{
 		pos=strstr(estudiante,aux2)-estudiante;
 		if (pos>=0) 
-			printf("esta");
+			printf("\nesta");
 		else
-			printf("no esta");
+			printf("\nno esta");
 		
 
 		fgets(estudiante,150,arch);
