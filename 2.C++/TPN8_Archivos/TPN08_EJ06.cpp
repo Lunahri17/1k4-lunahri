@@ -6,12 +6,18 @@
 //Protipos de funciones:
 void end();
 void cargar_estudiantes(FILE *arch);
+void listar_estudiantes(FILE *arch);
 
 main()
 {
 	FILE *arch;
 	
 	cargar_estudiantes(arch);
+	system("pause");
+
+	system("cls");
+	printf("\nListador de estudiantes: ");
+	listar_estudiantes(arch);
 	
 	end();
 }
@@ -51,12 +57,30 @@ void cargar_estudiantes(FILE *arch)
 		strcat(estudiante,aux);
 		strcat(estudiante,";");
 
+		strupr(estudiante);
 		fprintf(arch,strcat(estudiante,"\n"));
+		
+		printf("\n\n----------------------------------------------------------------\n\n");
 	}
 
 	fclose(arch);
 }
 
+void listar_estudiantes(FILE *arch)
+{
+	arch=fopen("Estudiantes.txt","r");
+
+	char estudiante[150]
+
+	fgets(estudiante,150,arch);
+	while (!feof(arch))
+	{
+		printf("\n-----------------------------------------------------------------------------");
+		printf("%s",estudiante);
+		fgets(estudiante,150,arch);
+	}
+	fclose(arch);
+}
 
 void end()
 {
