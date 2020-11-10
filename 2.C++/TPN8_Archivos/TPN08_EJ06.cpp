@@ -99,14 +99,14 @@ void buscar_estudiante(FILE *arch)
 	printf("\nIngrse el apellido del estudiante: ");
 	_flushall();
 	gets(aux);
-	srtcat(aux2,aux);
-	srtcat(aux2,";");
+	strcat(aux2,aux);
+	strcat(aux2,";");
 
 	printf("\nIngrse el nombre del estudiante: ");
 	_flushall();
 	gets(aux);
-	srtcat(aux2,aux);
-	srtcat(aux2,";");
+	strcat(aux2,aux);
+	strcat(aux2,";");
 
 	strupr(aux2);
 
@@ -120,7 +120,7 @@ void buscar_estudiante(FILE *arch)
 		else
 			printf("no esta");
 		
-		
+
 		fgets(estudiante,150,arch);
 	}
 }
