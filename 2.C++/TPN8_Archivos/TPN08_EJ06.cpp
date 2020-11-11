@@ -142,9 +142,10 @@ void buscar_estudiante(FILE *arch)
 				{
 					carrera[k]=aux3;
 					k++;
+					printf("\nCarrera: %s",carrera);
 				}
 
-				if (aux3==';')
+				if (aux3==59)
 				{
 					cont1++;
 				}
