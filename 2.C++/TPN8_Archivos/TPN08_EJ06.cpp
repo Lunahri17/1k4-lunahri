@@ -16,13 +16,13 @@ struct listar
 void end();
 int cargar_estudiantes(FILE *arch,listar reg[50]);
 void listar_estudiantes(listar reg[50],int n);
-void buscar_estudiante(FILE *arch);
+void buscar_estudiante(listar reg[50],int n);
 
 main()
 {
 	FILE *arch;
 	listar reg[50];
-	int n;
+	int n=0;
 
 	n=cargar_estudiantes(arch,reg);
 	system("pause");
@@ -32,7 +32,7 @@ main()
 	listar_estudiantes(reg,n);
 	
 
-	buscar_estudiante(arch);
+	buscar_estudiante(reg,n);
 	end();
 }
 
@@ -42,7 +42,7 @@ int cargar_estudiantes(FILE *arch,listar reg[50])
 	int n;
 	char estudiante[150],aux[40];
 
-	arch=fopen("Estudiantes.txt","w"); //cambiar por "w", solo es para caso de prueba.
+	arch=fopen("Estudiantes.txt","w");
 
 	printf("\nIngrese la cantidad de estudiantes: ");
 	scanf("%d",&n);
@@ -93,7 +93,7 @@ void listar_estudiantes(listar reg[50],int n)
 		puts(reg[i].nombre);
 
 		printf("\nApellido del alumno %d: ",i+1);
-		puts(reg[i].nombre);
+		puts(reg[i].apellido);
 
 		printf("\nCarrera del alumno %d: ",i+1);
 		puts(reg[i].carrera);
@@ -112,74 +112,43 @@ void listar_estudiantes(listar reg[50],int n)
 //No supe como implementarlo.
 
 //Apartado 5.
-void buscar_estudiante(FILE *arch)
+void buscar_estudiante(listar reg[50],int n)
 {
-	char aux[50],aux2[50],aux3,estudiante[150],carrera[20];
-	int pos,i=0,k=0,cont1=0;
-	bool stop=false;
+	char aux1[50],aux2[50];
+	bool esta=false;
 
-	arch=fopen("Estudiantes.txt","r");
-
-	printf("\nIngrse el apellido del estudiante: ");
+	printf("\nIngrese el Nombre del alumno: ");
+	_flushall();
+	gets(aux1);
+	strupr(aux1);
+	
+	printf("\nIngrese el Apellido del alumno: ");
 	_flushall();
 	gets(aux2);
-	strcat(aux2,";");
-
-	printf("\nIngrse el nombre del estudiante: ");
-	_flushall();
-	gets(aux);
-	strcat(aux2,aux);
-	strcat(aux2,";");
-
 	strupr(aux2);
-	
-	fgets(estudiante,150,arch);
-	while (!feof(arch))
+
+	for (int i = 0; i < n; i++)
 	{
-		pos=strstr(estudiante,aux2)-estudiante;
-		if (pos>=0) 
+		if (strcmp(reg[i].nombre,aux1)==0)
 		{
-			stop=true;
-			break;
-		}
-		fgets(estudiante,150,arch);
-	}
-
-	printf("\nvariable estudiante antes: %s",estudiante); //quitar, solo caso de prueba.
-
-	if (stop)
-	{
-		stop=false;
-		while (!stop) //Este wihle recorre la variable estudiante hasta que encuentre la carrera y el promedio, ubicandolos en un nuevo vector.
-		{
-			if (cont1==4)
+			if (strcmp(reg[i].apellido,aux2)==0)
 			{
-				stop=true;
-			}
-			else
-			{
-				aux3=estudiante[i];
+				esta=true;
+				printf("\nCarrera que estudia: ");
+				puts(reg[i].carrera);
 
-				if (cont1>2 and cont1<3)
-				{
-					carrera[k]=aux3;
-					k++;
-					printf("\nCarrera: %s",carrera);
-				}
+				printf("\nPromedio del estudiante: ");
+				puts(reg[i].promedio);
 
-				if (aux3==59)
-				{
-					cont1++;
-				}
-
-				i++;
+				break;
 			}
 		}
-		
-		printf("\nCarrera: %s",carrera);
 	}
 	
-	fclose(arch);
+	if (!esta)
+	{
+		printf("\nEl Nombre y Apellido ingresados no coinciden.");
+	}
 }
 
 
