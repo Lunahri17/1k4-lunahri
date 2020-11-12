@@ -124,15 +124,15 @@ void buscar_estudiante(listar reg[50],int n)
 	char aux1[50],aux2[50];
 	bool esta=false;
 
-	printf("\nIngrese el Apellido del alumno: ");
-	_flushall();
-	gets(aux2);
-	strupr(aux2);
-
 	printf("\nIngrese el Nombre del alumno: ");
 	_flushall();
 	gets(aux1);
 	strupr(aux1);
+	
+	printf("\nIngrese el Apellido del alumno: ");
+	_flushall();
+	gets(aux2);
+	strupr(aux2);
 		
 	for (int i = 0; i < n; i++)
 	{
