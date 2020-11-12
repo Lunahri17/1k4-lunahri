@@ -15,7 +15,7 @@ struct listar
 //Protipos de funciones:
 void end();
 int cargar_estudiantes(FILE *arch,listar reg[50]);
-void listar_estudiantes(listar reg[50]);
+void listar_estudiantes(listar reg[50],int n);
 void buscar_estudiante(FILE *arch);
 
 main()
@@ -29,7 +29,7 @@ main()
 
 	system("cls");
 	printf("\nListador de estudiantes: \n\n");
-	listar_estudiantes(reg);
+	listar_estudiantes(reg,n);
 	
 
 	buscar_estudiante(arch);
@@ -87,9 +87,20 @@ int cargar_estudiantes(FILE *arch,listar reg[50])
 void listar_estudiantes(listar reg[50],int n)
 {
 	printf("-----------------------------------------------------------------------------\n");
-	
+	for (int i=0 ; i < n ; i++)
 	{
-		
+		printf("\nNombre del alumno %d: ",i+1);
+		puts(reg[i].nombre);
+
+		printf("\nApellido del alumno %d: ",i+1);
+		puts(reg[i].nombre);
+
+		printf("\nCarrera del alumno %d: ",i+1);
+		puts(reg[i].carrera);
+
+		printf("\nPromedio del alumno %d: ",i+1);
+		puts(reg[i].promedio);
+
 		printf("-----------------------------------------------------------------------------\n");
 	}
 }
