@@ -49,31 +49,38 @@ int cargar_estudiantes(FILE *arch,listar reg[50])
 
 	for (int i = 0; i < n; i++)
 	{
-		printf("\nIngrese el Apellido del estudiante %d: ",i+1);
+		printf("\nIngrese el Nombre del estudiante %d: ",i+1);
 		_flushall();
-		gets(reg[i].nombre);
+		gets(aux);
+		strupr(aux);
+		strcpy(reg[i].nombre,aux);
 		strcpy(estudiante,reg[i].nombre);
 		strcat(estudiante," ; ");
 
-		printf("\nIngrese el Nombre del estudiante %d: ",i+1);
+		printf("\nIngrese el Apellido del estudiante %d: ",i+1);
 		_flushall();
-		gets(reg[i].apellido);
+		gets(aux);
+		strupr(aux);
+		strcpy(reg[i].nombre,aux);
 		strcat(estudiante,reg[i].apellido);
 		strcat(estudiante," ; ");
 
 		printf("\nIngrese la Carrera del estudiante %d: ",i+1);
 		_flushall();
-		gets(reg[i].carrera);
+		gets(aux);
+		strupr(aux);
+		strcpy(reg[i].carrera,aux);
 		strcat(estudiante,reg[i].carrera);
 		strcat(estudiante," ; ");
 		
 		printf("\nIngrese el promedio del estudiante %d: ",i+1);
 		_flushall();
-		gets(reg[i].promedio);
+		gets(aux);
+		strupr(aux);
+		strcpy(reg[i].promedio,aux);
 		strcat(estudiante,reg[i].promedio);
 		strcat(estudiante," ;");
 
-		strupr(estudiante);
 		fprintf(arch,strcat(estudiante,"\n"));
 		
 		printf("\n\n----------------------------------------------------------------\n\n");
@@ -117,16 +124,16 @@ void buscar_estudiante(listar reg[50],int n)
 	char aux1[50],aux2[50];
 	bool esta=false;
 
-	printf("\nIngrese el Nombre del alumno: ");
-	_flushall();
-	gets(aux1);
-	strupr(aux1);
-	
 	printf("\nIngrese el Apellido del alumno: ");
 	_flushall();
 	gets(aux2);
 	strupr(aux2);
 
+	printf("\nIngrese el Nombre del alumno: ");
+	_flushall();
+	gets(aux1);
+	strupr(aux1);
+		
 	for (int i = 0; i < n; i++)
 	{
 		if (strcmp(reg[i].nombre,aux1)==0)
