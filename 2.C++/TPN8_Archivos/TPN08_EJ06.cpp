@@ -14,20 +14,22 @@ struct listar
 
 //Protipos de funciones:
 void end();
-void cargar_estudiantes(FILE *arch,listar reg[50]);
-void listar_estudiantes(FILE *arch);
+int cargar_estudiantes(FILE *arch,listar reg[50]);
+void listar_estudiantes(listar reg[50]);
 void buscar_estudiante(FILE *arch);
 
 main()
 {
 	FILE *arch;
 	listar reg[50];
-	cargar_estudiantes(arch,reg);
+	int n;
+
+	n=cargar_estudiantes(arch,reg);
 	system("pause");
 
 	system("cls");
 	printf("\nListador de estudiantes: \n\n");
-	listar_estudiantes(arch);
+	listar_estudiantes(reg);
 	
 
 	buscar_estudiante(arch);
@@ -35,7 +37,7 @@ main()
 }
 
 //Apartado 1.
-void cargar_estudiantes(FILE *arch,listar reg[50])
+int cargar_estudiantes(FILE *arch,listar reg[50])
 {
 	int n;
 	char estudiante[150],aux[40];
@@ -78,24 +80,18 @@ void cargar_estudiantes(FILE *arch,listar reg[50])
 	}
 
 	fclose(arch);
+	return n;
 }
 
 //Apartado 2.
-void listar_estudiantes(FILE *arch)
+void listar_estudiantes(listar reg[50],int n)
 {
-	char estudiante[150];
-
-	arch=fopen("Estudiantes.txt","r");
-
 	printf("-----------------------------------------------------------------------------\n");
-	fgets(estudiante,150,arch);
-	while (!feof(arch))
+	
 	{
-		printf("%s",estudiante);
+		
 		printf("-----------------------------------------------------------------------------\n");
-		fgets(estudiante,150,arch);
 	}
-	fclose(arch);
 }
 
 //Apartado 3.
