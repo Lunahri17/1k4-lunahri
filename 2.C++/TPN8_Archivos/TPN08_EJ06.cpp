@@ -3,17 +3,26 @@
 #include<conio.h>
 #include<string.h>
 
+//Estructuras:
+struct listar
+{
+	char nombre[80];
+	char apellido[80];
+	char carrera[80];
+	char promedio[10];
+};
+
 //Protipos de funciones:
 void end();
-void cargar_estudiantes(FILE *arch);
+void cargar_estudiantes(FILE *arch,listar reg[50]);
 void listar_estudiantes(FILE *arch);
 void buscar_estudiante(FILE *arch);
 
 main()
 {
 	FILE *arch;
-	
-	cargar_estudiantes(arch);
+	listar reg[50];
+	cargar_estudiantes(arch,reg);
 	system("pause");
 
 	system("cls");
@@ -25,12 +34,13 @@ main()
 	end();
 }
 
-void cargar_estudiantes(FILE *arch)
+//Apartado 1.
+void cargar_estudiantes(FILE *arch,listar reg[50])
 {
 	int n;
 	char estudiante[150],aux[40];
 
-	arch=fopen("Estudiantes.txt","a"); //cambiar por "w", solo es para caso de prueba.
+	arch=fopen("Estudiantes.txt","w"); //cambiar por "w", solo es para caso de prueba.
 
 	printf("\nIngrese la cantidad de estudiantes: ");
 	scanf("%d",&n);
@@ -39,26 +49,27 @@ void cargar_estudiantes(FILE *arch)
 	{
 		printf("\nIngrese el Apellido del estudiante %d: ",i+1);
 		_flushall();
-		gets(estudiante);
-		strcat(estudiante,";");
+		gets(reg[i].nombre);
+		strcpy(estudiante,reg[i].nombre);
+		strcat(estudiante," ; ");
 
 		printf("\nIngrese el Nombre del estudiante %d: ",i+1);
 		_flushall();
-		gets(aux);
-		strcat(estudiante,aux);
-		strcat(estudiante,";");
+		gets(reg[i].apellido);
+		strcat(estudiante,reg[i].apellido);
+		strcat(estudiante," ; ");
 
 		printf("\nIngrese la Carrera del estudiante %d: ",i+1);
 		_flushall();
-		gets(aux);
-		strcat(estudiante,aux);
-		strcat(estudiante,";");
+		gets(reg[i].carrera);
+		strcat(estudiante,reg[i].carrera);
+		strcat(estudiante," ; ");
 		
 		printf("\nIngrese el promedio del estudiante %d: ",i+1);
 		_flushall();
-		gets(aux);
-		strcat(estudiante,aux);
-		strcat(estudiante,";");
+		gets(reg[i].promedio);
+		strcat(estudiante,reg[i].promedio);
+		strcat(estudiante," ;");
 
 		strupr(estudiante);
 		fprintf(arch,strcat(estudiante,"\n"));
@@ -69,6 +80,7 @@ void cargar_estudiantes(FILE *arch)
 	fclose(arch);
 }
 
+//Apartado 2.
 void listar_estudiantes(FILE *arch)
 {
 	char estudiante[150];
@@ -86,10 +98,13 @@ void listar_estudiantes(FILE *arch)
 	fclose(arch);
 }
 
+//Apartado 3.
+//No supe como implementarlo.
 
+//Apartado 4.
+//No supe como implementarlo.
 
-
-
+//Apartado 5.
 void buscar_estudiante(FILE *arch)
 {
 	char aux[50],aux2[50],aux3,estudiante[150],carrera[20];
