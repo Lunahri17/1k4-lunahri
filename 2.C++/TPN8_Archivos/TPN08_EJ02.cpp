@@ -213,7 +213,7 @@ void Agregar(FILE *arch)
     bool es;
     int aux2;
 
-    printf("\nIngrese el numero a agregar (0: Salir): ");
+    printf("\nIngrese el numero a agregar: ");
     scanf("%f",&aux);
 
     es=es_entero(aux);
@@ -221,13 +221,7 @@ void Agregar(FILE *arch)
     if (es)
     {
         aux2=aux;
-        while (aux2!=0)
-        {
-            fwrite(&aux2,sizeof(int),1,arch);
-            
-            printf("\nIngrese el numero a agregar (0: Salir): ");
-            scanf("%d",&aux2);
-        }
+        fwrite(&aux2,sizeof(int),1,arch);
     }
     else
     {
