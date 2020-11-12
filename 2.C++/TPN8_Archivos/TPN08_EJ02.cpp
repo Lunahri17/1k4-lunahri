@@ -12,6 +12,7 @@ void Listar(FILE *arch);
 void Agregar(FILE *arch);
 bool Buscar(FILE *arch);
 void Rangos(FILE *arch,int &cont1,int &cont2);
+bool es_entero(float aux);
 
 main()
 {
@@ -208,17 +209,46 @@ void Rangos(FILE *arch,int &cont1,int &cont2)
 void Agregar(FILE *arch)
 {
     arch=fopen("numeros.dat","a+b");
-    int aux;
+    float aux;
+    bool es;
+    int aux2;
 
     printf("\nIngrese el numero a agregar (0: Salir): ");
-    scanf("%d",&aux);
+    scanf("%f",&aux);
 
-    while (aux!=0)
+    es=es_entero(aux);
+
+    if (es)
     {
-        fwrite(&aux,sizeof(int),1,arch);
-        
-        printf("\nIngrese el numero a agregar (0: Salir): ");
-        scanf("%d",&aux);
+        aux2=aux;
+        while (aux2!=0)
+        {
+            fwrite(&aux2,sizeof(int),1,arch);
+            
+            printf("\nIngrese el numero a agregar (0: Salir): ");
+            scanf("%d",&aux2);
+        }
+    }
+    else
+    {
+        printf("\nIngreso un numero que no es entero.");
     }
     fclose(arch);
+}
+
+bool es_entero(float aux)
+{
+    int aux2=aux;
+    float aux3;
+
+    aux3=aux-aux2;
+
+    if (aux3==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }    
 }
