@@ -61,7 +61,7 @@ int cargar_estudiantes(FILE *arch,listar reg[50])
 		_flushall();
 		gets(aux);
 		strupr(aux);
-		strcpy(reg[i].nombre,aux);
+		strcpy(reg[i].apellido,aux);
 		strcat(estudiante,reg[i].apellido);
 		strcat(estudiante," ; ");
 
@@ -128,7 +128,7 @@ void buscar_estudiante(listar reg[50],int n)
 	_flushall();
 	gets(aux1);
 	strupr(aux1);
-	
+
 	printf("\nIngrese el Apellido del alumno: ");
 	_flushall();
 	gets(aux2);
