@@ -141,6 +141,9 @@ void buscar_estudiante(listar reg[50],int n)
 			if (strcmp(reg[i].apellido,aux2)==0)
 			{
 				esta=true;
+				
+				printf("\nDatos del estudiante: ")
+
 				printf("\nCarrera que estudia: ");
 				puts(reg[i].carrera);
 
