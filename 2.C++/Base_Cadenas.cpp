@@ -8,7 +8,7 @@ void end();
 
 main()
 {
-	
+	//Eliminar proque no sirve ya xd.
 	
 	end();
 }
