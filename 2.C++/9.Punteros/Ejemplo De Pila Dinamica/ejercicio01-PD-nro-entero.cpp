@@ -22,14 +22,14 @@ int estaVaciaPila(nodoPila *ptrTopeDePila );
 void imprimePila(nodoPila *ptrTopeDePila );
 int menuPrincipal();
  
-/* la función main comienza la ejecución del programa */
+/* la funcion main comienza la ejecucion del programa */
 main()
 { 
 	nodoPila *ptrTopeDePila;
 	ptrTopeDePila = NULL ;				
    int valor, opcion=3;  					//valor a guardar en la pila.
 
-   /* mientras el usuario no introduzca 3 */
+   /* mientras el usuario no introduzca 0 */
    while ( opcion != 0 ) { 
    
 		opcion = menuPrincipal();
@@ -107,7 +107,7 @@ int menuPrincipal()
 	printf("\n\t\t\t    Seleccione una opcion --> "); 
 	scanf("%d", &eleccion);
 	return eleccion;
-} /* fin de la función */
+} /* fin de la funciï¿½n */
 
 /*-------------Inserta un nodo en la cima de la pila--------------------------*/ 
 int agregarNodoPila(nodoPila *&ptrTopeDePila, int info )
@@ -151,7 +151,7 @@ int sacarNodoPila(nodoPila *&ptrTopeDePila)
 /*----- Imprime la pila -----*/
 void imprimePila(nodoPila *ptrActual )
 { 
-   /* si la pila esta vacía */
+   /* si la pila esta vacï¿½a */
    if ( ptrActual == NULL ){
       system("CLS");
    	printf("\n\t\t\t ==============================================");
@@ -178,7 +178,7 @@ void imprimePila(nodoPila *ptrActual )
  
 } /* fin */
  
-/* Devuelve 1 si la pila está vacía, de lo contrario 0 */
+/* Devuelve 1 si la pila estï¿½ vacï¿½a, de lo contrario 0 */
 int estaVaciaPila( nodoPila *ptrTopeDePila )
 { 
    return ptrTopeDePila == NULL;
