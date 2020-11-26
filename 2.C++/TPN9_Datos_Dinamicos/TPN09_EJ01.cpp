@@ -75,6 +75,22 @@ void borrar_nodo(nodo *&Lista,int valor)
             anterior=aux_borrar;
             aux_borrar=aux_borrar->sgte;
         }
+
+        if (aux_borrar==NULL)
+        {
+            printf("\nEl elemento buscado no se encontro.");
+        }
+        
+        if (anterior==NULL)
+        {
+            Lista=Lista->sgte;
+            delete aux_borrar;
+        }
+        else
+        {
+            anterior->sgte=aux_borrar->sgte;
+            delete aux_borrar;
+        }        
     }
 }
 
