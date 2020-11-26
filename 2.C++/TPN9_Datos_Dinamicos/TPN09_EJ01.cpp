@@ -3,17 +3,17 @@
 
 //Estructuras:
 struct nodo{
-	int nro;
-	struct nodo *sgte;
+	float nro;
+    nodo *sgte;
 };
 
 //Protipos de funciones:
 void end();
-void insertarNodo(nodo *&finLista, int valor);
+void insertar_lista(nodo *&Lista,float valor);
 
 main()
 {
-	nodo *finLista = NULL;
+	nodo *Lista = NULL;
     int n;
     float valor;
 
@@ -25,34 +25,36 @@ main()
     {
         printf("\nIngrese el valor real %d: ",i+1);
         scanf("%f",&valor);
-        insertarNodo(finLista, valor);
+        insertar_lista(Lista,valor);
     }
     
 	
 	end();
 }
 
-/*-------------------- Insertar siguiente Elemento-------------------------*/
-void insertarNodo(nodo *&finLista, int valor)
+
+void insertar_lista(nodo *&Lista,float valor)
 {
-	nodo *t, *q = new(nodo); //pide un nuevo nodo.
+	nodo *aux = Lista,*aux2, *nuevo_nodo = new(nodo); //pide un nuevo nodo.
 	
-    q->nro  = valor;
-	q->sgte = NULL;
+    nuevo_nodo->nro = valor;
 	
-    if(finLista==NULL)
-	{
-		finLista = q;
-	} 
+    while ((aux != NULL) and (aux->nro < valor))
+    {
+        aux2 = aux;
+        aux = aux->sgte;
+    }
+    
+    if (Lista == aux)
+    {
+        Lista = nuevo_nodo;
+    }
     else
-    {		
-		t = finLista;
-		while(t->sgte!=NULL)
-		{		
-			t = t->sgte;
-		}	
-		t->sgte = q;
-	}
+    {
+        aux2->sgte = nuevo_nodo;
+    }
+    
+    nuevo_nodo->sgte = aux;
 }
 
 
