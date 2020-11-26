@@ -30,6 +30,8 @@ main()
         insertar_lista(Lista,valor);
     }
     
+    printf("\nIngrese el valor que desea eliminar: ");
+    scanf("%f",&valor);
     borrar_nodo(Lista,valor);
 
     mostrar_lista(Lista);
