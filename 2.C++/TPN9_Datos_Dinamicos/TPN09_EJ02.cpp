@@ -14,8 +14,8 @@ struct nodo{
 //Protipos de funciones:
 void end();
 void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios);
-void mostrar_lista(nodo *Lista);
-void borrar_nodo(nodo *&Lista,int valor);
+//void mostrar_lista(nodo *Lista);
+//void borrar_nodo(nodo *&Lista,int valor);
 
 main()
 {
@@ -41,9 +41,9 @@ main()
         insertar_lista(Lista,legajo,apeynom,anios);
     }
     
-    printf("\nIngrese el valor que desea eliminar: ");
-    scanf("%f",&valor);
-    borrar_nodo(Lista,valor);
+    printf("\nIngrese el legajo del empleado que desea eliminar: ");
+    scanf("%d",&legajo);
+    borrar_nodo(Lista,legajo);
 
     mostrar_lista(Lista);
 	
@@ -55,12 +55,12 @@ void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios)
 	nodo *nuevo_nodo = new(nodo); //pide un nuevo nodo.
 	
     nuevo_nodo->leg = legajo;
-    nuevo_nodo->apenom = apeynom;
+    strcpy(nuevo_nodo->apenom,apeynom);
     nuevo_nodo->edad = anios;
 	
     nodo *aux = Lista,*aux2;
 
-    while ((aux != NULL) and (aux->leg < valor))
+    while ((aux != NULL) and (aux->leg < legajo))
     {
         aux2 = aux;
         aux = aux->sgte;
@@ -78,14 +78,14 @@ void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios)
     nuevo_nodo->sgte = aux;
 }
 
-void borrar_nodo(nodo *&Lista,int valor)
+void borrar_nodo(nodo *&Lista,int legajo)
 {
     if (Lista!=NULL)
     {
         nodo *aux_borrar=Lista;
         nodo *anterior=NULL;
 
-        while((aux_borrar!=NULL) and (aux_borrar->nro!=valor))
+        while((aux_borrar!=NULL) and (aux_borrar->leg!=legajo))
         {	
             anterior=aux_borrar;
             aux_borrar=aux_borrar->sgte;
@@ -109,17 +109,17 @@ void borrar_nodo(nodo *&Lista,int valor)
     }
 }
 
-
 void mostrar_lista(nodo *Lista)
 {
     nodo *actual = new(nodo);
     actual=Lista;
 
     int i = 0;
-	printf("\nListado de los elementos:\n");
+	printf("\nListado de los empleados:\n");
 	while(actual != NULL)
 	{	
-		printf("Elemento %d: %.2f \n", i+1, actual->nro);
+        printf("\nEmpleado %d:",i+1);
+		printf("\nLegajo: %.2d | Apellido y Nombre %s | Edad: %d",actual->leg,actual->apenom,actual->edad);
 		actual = actual->sgte;
 		i++;
 	}	
