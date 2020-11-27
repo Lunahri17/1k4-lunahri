@@ -54,11 +54,13 @@ void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios)
 {
 	nodo *nuevo_nodo = new(nodo); //pide un nuevo nodo.
 	
-    nuevo_nodo->nro = valor;
+    nuevo_nodo->leg = legajo;
+    nuevo_nodo->apenom = apeynom;
+    nuevo_nodo->edad = anios;
 	
     nodo *aux = Lista,*aux2;
 
-    while ((aux != NULL) and (aux->nro < valor))
+    while ((aux != NULL) and (aux->leg < valor))
     {
         aux2 = aux;
         aux = aux->sgte;
