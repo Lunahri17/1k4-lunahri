@@ -11,7 +11,7 @@ struct nodo{
 void end();
 void insertar_lista(nodo *&Lista,float valor);
 void mostrar_lista(nodo *Lista);
-void borrar_nodo(nodo *&Lista,int valor);
+void borrar_nodo(nodo *&Lista,float valor);
 
 main()
 {
@@ -65,7 +65,7 @@ void insertar_lista(nodo *&Lista,float valor)
     nuevo_nodo->sgte = aux;
 }
 
-void borrar_nodo(nodo *&Lista,int valor)
+void borrar_nodo(nodo *&Lista,float valor)
 {
     if (Lista!=NULL)
     {
