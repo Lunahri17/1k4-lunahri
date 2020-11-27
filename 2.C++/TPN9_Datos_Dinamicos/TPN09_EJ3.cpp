@@ -22,9 +22,6 @@ struct nodo
 void end();
 void insertar_nodo(nodo *&frente,registro aux);
 
-//Variables globales:
-
-
 main()
 {
 	nodo *frente=NULL,*p;
@@ -61,7 +58,7 @@ void insertar_nodo(nodo *&frente,registro aux)
 
     if (p != NULL)
     {
-        p->info = x;
+        p->info = aux;
         p->sig = frente;
         frente = p;
     }
