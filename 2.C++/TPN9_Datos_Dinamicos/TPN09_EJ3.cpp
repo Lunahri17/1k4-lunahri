@@ -5,7 +5,18 @@
 #include<string.h>
 
 //Estructuras:
+struct registro
+{
+    char apeynom[60];
+    int telefono;
+    int edad;
+};
 
+struct nodo
+{
+    registro info;
+    nodo *sig;
+};
 
 //Protipos de funciones:
 void end();
