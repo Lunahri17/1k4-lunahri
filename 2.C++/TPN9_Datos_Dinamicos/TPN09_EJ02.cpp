@@ -13,7 +13,7 @@ struct nodo{
 
 //Protipos de funciones:
 void end();
-void insertar_lista(nodo *&Lista,float valor);
+void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios);
 void mostrar_lista(nodo *Lista);
 void borrar_nodo(nodo *&Lista,int valor);
 
@@ -31,11 +31,14 @@ main()
     {
         printf("\nIngrese el legajo del empleado %d: ",i+1);
         scanf("%d",&legajo);
-        printf("\nIngrese el legajo del empleado %d: ",i+1);
-        scanf("%d",&legajo);
-        printf("\nIngrese el legajo del empleado %d: ",i+1);
-        scanf("%d",&legajo);
-        insertar_lista(Lista,valor);
+        
+        printf("\nIngrese el Apellido y Nombre del empleado %d: ",i+1);
+        _flushall();
+        gets(apeynom);
+        
+        printf("\nIngrese la edad del empleado %d: ",i+1);
+        scanf("%d",&anios);
+        insertar_lista(Lista,legajo,apeynom,anios);
     }
     
     printf("\nIngrese el valor que desea eliminar: ");
@@ -47,7 +50,7 @@ main()
 	end();
 }
 
-void insertar_lista(nodo *&Lista,float valor)
+void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios)
 {
 	nodo *nuevo_nodo = new(nodo); //pide un nuevo nodo.
 	
