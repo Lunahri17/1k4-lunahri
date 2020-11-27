@@ -41,9 +41,12 @@ main()
         insertar_lista(Lista,legajo,apeynom,anios);
     }
     
+    system("cls");
+
     printf("\nIngrese el legajo del empleado que desea eliminar: ");
     scanf("%d",&legajo);
     borrar_nodo(Lista,legajo);
+    
 
     mostrar_lista(Lista);
 	
@@ -93,18 +96,20 @@ void borrar_nodo(nodo *&Lista,int legajo)
 
         if (aux_borrar==NULL)
         {
-            printf("\nEl elemento buscado no se encontro.");
+            printf("\nEl empleado buscado no se encontro.");
         }
         
         if (anterior==NULL)
         {
             Lista=Lista->sgte;
             delete aux_borrar;
+            printf("\nSe elimino con exito.");
         }
         else
         {
             anterior->sgte=aux_borrar->sgte;
             delete aux_borrar;
+            printf("\nSe elimino con exito.");
         }        
     }
 }
