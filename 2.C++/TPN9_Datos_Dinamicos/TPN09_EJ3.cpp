@@ -73,22 +73,25 @@ void insertar_nodo(nodo *&frente,registro aux)
 
 void pasiente_mayor_edad(nodo *&frente)
 {
-    nodo *aux = frente;
+    nodo *aux2 = frente;
+    registro aux;
     int edad_mayor = 0, telefono_mayor;
     char apeynom_mayor[50];
 
-    while (aux != NULL)
+    while (aux2 != NULL)
     {
-        if (aux->edad > edad_mayor)
+        aux = aux2->info;
+
+        if (aux.edad > edad_mayor)
         {
-            edad_mayor = aux->edad;
-            telefono_mayor = aux->telefono;
-            strcopy(apeynom_mayor,aux->apeynom);
+            edad_mayor = aux.edad;
+            telefono_mayor = aux.telefono;
+            strcpy(apeynom_mayor,aux.apeynom);
         }
-        aux = aux->sig;
+        aux2 = aux2->sig;
     }
     
-    printf("\n El pasiente con la mayor edad (%d) es: %s",edad_mayor,apeynom_mayor);
+    printf("\n El pasiente con la mayor edad (%d anios) es: %s",edad_mayor,apeynom_mayor);
     printf("\n Telefono del pasiente: %d",telefono_mayor);
 }
 
