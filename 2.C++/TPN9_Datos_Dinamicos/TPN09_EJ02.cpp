@@ -14,8 +14,8 @@ struct nodo{
 //Protipos de funciones:
 void end();
 void insertar_lista(nodo *&Lista,int legajo,char apeynom[50],int anios);
-//void mostrar_lista(nodo *Lista);
-//void borrar_nodo(nodo *&Lista,int valor);
+void mostrar_lista(nodo *Lista);
+void borrar_nodo(nodo *&Lista,int legajo)
 
 main()
 {
