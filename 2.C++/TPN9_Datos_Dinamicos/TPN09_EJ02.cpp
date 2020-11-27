@@ -124,7 +124,7 @@ void mostrar_lista(nodo *Lista)
 	while(actual != NULL)
 	{	
         printf("\nEmpleado %d:",i+1);
-		printf("\nLegajo: %.2d | Apellido y Nombre %s | Edad: %d",actual->leg,actual->apenom,actual->edad);
+		printf("\nLegajo: %.2d | Apellido y Nombre: %s | Edad: %d",actual->leg,actual->apenom,actual->edad);
 		actual = actual->sgte;
 		i++;
 	}	
