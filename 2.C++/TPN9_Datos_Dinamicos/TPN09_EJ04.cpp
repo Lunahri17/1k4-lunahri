@@ -20,7 +20,7 @@ struct nodo
 //Protipos de funciones:
 void end();
 void insertar_nodo(nodo *&frente,registro aux);
-char borrar_nodo(nodo *&frente);
+void borrar_nodo(nodo *&frente);
 void mostrar_pila(nodo *&frente);
 
 main()
@@ -47,7 +47,7 @@ main()
     }
     
     system("cls");
-    printf("\n Se borro el programa: %s",borrar_nodo(frente));
+    borrar_nodo(frente);
     system("pause");
 
     mostrar_pila(frente);
@@ -71,19 +71,18 @@ void insertar_nodo(nodo *&frente,registro aux)
     }    
 }
 
-char borrar_nodo(nodo *&frente)
+void borrar_nodo(nodo *&frente)
 {
     if (frente != NULL)
     {
         char nombre[50];
         strcpy(nombre,frente->info.nom_prog);
         frente = frente->sig;
-        return nombre;
+        printf("\n Se borro el programa: %s",nombre);
     }
     else
     {
         printf("\n ERROR - La listaa esta vacia.");
-        return 0;
     }
 }
 
