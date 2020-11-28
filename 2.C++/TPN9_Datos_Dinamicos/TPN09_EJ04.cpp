@@ -21,6 +21,7 @@ struct nodo
 void end();
 void insertar_nodo(nodo *&frente,registro aux);
 char borrar_nodo(nodo *&frente);
+void mostrar_pila(nodo *&frente);
 
 main()
 {
@@ -45,7 +46,11 @@ main()
         printf("\n---------------------------------------------------------------------");
     }
     
+    system("cls");
     printf("\n Se borro el programa: %s",borrar_nodo(frente));
+    system("pause");
+
+    mostrar_pila(frente);
 
 	end();
 }
@@ -82,6 +87,18 @@ char borrar_nodo(nodo *&frente)
     }
 }
 
+void mostrar_pila(nodo *&frente)
+{
+    nodo *aux = frente;
+
+    while (aux != NULL)
+    {
+        printf("\n");
+        printf("Nombre del programa: %s\n",aux->info.nom_prog);
+        printf("Cantidad de lineas : %d\n",aux->info.cant_lineas);
+        aux = aux->sig;
+    }
+}
 
 void end()
 {
