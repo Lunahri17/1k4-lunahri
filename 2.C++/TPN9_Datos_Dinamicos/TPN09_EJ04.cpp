@@ -48,6 +48,7 @@ main()
     
     system("cls");
     borrar_nodo(frente);
+    printf("\n\n");
     system("pause");
 
     mostrar_pila(frente);
