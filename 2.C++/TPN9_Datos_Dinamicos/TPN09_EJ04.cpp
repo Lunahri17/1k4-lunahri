@@ -20,7 +20,7 @@ struct nodo
 //Protipos de funciones:
 void end();
 void insertar_nodo(nodo *&frente,registro aux);
-//void pasiente_mayor_edad(nodo *&frente);
+char borrar_nodo(nodo *&frente);
 
 main()
 {
@@ -44,10 +44,9 @@ main()
 
         printf("\n---------------------------------------------------------------------");
     }
-    /*
-    system("cls");
-    pasiente_mayor_edad(frente);
-	*/
+    
+    printf("\n Se borro el programa: %s",borrar_nodo(frente));
+
 	end();
 }
 
@@ -67,30 +66,23 @@ void insertar_nodo(nodo *&frente,registro aux)
     }    
 }
 
-/*void pasiente_mayor_edad(nodo *&frente)
+char borrar_nodo(nodo *&frente)
 {
-    nodo *aux2 = frente;
-    registro aux;
-    int edad_mayor = 0, telefono_mayor;
-    char apeynom_mayor[50];
-
-    while (aux2 != NULL)
+    if (frente != NULL)
     {
-        aux = aux2->info;
-
-        if (aux.edad > edad_mayor)
-        {
-            edad_mayor = aux.edad;
-            telefono_mayor = aux.telefono;
-            strcpy(apeynom_mayor,aux.apeynom);
-        }
-        aux2 = aux2->sig;
+        char nombre[50];
+        strcpy(nombre,frente->info.nom_prog);
+        frente = frente->sig;
+        return nombre;
     }
-    
-    printf("\n El pasiente con la mayor edad (%d anios) es: %s",edad_mayor,apeynom_mayor);
-    printf("\n Telefono del pasiente: %d",telefono_mayor);
+    else
+    {
+        printf("\n ERROR - La listaa esta vacia.");
+        return 0;
+    }
 }
-*/
+
+
 void end()
 {
 	printf("\n\n");
