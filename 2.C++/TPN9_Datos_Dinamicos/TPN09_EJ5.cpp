@@ -98,5 +98,5 @@ intborrarPrimero(nodo *&frente, nodo *&fondo){
 		printf("ERROR - COLA VACIA");
 		cod=0;
 	}
-	returncod;
+	return cod;
 }
