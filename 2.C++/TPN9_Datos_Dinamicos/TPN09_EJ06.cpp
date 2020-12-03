@@ -102,7 +102,7 @@ main()
     if (aux2!=0)
     {
         porcentaje = (contador*100)/aux2;
-        printf("\nEl porcentaje de reclamos por problemas tecnicos es: %.2f %\n\n",porcentaje);
+        printf("\nEl porcentaje de reclamos por problemas tecnicos es: %.2f\n\n",porcentaje);
     }
     
 	system("PAUSE");
