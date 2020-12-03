@@ -50,7 +50,7 @@ main()
 	while(aux != NULL)
     {
 		printf("Codigo: %d\n",aux->info.cod);
-		printf("Importe: %.2f\n\n",aux->info.imp);
+		printf("Importe: %.2f\n",aux->info.imp);
 		printf("------------------------------\n");
 		aux = aux->sig;
 	}
