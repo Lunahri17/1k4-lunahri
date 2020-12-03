@@ -90,15 +90,15 @@ int borrar_nodo(nodo *&frente, nodo *&fondo)
 
 	if (frente!=NULL)
     {
-		nodo*p;							//Define un puntero a datos de tipo nodo.
-		p=frente;						//Asigna a p la direcci�n de frente.
-		cod=p->info.cod;			//Asigna a "cod" la informaci�n del nodo que ser� eliminado (cod).
-		frente=p->sig;				//Asigna a "frente" la direcci�n del siguiente nodo(frente->sig).
-		delete p;						//Libera el espacio de memoria ocupado por "p".
+		nodo*p;
+		p=frente;
+		cod=p->info.cod;
+		frente=p->sig;
+		delete p;
 		
-        if(frente==NULL)			//Si "frente" es NULL, en el caso de que la cola tenga un solo nodo.
+        if(frente==NULL)
 		{
-            fondo=NULL;				//Asigna a "fondo"el valor NULL. Indicando que la cola esta vac�a.
+            fondo=NULL;
         }	
 	}
     else
