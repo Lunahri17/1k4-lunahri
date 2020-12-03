@@ -25,9 +25,10 @@ void borrar_nodo(nodo *&frente,nodo *&fondo);
 main()
 {
 	nodo *frente = NULL,*fondo = NULL,*aux;
-	int aux2,cod,contador=0;
+	int aux2,cod,contador = 0;
 	registro reg;
     bool stop;
+    float porcentaje = 0;
 	
     printf("\nIngrese la cantidad de usuarios: ");
     scanf("%d",&aux2);
@@ -66,10 +67,8 @@ main()
 		insertar_nodo(frente,fondo,reg);
     }
 	
-    
+    system("cls");
 
-	
-	
 	aux=frente;
 	while(aux != NULL)
     {
@@ -84,7 +83,7 @@ main()
         
         if (aux->info.tipo == 70)
         {
-            printf("Facturación.");
+            printf("Facturacion.");
         }
         
         if (aux->info.tipo == 84)
@@ -93,13 +92,19 @@ main()
             contador++;
         }
 
-		printf("------------------------------\n");
-        
+		printf("\n------------------------------\n");
+        system("pause");
         borrar_nodo(frente,fondo);
         
         aux = aux->sig;
 	}
 
+    if (aux2!=0)
+    {
+        porcentaje = (contador*100)/aux2;
+        printf("\nEl porcentaje de reclamos por problemas tecnicos es: %.2f %\n\n",porcentaje);
+    }
+    
 	system("PAUSE");
 }
 
