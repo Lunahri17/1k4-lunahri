@@ -45,14 +45,16 @@ main()
     {
         printf("\n\nSe borro el nodo: %d \n \n",cod);
     }
-	/*---------- Listado de la lista -----------------------
-	p=frente;									//Toma frente de la cola.
-	while(p != NULL){								//hacer mientras no sea el �ltimo nodo.
-		printf("Codigo: %d\n",p->info.cod);		//Mostrar los datos de cada nodo
-		printf("Importe: %.2f\n\n",p->info.imp);
+	
+	aux=frente;
+	while(aux != NULL)
+    {
+		printf("Codigo: %d\n",aux->info.cod);
+		printf("Importe: %.2f\n\n",aux->info.imp);
 		printf("------------------------------\n")
-		p = p->sig;								//Pasar al siguiente nodo.
-	}                              */
+		aux = aux->sig;
+	}
+    
 	system("PAUSE");
 }
 
