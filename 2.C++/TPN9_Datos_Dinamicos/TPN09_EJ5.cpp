@@ -1,80 +1,86 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/* ------ Define la estructura para guardar los datos ------- */
-struct registro{
+//Estructuras:
+struct registro
+{
 	int cod;
 	float imp;
 };
 
-/*------ Define el nodo de la estructura FIFO --------*/
-struct nodo{
+struct nodo
+{
 	registro info;
 	nodo *sig;
 };
 
-/*------- Define los prototipos ---------*/
-void inicializar(nodo *&frente,nodo *&fondo);
-void insertar(nodo *&frente,nodo *&fondo, registro x1);
-intborrarPrimero(nodo *&frente,nodo *&fondo);
+//Prototipo:
+void insertar_nodo(nodo *&frente,nodo *&fondo,registro reg);
+int borrarPrimero(nodo *&frente,nodo *&fondo);
 
 
-main(){
-	nodo *frente, *fondo, *p;	//Define 3 variables puntero a tipo de dato nodo.
-	int i, cod;
-	registro x;			// Define la variable "x" de tipo registro (est�tico).
+main()
+{
+	nodo *frente = NULL,*fondo = NULL,*aux;
+	int aux2,cod;
+	registro reg;
 	
-	/*-------- Inicializar la cola -------*/
-	inicializar(frente,fondo);	//Llamada para inicializar la estructura FIFO
+    printf("\nIngrese el codigo (0: Para terminar): ");
+    scanf("%d",&aux2);
 	
-	/*-------- Realizar la carga a los 5 nodos de la cola -----------*/
-	for(i=0;i<5;i++){
-		printf("Ingresecodigo: ");
-		scanf("%d",&x.cod);
+	while (aux2 != 0)
+    {
+        reg.cod = aux2;
 		printf("Ingrese importe: ");
-		scanf("%f",&x.imp);
+		scanf("%f",&reg.imp);
 		
-		insertar(frente, fondo, x);	// Llamada, agregar a la cola los datos
-	}								// ingresados en un nuevo nodo.
+		insertar_nodo(frente,fondo,reg);
+
+        printf("\nIngrese el codigo (0: Para terminar): ");
+        scanf("%d",&aux2);
+    }
+    
 	
-	/*---------- Borrado elnodode frente ------*/
+	/*---------- Borrado elnodode frente ------
 	cod = borrarPrimero(frente,fondo)
 	printf("\n\nSE BORRO EL PRIMER NODO CON VALOR: %d \n \n",cod);
 	
-	/*---------- Listado de la lista -----------------------*/
+	/*---------- Listado de la lista -----------------------
 	p=frente;									//Toma frente de la cola.
 	while(p != NULL){								//hacer mientras no sea el �ltimo nodo.
 		printf("Codigo: %d\n",p->info.cod);		//Mostrar los datos de cada nodo
 		printf("Importe: %.2f\n\n",p->info.imp);
 		printf("------------------------------\n")
 		p = p->sig;								//Pasar al siguiente nodo.
-	}
+	}                              */
 	system("PAUSE");
 }
 
+void insertar_nodo(nodo *&frente,nodo *&fondo,registro reg)
+{
+	nodo *p = new nodo;
+				
+	if (p !=NULL)
+    {
+		p->info = reg;
+		p->sig = NULL;
+		
+        if (frente == NULL)
+        {			
+			frente=p;
+        }
+		else
+        {
+			fondo->sig= p;
+        }
 
-/*---------- Funci�n Inicializar------------------*/
-void inicializar(nodo *&frente,nodo *&fondo){
-	frente= NULL;				//Inicializa el frente de cola en NULL
-	fondo= NULL;				//Inicializa el fondo de cola en NULL
+		fondo= p;
+	}
+    else
+    {
+		printf("ERROR - COLA LLENA");
+    }
 }
-
-
-/*---------- Funci�n Insertar------------------*/
-void insertar(nodo *&frente,nodo *&fondo, registro x){
-	nodo*p;						//define un puntero a dato tipo nodo
-	p = new nodo;				//Solicita espacio de memoria para un Nuevo nodo. (Din�mico)
-	if(p !=NULL){				//Si se le asign� el espacio transfiere los datos
-		p->info = x;				//En el nuevo nodo se asigna a "p->info" el registro "x".
-		p->sig = NULL;			//En el nuevo nodo se asigna a "p->Sig" el valor NULL.
-		if(frente == NULL)		//Si frente es null, es el primeroy				
-			frente=p;			//Asignaa "frente la direcci�n del nuevo nodo"p".
-		else					//Si no es el primero
-			fondo->sig= p;		//Asigna la direcci�n de p a "fondo->sig".
-		fondo= p;				//Asigna a "fondo" la direcci�n de memoria de p.
-	}else
-		printf("ERROR - COLA LLENA");	//Cuando no se asigna espacio de memoria, 
-}										//muestra el mensaje.
 
 
 /*---------- Funci�n borrar------------------*/
