@@ -51,10 +51,10 @@ main()
     {
 		printf("Codigo: %d\n",aux->info.cod);
 		printf("Importe: %.2f\n\n",aux->info.imp);
-		printf("------------------------------\n")
+		printf("------------------------------\n");
 		aux = aux->sig;
 	}
-    
+
 	system("PAUSE");
 }
 
